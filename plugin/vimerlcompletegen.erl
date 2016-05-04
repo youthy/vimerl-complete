@@ -15,16 +15,19 @@ parse_file(FileName) ->
     ok = file:write_file(get_output_file(Module), Data).
 
 parse_bin(Bin) ->
-    case re:run(Bin, "<h3 id=\"(?<name>\\w+)\/\\d+\">(?<detail>.*)</h3>", [global, {capture, [name, detail], binary}]) of
+    case re:run(Bin, "<h3 id=\"(?<name>\\w+)\/\\d+\">(?<detail>.*)</h3>\\s+(?<type><ul.*/ul>\|\\s+)", [global, {capture, [name, detail, type], binary}]) of
         nomatch -> [];
         {match, List} -> 
             [parse_part(Match) || Match <- List]
     end.
 
-parse_part([FunName, FunDetail]) ->
-    FunDetail2 = re:replace(FunDetail, "\s<a.*\">|<\/a>", " ", [global, {return, binary}]),
-    FunDetail3 = re:replace(FunDetail2, "&gt;", ">", [global, {return, binary}]),
-    list_to_binary([FunName, "@", FunDetail3, "\n"]).
+parse_part([FunName, FunDetail, Type]) ->
+    Detail2 = parse_detail(FunDetail),
+    Type2 = parse_type(Type),
+    case Type2 of
+        <<>> -> list_to_binary([FunName, "@", Detail2, "\n"]);
+        _ -> list_to_binary([FunName, "@", Detail2, "@", Type2, "\n"])
+    end.
 
 get_output_dir() ->
     PluginDir = filename:dirname(filename:absname(escript:script_name())),
@@ -35,5 +38,15 @@ get_output_dir() ->
 get_output_file(Module) when is_list(Module) ->
     get_output_dir() ++ "/" ++ Module ++ ".parse".
 
+parse_detail(Detail) ->
+    Detail2 = re:replace(Detail, "\s<a.*\">|<\/a>", " ", [global, {return, binary}]),
+    replace_gt(Detail2).
 
+parse_type(<<>>) ->
+    <<>>;
+parse_type(Type) ->
+    Type2 = re:replace(Type, "<.*<code>|<a.*\">|<\/\[a-z]+>", " ", [global, {return, binary}, ungreedy]),
+    replace_gt(Type2).
 
+replace_gt(Bin) ->
+    re:replace(Bin, "&gt;", ">", [global, {return, binary}]).

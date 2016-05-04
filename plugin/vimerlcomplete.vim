@@ -9,6 +9,7 @@ let s:parse_path = expand('<sfile>:p:h') . '/parsetag/'
 let s:home_path = split(expand('<sfile>:p:h'), '.vim')[0]
 
 autocmd FileType erlang call VimerlCompleteSet()
+autocmd! CompleteDone * call feedkeys("\<ESC>\<C-W>\<C-Z>")
 
 command! -nargs=* VcompleteGen call VimerlcompleteGen <args>
 
@@ -79,9 +80,12 @@ endfunction
 
 " form each result
 function! s:form_result(module, str)
-    let [word, replace] = split(a:str, '@')
+    let [word, replace; type] = split(a:str, '@')
     echom word replace
-    return {'word':a:module . ':'. word . '(', 'abbr':replace, 'kind':'f'}
+    if empty(type)
+        return {'word':a:module . ':'. word . '(', 'abbr':replace}
+    else
+        return {'word':a:module . ':'. word . '(', 'abbr':replace, 'info':type[0]}
 endfunction
 
 function! s:is_file_exist(path, filename)
@@ -103,3 +107,4 @@ function! VimerlCompleteSet()
     set omnifunc=vimerlcomplete#Complete
     inoremap <buffer> <C-J>         <ESC>:call Try_complete()<CR>
 endfunction
+
