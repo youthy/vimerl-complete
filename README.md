@@ -20,4 +20,4 @@ in vim to generate tags for completation. ("18.3" is the version I used. It can 
 use `<C-J>` which means `CTRL + J` to list completation. If the words before cursor do not have `:` it displays what `<C-X><C-N>` 
 does.
 
-This version can only display functions in erldocs. user defined functions maybe supplied later on.
+This version can only display functions in erldocs. user defined functions maybe supplied later.
