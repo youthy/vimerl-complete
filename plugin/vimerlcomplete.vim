@@ -9,7 +9,6 @@ let s:parse_path = expand('<sfile>:p:h') . '/parsetag/'
 let s:home_path = split(expand('<sfile>:p:h'), '.vim')[0]
 
 autocmd FileType erlang call VimerlCompleteSet()
-autocmd! CompleteDone * call feedkeys("\<ESC>\<C-W>\<C-Z>a")
 
 command! -nargs=* EcompleteGen call VimerlcompleteGen <args>
 
@@ -128,6 +127,12 @@ endfunction
 function! VimerlCompleteSet()
     set omnifunc=vimerlcomplete#Complete
     inoremap <buffer> <C-J>         <ESC>:call Try_complete()<CR>
+    autocmd! CompleteDone * call feedkeys("\<ESC>\<C-W>\<C-Z>a")
+    autocmd!  InsertCharPre * if v:char == ':' 
+                \ | if exists('g:vimerl_complete_auto') && g:vimerl_complete_auto
+                    \ | call feedkeys("\<C-X>\<C-O>") 
+                    \ | endif
+                \ | endif
 endfunction
 
 function! Get_user_module_filepath(module)

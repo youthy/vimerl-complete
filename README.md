@@ -20,5 +20,12 @@ in vim to generate tags for completation. ("18.3" is the version I used. It can 
 Use `<C-J>` which means `CTRL + J` to list completation. If the words before cursor do not have `:` it displays what `<C-X><C-N>` 
 does.
 
+You can add
+```
+let g:vimerl_complete_auto = 1
+```
+to your `.vimrc` file to make the completation automaticlly without press `<C-J>` after you type `:`. In contrast, just remove it 
+or set the value to `0` to close auto-completation.
+
 If the module is not in the offical list, it will search `.erl` files in the `src` directory's parent directory recursively.If no 
 file match the module name.It will print error report.
