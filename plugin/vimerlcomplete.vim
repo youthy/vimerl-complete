@@ -127,12 +127,15 @@ endfunction
 function! VimerlCompleteSet()
     set omnifunc=vimerlcomplete#Complete
     inoremap <buffer> <C-J>         <ESC>:call Try_complete()<CR>
-    autocmd! CompleteDone * call feedkeys("\<ESC>\<C-W>\<C-Z>a")
-    autocmd!  InsertCharPre * if v:char == ':' 
-                \ | if exists('g:vimerl_complete_auto') && g:vimerl_complete_auto
-                    \ | call feedkeys("\<C-X>\<C-O>") 
+    augroup vimerlautocmd
+        au!
+        autocmd CompleteDone <buffer> call feedkeys("\<ESC>\<C-W>\<C-Z>a")
+        autocmd  InsertCharPre <buffer> if  v:char == ':' 
+                    \ | if exists('g:vimerl_complete_auto') && g:vimerl_complete_auto
+                        \ | call feedkeys("\<C-X>\<C-O>") 
+                        \ | endif
                     \ | endif
-                \ | endif
+    augroup END
 endfunction
 
 function! Get_user_module_filepath(module)
