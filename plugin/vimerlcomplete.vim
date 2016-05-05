@@ -9,20 +9,17 @@ let s:parse_path = expand('<sfile>:p:h') . '/parsetag/'
 let s:home_path = split(expand('<sfile>:p:h'), '.vim')[0]
 
 autocmd FileType erlang call VimerlCompleteSet()
-autocmd! CompleteDone * call feedkeys("\<ESC>\<C-W>\<C-Z>")
+autocmd! CompleteDone * call feedkeys("\<ESC>\<C-W>\<C-Z>a")
 
-command! -nargs=* VcompleteGen call VimerlcompleteGen <args>
+command! -nargs=* EcompleteGen call VimerlcompleteGen <args>
 
 function! vimerlcomplete#Complete(findstart, base)
     if a:findstart
         return s:calc_return_column()
     else
-        echom a:base
-        if a:base =~ '\w\+:\w*'
-            echom 'external'
+        if a:base =~ '\w\+:\w*' 
             return s:search_external(a:base)
         else
-            echom 'local'
             return -1
         endif
     endif
@@ -36,26 +33,47 @@ function! s:calc_return_column()
     endif
     " 添加'$'防止前面存在一样的string
     let column = match(line, tmplist[-1].'$')
-    echom column
     return column
 endfunction
 
 function! s:search_external(base) 
-    echom a:base
     let sp = split(a:base, ":")
     " func可能为[], 或者[funname]
     let [module; func] = sp
-    if func == []
+    let filename = module .'.parse'
+    if s:is_file_exist(s:parse_path, module.'.parse')
+        " offical modules
+        return s:search_offical_module_functions(module, func)
+    else
+        " user modules
+        let filepath = Get_user_module_filepath(module)
+        if empty(filepath)
+            " can't find module
+            return -1
+        endif
+        return s:search_user_module_functions(module, func, filepath)
+    endif
+    endfunction
+
+function! s:search_offical_module_functions(module, func)
+    if a:func == []
         let arg = '.* '
     else
-        let arg = '^' . func[0]
+        let arg = '^' . a:func[0]
     endif
-    let filename = module .'.parse'
-    if !s:is_file_exist(s:parse_path, filename)
-        return -1
+    let grepcmd = 'grep ' . '"'. arg . '"' . ' ' . s:parse_path . a:module . '.parse'
+    let result = map(split(system(grepcmd), '\n'), 's:form_offical_result(a:module, v:val)')
+    return result
+endfunction
+
+function! s:search_user_module_functions(module, func, filepath)
+    if a:func == []
+        let arg = '^\w\+('
+    else
+        let arg = '^' . a:func[0]
     endif
-    let grepcmd = 'grep ' . '"'. arg . '"' . ' ' . s:parse_path . filename 
-    let result = map(split(system(grepcmd), '\n'), 's:form_result(module, v:val)')
+    let grepcmd = 'grep ' . '"'. arg . '"' . ' ' . a:filepath 
+    let result = map(split(system(grepcmd), '\n'), 's:form_user_result(a:module, v:val)')
     return result
 endfunction
 
@@ -78,14 +96,19 @@ function! VimerlcompleteGen(version)
     endif
 endfunction
 
-" form each result
-function! s:form_result(module, str)
+" form offical each result
+function! s:form_offical_result(module, str)
     let [word, replace; type] = split(a:str, '@')
-    echom word replace
     if empty(type)
         return {'word':a:module . ':'. word . '(', 'abbr':replace}
     else
         return {'word':a:module . ':'. word . '(', 'abbr':replace, 'info':type[0]}
+endfunction
+
+" form user function result
+function! s:form_user_result(module, str)
+    let name = matchstr(a:str, '\w\+(')
+    return {'word':a:module.':'.name, 'abbr': matchstr(a:str, '.*)')}
 endfunction
 
 function! s:is_file_exist(path, filename)
@@ -95,7 +118,6 @@ endfunction
 function! Try_complete() 
     call feedkeys('a')
     let line = strpart(getline('.'), 0, col('.'))
-    echom line
     if line =~ '.*:\w*$'
         call feedkeys("\<C-X>\<C-O>", 'n')
     else
@@ -108,3 +130,12 @@ function! VimerlCompleteSet()
     inoremap <buffer> <C-J>         <ESC>:call Try_complete()<CR>
 endfunction
 
+function! Get_user_module_filepath(module)
+    let currentpath = split(expand('%:p:h'), 'src')[0]
+    if empty(currentpath)
+        return ""
+    endif
+    let findcmd = "find " . currentpath . " " . "-name" . " " . a:module . ".erl"
+    let find = system(findcmd)
+    return find
+endfunction
