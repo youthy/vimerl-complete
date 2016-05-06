@@ -17,17 +17,24 @@ Then run
 
 in vim to generate tags for completation. ("18.3" is the version I used. It can be like "R15B01" etc.)
 
-Use `<C-J>` which means `CTRL + J` to list completation. If the words before cursor do not have `:` it displays what `<C-X><C-N>` 
-does.
+By default, It will automaticlly display module functions after you type `module:`.
 
-You can add
-```
-let g:vimerl_complete_auto = 1
-```
-to your `.vimrc` file to make the completation automaticlly without press `<C-J>` after you type `:`. In contrast, just remove it 
-or set the value to `0` to close auto-completation.
+And the functions only include exported functions. 
 
 ![](http://i1156.photobucket.com/albums/p578/crossshura/optimized_zpsmwhao7bh.gif)
+
+You can change default settings by add
+```
+" set this value to 0 to disable the auto completation
+let g:vimerl_complete_auto = 0
+" set this value to 0 to enable display all module functions include not exported
+let g:vimerl_complete_only_export = 0
+```
+
+into your `.vimrc` file to change the default settings.
+If you disable auto-display, then you can Use `<C-J>` which means `CTRL + J` to list completation. 
+If the words before cursor do not have `:` it displays what `<C-X><C-N>` does.
+
 
 If the module is not in the offical list, it will search `.erl` files in the `src` directory's parent directory recursively.If no 
 file match the module name.It will print error report.
