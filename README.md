@@ -2,15 +2,24 @@
 Vim plugin for erlang code auto-completation
 
 ## Install
-1. If you use Vundle, then edit .vimrc in your $HOME path, add `Plugin 'youthy/vimerl-complete'` after other plugins. Then type
-`:PluginInstall` in vim to install.
+1. If you use Vundle, then edit .vimrc in your $HOME path, add 
+```
+Plugin 'youthy/vimerl-complete'
+```` 
+
+after other plugins. Then type
+```
+:PluginInstall
+```` 
+
+in vim to install.
 2. or just download and put extract directory `vimerl-complete` into your plugin directory.
 
 ## Usage
-This plugin parse offical docs on [erldocs](http://erldocs.com/). please download a version which you need and extract into your
+1. This plugin parse offical docs on [erldocs](http://erldocs.com/). please download a version which you need and extract into your
 $HOME directory. like `/home/youthy/docs-18.3`.
 
-Then run 
+2. Then run 
 ```
 :EcompleteGen("18.3")
 ```
