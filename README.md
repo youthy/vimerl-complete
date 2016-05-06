@@ -27,5 +27,7 @@ let g:vimerl_complete_auto = 1
 to your `.vimrc` file to make the completation automaticlly without press `<C-J>` after you type `:`. In contrast, just remove it 
 or set the value to `0` to close auto-completation.
 
+![](http://i1156.photobucket.com/albums/p578/crossshura/optimized_zpsmwhao7bh.gif)
+
 If the module is not in the offical list, it will search `.erl` files in the `src` directory's parent directory recursively.If no 
 file match the module name.It will print error report.
