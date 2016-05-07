@@ -13,6 +13,7 @@ after other plugins. Then type
 ```` 
 
 in vim to install.
+
 2. or just download and put extract directory `vimerl-complete` into your plugin directory.
 
 ## Usage
