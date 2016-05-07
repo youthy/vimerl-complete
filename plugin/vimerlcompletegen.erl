@@ -1,6 +1,7 @@
 #!/usr/bin/env escript
 
 -mode(compile).
+-define(RE_FUNCTION, "<h3 id=\"(?<name>\\w+)\/\\d+\">(?<detail>.*)</h3>\\s+(?<type><ul.*/ul>\|\\s+)").
 
 main([Path]) ->
     Files = filelib:wildcard(Path ++"/" ++ "*/*.html"),
@@ -15,7 +16,7 @@ parse_file(FileName) ->
     ok = file:write_file(get_output_file(Module), Data).
 
 parse_bin(Bin) ->
-    case re:run(Bin, "<h3 id=\"(?<name>\\w+)\/\\d+\">(?<detail>.*)</h3>\\s+(?<type><ul.*/ul>\|\\s+)", [global, {capture, [name, detail, type], binary}]) of
+    case re:run(Bin, ?RE_FUNCTION, [global, {capture, [name, detail, type], binary}]) of
         nomatch -> [];
         {match, List} -> 
             [parse_part(Match) || Match <- List]
@@ -43,6 +44,8 @@ parse_detail(Detail) ->
     replace_gt(Detail2).
 
 parse_type(<<>>) ->
+    <<>>;
+parse_type(<<"\n">>) ->
     <<>>;
 parse_type(Type) ->
     Type2 = re:replace(Type, "<.*<code>|<a.*\">|<\/\[a-z]+>", " ", [global, {return, binary}, ungreedy]),

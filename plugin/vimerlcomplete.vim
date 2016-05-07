@@ -57,7 +57,7 @@ function! vimerlcomplete#Complete(findstart, base)
         else
             " I don't want supply local function because other method can do 
             " I'm lazy
-            return -1
+            return s:search_local(a:base)
         endif
     endif
 endfunction
@@ -86,7 +86,7 @@ function! s:search_external(base)
         return s:search_offical_module_functions(module, func)
     else
         " user modules
-        let filepath = s:get_user_module_filepath(module)
+        let filepath = s:get_user_module_filepath(module.'.erl')
         if empty(filepath)
             " can't find module
             return -1
@@ -97,7 +97,21 @@ function! s:search_external(base)
             return s:search_user_module_functions(module, func, filepath)
         endif
     endif
-    endfunction
+endfunction
+
+function! s:search_local(base)
+    let modresult = s:search_module(a:base)
+    let erlangfun = s:search_external('erlang:'.a:base)
+    return extend(erlangfun, modresult)
+endfunction
+
+function! s:search_module(base)
+    let officalpath = globpath(s:parse_path, a:base.'*'.'.parse')
+    let userpath = s:get_user_module_filepath(a:base.'*.erl')
+    let officalmods = split(substitute(officalpath, '[^\n]*/\(\w*\).parse', '\1', 'g'), '\n')
+    let usermods = split(substitute(userpath, '[^\n]*/\(\w*\).erl', '\1', 'g'), '\n')
+    return map(extend(officalmods, usermods), '{"word":v:val, "kind":"m"}')
+endfunction
 
 function! s:search_offical_module_functions(module, func)
     if a:func == []
@@ -145,16 +159,21 @@ endfunction
 " form offical each result
 function! s:form_offical_result(module, str)
     let [word, replace; type] = split(a:str, '@')
-    if empty(type)
-        return {'word':a:module . ':'. word . '(', 'abbr':replace}
+    if a:module ==# 'erlang'
+        let prefix = ""
     else
-        return {'word':a:module . ':'. word . '(', 'abbr':replace, 'info':type[0]}
+        let prefix = a:module.':'
+    endif
+    if empty(type)
+        return {'word':prefix . word . '(', 'abbr':replace, 'kind':'f'}
+    else
+        return {'word':prefix . word . '(', 'abbr':replace, 'info':type[0], 'kind':'f'}
 endfunction
 
 " form user function result
 function! s:form_user_result(module, str)
     let name = matchstr(a:str, '\w\+(')
-    return {'word':a:module.':'.name, 'abbr': matchstr(a:str, '.*)')}
+    return {'word':a:module.':'.name, 'abbr': matchstr(a:str, '.*)'), 'kind':'f'}
 endfunction
 
 " form user function only exported
@@ -181,23 +200,27 @@ function! s:is_user_fun_export(export_list, fun_str)
    endif
 endfunction
 
-function! Try_complete() 
-    call feedkeys('a')
+function! vimerlcomplete#Tab() 
+    if pumvisible()
+        return "\<C-N>"
+    endif
     let line = strpart(getline('.'), 0, col('.'))
-    if line =~ '.*:\w*$'
-        call feedkeys("\<C-X>\<C-O>", 'n')
+    if line =~ '\w\+$' 
+        return "\<C-X>\<C-O>"
     else
-        call feedkeys("\<c-x>\<c-n>", 'n')
+        return "\<Tab>"
     endif
 endfunction
 
 function! VimerlCompleteSet()
     setlocal omnifunc=vimerlcomplete#Complete
-    inoremap <buffer> <C-J>         <ESC>:call Try_complete()<CR>
+    inoremap <buffer> <TAB>  <C-R>=vimerlcomplete#Tab()<CR>
     augroup vimerlautocmd
         au!
-        autocmd CompleteDone <buffer> call feedkeys("\<ESC>\<C-W>\<C-Z>a")
-        autocmd  InsertCharPre <buffer> if  v:char == ':' 
+        autocmd CompleteDone <buffer> if PreviewWindowOpened() 
+                    \ | call feedkeys("\<ESC>\<C-W>\<C-Z>a") 
+                    \ | endif
+        autocmd InsertCharPre <buffer> if  v:char == ':' 
                     \ | if g:vimerl_complete_auto
                         \ | call feedkeys("\<C-X>\<C-O>") 
                         \ | endif
@@ -210,7 +233,16 @@ function! s:get_user_module_filepath(module)
     if empty(currentpath)
         return ""
     endif
-    let findcmd = "find " . currentpath . " " . "-name" . " " . a:module . ".erl"
-    let find = system(findcmd)
+    let find = globpath(currentpath, '**/'.a:module)
     return find
 endfunction
+
+function! PreviewWindowOpened()
+    for nr in range(1, winnr('$'))
+        if getwinvar(nr, "&pvw") == 1
+            " found a preview
+            return 1
+        endif  
+    endfor
+    return 0
+endfun
