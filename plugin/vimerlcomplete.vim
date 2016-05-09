@@ -229,9 +229,7 @@ function! VimerlCompleteSet()
     inoremap <buffer> <TAB>  <C-R>=vimerlcomplete#Tab()<CR>
     augroup vimerlautocmd
         au!
-        autocmd CompleteDone <buffer> if PreviewWindowOpened() 
-                    \ | call feedkeys("\<ESC>\<C-W>\<C-Z>a") 
-                    \ | endif
+        autocmd InsertLeave <buffer> if PreviewWindowOpened()|pclose|endif
         autocmd InsertCharPre <buffer> if  v:char == ':' 
                     \ | if g:vimerl_complete_auto && (s:get_line_cursor() =~ '\w\+$')
                         \ | call feedkeys("\<C-X>\<C-O>") 
