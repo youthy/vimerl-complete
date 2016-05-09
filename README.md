@@ -1,6 +1,7 @@
 # vimerl-complete
 Vim plugin for erlang code auto-completation
 
+![](http://i1156.photobucket.com/albums/p578/crossshura/optimized2_zpszcg8yvwx.gif)
 ## Require
 1. need [Vundle](https://github.com/VundleVim/Vundle.vim) or other Plugin Manager
 2. need [Syntastic](https://github.com/scrooloose/syntastic) or some other syntax
@@ -64,4 +65,4 @@ same as above,but display matches only match funname.
 when there no `:` before cursor, it will display modules which match the `singleword`, and functions in `erlang` module
 which match, and localfunctions.
 
-![](http://i1156.photobucket.com/albums/p578/crossshura/optimized2_zpszcg8yvwx.gif)
+
