@@ -220,8 +220,7 @@ function! vimerlcomplete#Tab()
     if pumvisible()
         return "\<C-N>"
     endif
-    let line = strpart(getline('.'), 0, col('.'))
-    if line =~ '\w\+$' 
+    if s:get_line_cursor() =~ '\w\+$' 
         return "\<C-X>\<C-O>"
     else
         return "\<Tab>"
@@ -237,7 +236,7 @@ function! VimerlCompleteSet()
                     \ | call feedkeys("\<ESC>\<C-W>\<C-Z>a") 
                     \ | endif
         autocmd InsertCharPre <buffer> if  v:char == ':' 
-                    \ | if g:vimerl_complete_auto
+                    \ | if g:vimerl_complete_auto && (s:get_line_cursor() =~ '\w\+$')
                         \ | call feedkeys("\<C-X>\<C-O>") 
                         \ | endif
                     \ | endif
@@ -261,4 +260,8 @@ function! PreviewWindowOpened()
         endif  
     endfor
     return 0
-endfun
+endfunction
+
+function! s:get_line_cursor()
+    return strpart(getline('.'), 0, col('.'))
+endfunction
