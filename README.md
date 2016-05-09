@@ -35,8 +35,6 @@ By default, It will automaticlly display module functions after you type `module
 
 And the functions only include exported functions. 
 
-![](http://i1156.photobucket.com/albums/p578/crossshura/optimized_zpsmwhao7bh.gif)
-
 You can change default settings by add
 ```
 " set this value to 0 to disable the auto completation
@@ -62,4 +60,4 @@ same as above,but display matches only match funname.
 when there no `:` before cursor, it will display modules which match the `singleword`, and functions in `erlang` module
 which match, and localfunctions.
 
-
+![](http://i1156.photobucket.com/albums/p578/crossshura/optimized2_zpszcg8yvwx.gif)
