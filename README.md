@@ -29,11 +29,12 @@ $HOME directory. like `/home/youthy/docs-18.3`.
 :EcompleteGen("18.3")
 ```
 
-in vim to generate tags for completation. ("18.3" is the version I used. It can be like "R15B01" etc.)
+in vim to generate tags for completation. Yon need run this command **only once** unless you change your erlang version
+("18.3" is the version I used. It can be like "R15B01" etc.)
 
 By default, It will automaticlly display module functions after you type `module:`.
 
-And the functions only include exported functions. You can change default settings by add
+And the functions **only include exported** functions. You can change default settings by add
 ```
 " set this value to 0 to disable the auto completation
 let g:vimerl_complete_auto = 0
@@ -42,7 +43,7 @@ let g:vimerl_complete_only_export = 0
 ```
 
 into your `.vimrc` file to change the default settings.
-If you disable auto-display, then you can Use 
+If you **disable auto-display**, then you can Use 
 ```
 <Tab>
 ``` 
