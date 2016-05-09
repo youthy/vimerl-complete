@@ -1,7 +1,0 @@
-decode@decode(Module,Type,Bytes) -> {ok,Value}|{error,Reason}@ 
-encode@encode(Module,Type,Value)-> {ok,BinOrList} | {error,Reason}@ 
-info@info(Module) ->  {ok,Info} | {error,Reason}@ 
-load_driver@load_driver() ->  ok | {error,Reason}@ 
-unload_driver@unload_driver() ->  ok | {error,Reason}@ 
-utf8_binary_to_list@utf8_binary_to_list(UTF8Binary) ->  {ok,UnicodeList} | {error,Reason}@ 
-utf8_list_to_binary@utf8_list_to_binary(UnicodeList) ->  {ok,UTF8Binary} | {error,Reason}@ 

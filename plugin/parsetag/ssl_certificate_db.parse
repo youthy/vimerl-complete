@@ -1,9 +1,0 @@
-create@create() -> [db_handle()]
-remove@remove(Dbs::[db_handle()]) -> term()
-lookup_trusted_cert@lookup_trusted_cert(DbHandle::db_handle(), Ref::certdb_ref(), SerialNumber::serialnumber(), Issuer::issuer()) -> undefined | {ok, {der_cert(), #'OTPCertificate'{}}}
-add_trusted_certs@add_trusted_certs(Pid::pid(), File::string() | {der, list()}, X3::[db_handle()]) -> {ok, [db_handle()]}
-cache_pem_file@cache_pem_file(Pid::pid(), File::string(), Time::time(), X4::[db_handle()]) -> term()
-uncache_pem_file@uncache_pem_file(File::string(), X2::[db_handle()]) -> no_return()
-remove_trusted_certs@remove_trusted_certs(Pid::pid(), X2::[db_handle()]) -> term()
-lookup@lookup(Key::term(), Db::db_handle()) -> term() | undefined
-foldl@foldl(Fun::function(), Acc0::term(), Cache::db_handle()) -> term()

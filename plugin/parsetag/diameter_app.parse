@@ -1,7 +1,0 @@
-peer_up@Mod:peer_up(SvcName, Peer, State) -> NewState
-peer_down@Mod:peer_down(SvcName, Peer, State) -> NewState
-prepare_request@Mod:prepare_request(Packet, SvcName, Peer) -> Action
-prepare_retransmit@Mod:prepare_retransmit(Packet, SvcName, Peer) -> Result
-handle_answer@Mod:handle_answer(Packet, Request, SvcName, Peer) -> Result
-handle_error@Mod:handle_error(Reason, Request, SvcName, Peer) -> Result
-handle_request@Mod:handle_request(Packet, SvcName, Peer) -> Action

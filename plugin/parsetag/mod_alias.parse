@@ -1,4 +1,0 @@
-default_index@default_index(ConfigDB, Path) -> NewPath@ 
-path@path(PathData, ConfigDB, RequestURI) -> Path@ 
-real_name@real_name(ConfigDB, RequestURI, Aliases) -> Ret@ 
-real_script_name@real_script_name(ConfigDB,RequestURI,ScriptAliases) -> Ret@ 

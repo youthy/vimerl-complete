@@ -1,5 +1,0 @@
-create@create(File::filename() (see module file) | binary, Options::[section()]) -> ok | {ok, binary()} | {error, term()}
-extract@extract(File::filename() (see module file), Options::[extract_option()]) -> {ok, [section()]} | {error, term()}
-script_name@script_name() -> string()
-start@start() -> no_return()
-start@start(EscriptOptions::[string()]) -> no_return()

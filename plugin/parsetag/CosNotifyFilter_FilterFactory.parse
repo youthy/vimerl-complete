@@ -1,2 +1,0 @@
-create_filter@create_filter(FilterFactory, Grammar) -> Reply@ 
-create_mapping_filter@create_mapping_filter(FilterFactory, Grammar) -> Reply@ 

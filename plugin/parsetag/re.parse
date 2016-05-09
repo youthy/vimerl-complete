@@ -1,8 +1,0 @@
-compile@compile(Regexp) -> {ok, MP} | {error, ErrSpec}@ 
-compile@compile(Regexp,Options) -> {ok, MP} | {error, ErrSpec}@ 
-run@run(Subject,RE) -> {match, Captured} | nomatch@ 
-run@run(Subject,RE,Options) -> {match, Captured} | match | nomatch@ 
-replace@replace(Subject, RE, Replacement) -> iodata() | unicode:charlist() @ Subject = iodata() |  RE =  Replacement = iodata() |  unicode:charlist()    
-replace@replace(Subject, RE, Replacement, Options) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iodata() | unicode:charlist() @ Subject = iodata() |  RE =  Replacement = iodata() |  Options = [Option] Option = anchored ReturnType = iodata | list | binary CompileOpt =  NLSpec = cr | crlf | lf | anycrlf | any   
-split@split(Subject, RE) -> SplitList@ Subject = iodata() |  RE =  SplitList = [iodata() |  unicode:charlist() ]   
-split@split(Subject, RE, Options) -> SplitList@ Subject = iodata() |  RE =  Options = [Option] Option = anchored NumParts = integer() >= 0 | infinity ReturnType = iodata | list | binary CompileOpt =  SplitList = [RetData] | [GroupedRetData] GroupedRetData = [RetData] RetData = iodata() |  unicode:charlist()  | binary() | list()   

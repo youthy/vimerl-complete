@@ -1,2 +1,0 @@
-add_nodes@add_nodes(Nodes) -> {ok, StartedNodes} | {error, Reason}
-remove_nodes@remove_nodes(Nodes) -> ok | {error, Reason}

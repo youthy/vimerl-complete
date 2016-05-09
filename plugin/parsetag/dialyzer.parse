@@ -1,5 +1,0 @@
-gui@gui() -> ok | {error, Msg}@ 
-gui@gui(OptList) -> ok | {error, Msg}@ 
-run@run(OptList) -> Warnings@ 
-format_warning@format_warning(Msg) -> string()@ 
-plt_info@plt_info(string()) -> {'ok', [{atom(), any()}]} | {'error', atom()}@ 

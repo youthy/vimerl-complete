@@ -1,3 +1,0 @@
-register@register(TimerEventService, CosEventCommPushConsumer, Data) -> TimerEventHandler@ 
-unregister@unregister(TimerEventService, TimerEventHandler) -> ok@ 
-event_time@event_time(TimerEventService, TimerEvent) -> UTO@ 

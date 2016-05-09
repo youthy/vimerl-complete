@@ -1,1 +1,0 @@
-detect_charset@detect_charset(T::list()) -> charset_info()

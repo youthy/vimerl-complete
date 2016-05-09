@@ -1,6 +1,0 @@
-init@init(X1::[]) -> {ok, state()} | {stop, term()}
-handle_call@handle_call(Request::term(), From::term(), Handle::state()) -> {noreply, state()} | {reply, eof | ok | {error, term()} | {ok, term()}, state()} | {stop, normal, stopped, state()}
-handle_cast@handle_cast(Msg::term(), State::state()) -> {noreply, state()}
-handle_info@handle_info(Info::term(), Handle::state()) -> {noreply, state()} | {stop, normal, state()}
-terminate@terminate(Reason::term(), Handle::state()) -> ok
-code_change@code_change(OldVsn::term(), State::state(), Extra::term()) -> {ok, state()}

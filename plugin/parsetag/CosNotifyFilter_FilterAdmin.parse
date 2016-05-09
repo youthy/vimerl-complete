@@ -1,5 +1,0 @@
-add_filter@add_filter(Object, Filter) -> FilterID@ 
-remove_filter@remove_filter(Object, FilterID) -> ok@ 
-get_filter@get_filter(Object, FilterID) -> Reply@ 
-get_all_filters@get_all_filters(Object) -> FilterIDSeq@ 
-remove_all_filters@remove_all_filters(Object) -> ok@ 

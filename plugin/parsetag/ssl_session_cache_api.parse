@@ -1,7 +1,0 @@
-delete@delete(Cache, Key) -> _@ 
-foldl@foldl(Fun, Acc0, Cache) -> Acc@ 
-init@init() -> opaque() @ 
-lookup@lookup(Cache, Key) -> Entry@ 
-select_session@select_session(Cache, PartialKey) -> [session()]@ 
-terminate@terminate(Cache) -> _@ 
-update@update(Cache, Key, Session) -> _@ 

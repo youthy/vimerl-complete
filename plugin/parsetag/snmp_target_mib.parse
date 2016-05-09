@@ -1,8 +1,0 @@
-configure@configure(ConfDir) -> void()@ 
-reconfigure@reconfigure(ConfDir) -> void()@ 
-set_target_engine_id@set_target_engine_id(TargetAddrName, EngineId) -> boolean()@ 
-add_addr@add_addr(Name, Ip, Port, Timeout, Retry, TagList, Params, EngineId, TMask, MMS) -> Ret@ 
-add_addr@add_addr(Name, Domain, Ip, Port, Timeout, Retry, TagList, Params, EngineId, TMask, MMS) -> Ret@ 
-delete_addr@delete_addr(Key) -> Ret@ 
-add_params@add_params(Name, MPModel, SecModel, SecName, SecLevel) -> Ret@ 
-delete_params@delete_params(Key) -> Ret@ 

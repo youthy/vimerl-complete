@@ -1,4 +1,0 @@
-decode@decode(Bin::binary()) -> [pem_entry()]
-encode@encode(PemEntries::[pem_entry()]) -> iolist()
-decipher@decipher(X1::{pki_asn1_type(), DerEncrypted::binary(), {Cipher::string(), Salt::iodata() | #'PBES2-params'{}}}, Password::string()) -> Der::binary()
-cipher@cipher(Der::binary(), X2::{Cipher::string(), Salt::iodata() | #'PBES2-params'{}}, Password::string()) -> binary()

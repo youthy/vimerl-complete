@@ -1,4 +1,0 @@
-file@file(Filename, Options) -> Result@ 
-stream@stream(Xml, Options) -> Result@ 
-ContinuationFun@ContinuationFun(State) -> {NewBytes, NewState}@ 
-EventFun@EventFun(Event, Location, State) -> NewState@ 

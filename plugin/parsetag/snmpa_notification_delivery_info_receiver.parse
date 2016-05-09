@@ -1,2 +1,0 @@
-delivery_targets@delivery_targets(Tag, Targets, Extra) -> void()@ 
-delivery_info@delivery_info(Tag, Target, DeliveryResult, Extra) -> void()@ 

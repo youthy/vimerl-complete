@@ -1,9 +1,0 @@
-set_directory@set_directory(FTS, Directory) -> Return@ 
-create_file@create_file(FTS, FileNameList) -> Return@ 
-create_directory@create_directory(FTS, FileNameList) -> Return@ 
-get_file@get_file(FTS, FileNameList) -> Return@ 
-delete@delete(FTS, File) -> Return@ 
-transfer@transfer(FTS, SourceFile, DestinationFile) -> Return@ 
-append@append(FTS, SourceFile, DestinationFile) -> Return@ 
-insert@insert(FTS, SourceFile, DestinationFile, Offset) -> Return@ 
-logout@logout(FTS) -> ok@ 

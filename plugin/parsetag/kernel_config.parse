@@ -1,6 +1,0 @@
-init@init(X1::[]) -> {ok, []} | {stop, term()}
-handle_info@handle_info(X1::term(), State) -> {noreply, State}
-terminate@terminate(Reason::term(), State::term()) -> ok
-handle_call@handle_call(X1::term(), From::term(), State) -> {reply, ok, State}
-handle_cast@handle_cast(X1::term(), State) -> {noreply, State}
-code_change@code_change(OldVsn::term(), State, Extra::term()) -> {ok, State}

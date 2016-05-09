@@ -1,7 +1,0 @@
-start@start(Name, Mod, Args, Options) -> wxWindow() (see module wxWindow)
-start_link@start_link(Mod, Args, Options) -> wxWindow() (see module wxWindow)
-start_link@start_link(Name, Mod, Args, Options) -> wxWindow() (see module wxWindow)
-call@call(Ref::wxObject() | atom() | pid(), Request::term()) -> term()
-cast@cast(Ref::wxObject() | atom() | pid(), Request::term()) -> ok
-get_pid@get_pid(Ref::wxObject()) -> pid()
-reply@reply(From::tuple(), Reply::term()) -> pid()

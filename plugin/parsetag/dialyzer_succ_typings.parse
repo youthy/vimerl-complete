@@ -1,4 +1,0 @@
-analyze_callgraph@analyze_callgraph(Callgraph::callgraph() (see module dialyzer_callgraph), Plt::plt() (see module dialyzer_plt), Codeserver::codeserver() (see module dialyzer_codeserver)) -> plt() (see module dialyzer_plt)
-get_warnings@get_warnings(Callgraph::callgraph() (see module dialyzer_callgraph), Plt::plt() (see module dialyzer_plt), DocPlt::doc_plt(), Codeserver::codeserver() (see module dialyzer_codeserver), NoWarnUnused::set(), Parent::pid()) -> {[dial_warning()], plt() (see module dialyzer_plt), doc_plt()}
-doit@doit(Module::atom() | filename() (see module file)) -> ok
-get_top_level_signatures@get_top_level_signatures(Code::c_module() (see module cerl), Records::dict(), Contracts::dict()) -> [{{atom(), arity()}, erl_type() (see module erl_types)}]

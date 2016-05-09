@@ -1,4 +1,0 @@
-application@application(Args::[string()]) -> none()
-files@files(Args::[string()]) -> none()
-packages@packages(Args::[string()]) -> none()
-file@file(Args::[string()]) -> none()

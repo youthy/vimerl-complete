@@ -1,3 +1,0 @@
-set_cmd@set_cmd(Cmd) -> ok | {error, {bad_cmd, Cmd}}@ Cmd = string()   
-clear_cmd@clear_cmd() -> ok@ 
-get_cmd@get_cmd() -> {ok, Cmd}@ Cmd = string()   

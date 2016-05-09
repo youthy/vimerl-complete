@@ -1,4 +1,0 @@
-start_sub_sup@start_sub_sup(Opts) -> {ok, pid()} | {error, {already_started, pid()}} | {error, Reason}@ 
-start_master_sup@start_master_sup(Opts) -> {ok, pid()} |  {error, {already_started, pid()}} | {error, Reason}@ 
-start_sub_agent@start_sub_agent(ParentAgent,Subtree,Mibs) -> {ok, pid()} | {error, Reason}@ 
-stop_sub_agent@stop_sub_agent(SubAgent) -> ok | no_such_child@ 

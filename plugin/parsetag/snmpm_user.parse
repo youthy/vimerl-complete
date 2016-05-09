@@ -1,6 +1,0 @@
-handle_error@handle_error(ReqId, Reason, UserData) -> Reply@ 
-handle_agent@handle_agent(Addr, Port, Type, SnmpInfo, UserData) -> Reply@ 
-handle_pdu@handle_pdu(TargetName, ReqId, SnmpPduInfo, UserData) -> Reply@ 
-handle_trap@handle_trap(TargetName, SnmpTrapInfo, UserData) -> Reply@ 
-handle_inform@handle_inform(TargetName, SnmpInformInfo, UserData) -> Reply@ 
-handle_report@handle_report(TargetName, SnmpReportInfo, UserData) -> Reply@ 

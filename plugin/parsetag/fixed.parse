@@ -1,7 +1,0 @@
-create@create(Digits, Scale, Value) -> Result@ 
-get_typecode@get_typecode(Fixed) -> Result@ 
-add@add(Fixed1, Fixed2) -> Result@ 
-subtract@subtract(Fixed1, Fixed2) -> Result@ 
-multiply@multiply(Fixed1, Fixed2) -> Result@ 
-divide@divide(Fixed1, Fixed2) -> Result@ 
-unary_minus@unary_minus(Fixed) -> Result@ 

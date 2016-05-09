@@ -1,3 +1,0 @@
-init@init(X1::[]) -> {ok, pid(), pid()} | {error, term()}
-terminate@terminate(Reason::term(), Pid::pid()) -> ok
-system_code_change@system_code_change(State::state(), Module::module(), OldVsn::term(), Extra::term()) -> {ok, state()}

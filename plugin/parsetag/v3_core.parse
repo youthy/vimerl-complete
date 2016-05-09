@@ -1,2 +1,0 @@
-module@module(X1::{module(), [fa()], [form()]}, Opts::[option() (see module compile)]) -> {ok, c_module() (see module cerl), [warning()]}
-format_error@format_error(X1::err_desc()) -> nonempty_string()

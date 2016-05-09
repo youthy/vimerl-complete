@@ -1,6 +1,0 @@
-master_secret@master_secret(PreMasterSecret::binary(), ClientRandom::binary(), ServerRandom::binary()) -> binary()
-finished@finished(Role::client | server, MasterSecret::binary(), X3::{binary(), binary()}) -> binary()
-certificate_verify@certificate_verify(OID::tuple(), X2::{binary(), binary()}) -> binary()
-setup_keys@setup_keys(MasterSecret::binary(), ServerRandom::binary(), ClientRandom::binary(), HashSize::integer(), KeyMatLen::integer(), IVSize::integer()) -> {binary(), binary(), binary(), binary(), binary(), binary()}
-mac_hash@mac_hash(Method::integer(), Mac_write_secret::binary(), Seq_num::integer(), Type::integer(), X5::tls_version(), Length::integer(), Fragment::binary()) -> binary()
-suites@suites() -> [cipher_suite()]

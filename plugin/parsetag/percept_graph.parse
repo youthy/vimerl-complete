@@ -1,2 +1,0 @@
-graph@graph(SessionID, Env, Input) -> term()
-activity@activity(SessionID, Env, Input) -> term()

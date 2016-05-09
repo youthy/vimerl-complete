@@ -1,1 +1,0 @@
-format_error@format_error(X1::bin_opt | {no_bin_opt, term()}) -> nonempty_string()

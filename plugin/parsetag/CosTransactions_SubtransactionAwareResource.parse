@@ -1,2 +1,0 @@
-commit_subtransaction@commit_subtransaction(SubtransactionAwareResource, Coordinator) -> Return@ 
-rollback_subtransaction@rollback_subtransaction(SubtransactionAwareResource) -> Return@ 

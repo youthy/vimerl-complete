@@ -1,8 +1,0 @@
-_get_MyType@_get_MyType(ProxySupplier) -> ProxyType@ 
-_get_MyAdmin@_get_MyAdmin(ProxySupplier) -> AdminObject@ 
-_get_priority_filter@_get_priority_filter(ProxySupplier) -> MappingFilter@ 
-_set_priority_filter@_set_priority_filter(ProxySupplier, MappingFilter) -> ok@ 
-_get_lifetime_filter@_get_lifetime_filter(ProxySupplier) -> MappingFilter@ 
-_set_lifetime_filter@_set_lifetime_filter(ProxySupplier, MappingFilter) -> ok@ 
-obtain_offered_types@obtain_offered_types(ProxySupplier, ObtainInfoMode) -> EventTypeSeq@ 
-validate_event_qos@validate_event_qos(ProxySupplier, QoSProperties) -> Reply@ 

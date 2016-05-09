@@ -1,4 +1,0 @@
-configure@configure(ConfDir) -> void()@ 
-reconfigure@reconfigure(ConfDir) -> void()@ 
-add_notify@add_notify(Name, Tag, Type) -> Ret@ 
-delete_notify@delete_notify(Key) -> Ret@ 

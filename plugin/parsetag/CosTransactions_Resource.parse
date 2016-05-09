@@ -1,5 +1,0 @@
-commit@commit(Resource) -> Return@ 
-commit_one_phase@commit_one_phase(Resource) -> Return@ 
-forget@forget(Resource) -> Return@ 
-prepare@prepare(Resource) -> Return@ 
-rollback@rollback(Resource) -> Return@ 

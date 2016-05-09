@@ -1,3 +1,0 @@
-is_pure@is_pure(X1::atom(), X2::atom(), X3::arity()) -> boolean()
-is_safe@is_safe(X1::atom(), X2::atom(), X3::arity()) -> boolean()
-is_exit_bif@is_exit_bif(X1::atom(), X2::atom(), X3::arity()) -> boolean()

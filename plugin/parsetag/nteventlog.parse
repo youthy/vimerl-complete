@@ -1,3 +1,0 @@
-start@start(Identifier, MFA) -> Result@ 
-start_link@start_link(Identifier, MFA) -> Result@ 
-stop@stop() -> stopped@ 

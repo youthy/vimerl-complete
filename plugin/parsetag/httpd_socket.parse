@@ -1,3 +1,0 @@
-deliver@deliver(SocketType, Socket, Data) -> Result@ 
-peername@peername(SocketType,Socket) -> {Port,IPAddress}@ 
-resolve@resolve() -> HostName@ 

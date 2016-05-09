@@ -1,3 +1,0 @@
-decode_cert@decode_cert(DerCert::binary()) -> {ok, #'OTPCertificate'{}}
-transform@transform(OTPCertificate::term(), Func::encode | decode) -> term()
-supportedPublicKeyAlgorithms@supportedPublicKeyAlgorithms(Oid::tuple()) -> asn1_type()

@@ -1,5 +1,0 @@
-start@start() -> {ok, PortOrPorts} | {error, Reason}@ 
-stop@stop(PortOrPorts) -> stopped@ 
-is_reentrant_enabled@is_reentrant_enabled() -> Boolean@ 
-is_scanner_port@is_scanner_port(Port, PortOrPorts) -> Boolean@ 
-scan@scan(Binary, PortOrPorts) -> {ok, Tokens, Version, LatestLine} | {error, Reason, LatestLine} @ 

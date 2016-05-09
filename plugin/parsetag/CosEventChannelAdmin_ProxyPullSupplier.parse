@@ -1,4 +1,0 @@
-connect_pull_consumer@connect_pull_consumer(Object, PullConsumer) -> Return@ 
-disconnect_pull_supplier@disconnect_pull_supplier(Object) -> Return@ 
-pull@pull(Object) -> Return@ 
-try_pull@try_pull(Object) -> Return@ 

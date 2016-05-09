@@ -1,4 +1,0 @@
-configure@configure(ConfDir) -> void()@ 
-reconfigure@reconfigure(ConfDir) -> void()@ 
-add_user@add_user(EngineID, Name, SecName, Clone, AuthP, AuthKeyC, OwnAuthKeyC, PrivP, PrivKeyC, OwnPrivKeyC, Public, AuthKey, PrivKey) -> Ret@ 
-delete_user@delete_user(Key) -> Ret@ 

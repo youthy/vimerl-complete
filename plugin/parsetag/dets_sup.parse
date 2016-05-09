@@ -1,2 +1,0 @@
-start_link@start_link() -> {ok, pid()} | ignore | {error, term()}
-init@init(X1::[]) -> {ok, {{simple_one_for_one, 4, 3600}, [{dets, {dets, istart_link, []}, temporary, 30000, worker, [dets]}]}}

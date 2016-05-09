@@ -1,5 +1,0 @@
-handle_call@handle_call(X1::calls(), From::{pid(), term()}, S::state()) -> {noreply, state()} | {reply, term(), state()}
-handle_cast@handle_cast(X1::{application_started, appname(), term()}, S::state()) -> {noreply, state()} | {stop, string(), state()}
-handle_info@handle_info(X1::term(), S::state()) -> {noreply, state()} | {stop, string(), state()}
-terminate@terminate(Reason::term(), S::state()) -> ok
-code_change@code_change(OldVsn::term(), State::state(), Extra::term()) -> {ok, state()}

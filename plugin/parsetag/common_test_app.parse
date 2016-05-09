@@ -1,8 +1,0 @@
-all@Module:all() -> Tests | {skip,Reason} @ 
-groups@Module:groups() -> GroupDefs@ 
-suite@Module:suite() -> [Info] @	
-group@Module:group(GroupName) -> [Info] @ 
-init_per_testcase@Module:init_per_testcase(TestCase, Config) -> NewConfig | {fail,Reason} | {skip,Reason}@	
-end_per_testcase@Module:end_per_testcase(TestCase, Config) -> void() | {fail,Reason} | {save_config,SaveConfig}@	
-Testcase@Module:Testcase() -> [Info] @ 
-Testcase@Module:Testcase(Config) ->  void() | {skip,Reason} | {comment,Comment} | {save_config,SaveConfig} | {skip_and_save,Reason,SaveConfig} | exit() @ 

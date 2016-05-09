@@ -1,5 +1,0 @@
-start@start() -> Return@ 
-stop@stop() -> Return@ 
-start_factory@start_factory() -> TransactionFactory@ 
-start_factory@start_factory(FacDef) -> TransactionFactory@ 
-stop_factory@stop_factory(TransactionFactory) -> Reply@ 

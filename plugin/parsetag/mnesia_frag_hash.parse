@@ -1,5 +1,0 @@
-init_state@init_state(Tab, State) -> NewState | abort(Reason)@ 
-add_frag@add_frag(State) -> {NewState, IterFrags, AdditionalLockFrags} | abort(Reason)@ 
-del_frag@del_frag(State) ->  {NewState, IterFrags, AdditionalLockFrags} | abort(Reason)@ 
-key_to_frag_number@key_to_frag_number(State, Key) -> FragNum | abort(Reason)@ 
-match_spec_to_frag_numbers@match_spec_to_frag_numbers(State, MatchSpec) -> FragNums | abort(Reason)@ 

@@ -1,2 +1,0 @@
-open@open(Port::term()) -> {ok, socket() (see module inet)} | {error, atom()}
-close@close(S::socket() (see module inet)) -> ok

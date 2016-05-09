@@ -1,4 +1,0 @@
-reset@reset(Iterator) -> ok@ 
-next_one@next_one(Iterator) -> Reply@ 
-next_n@next_n(Iterator, HowMany) -> Reply@ 
-destroy@destroy(Iterator) -> ok@ 

@@ -1,3 +1,0 @@
-for_consumers@for_consumers(Object) -> Return@ 
-for_suppliers@for_suppliers(Object) -> Return@ 
-destroy@destroy(Object) -> Return@ 

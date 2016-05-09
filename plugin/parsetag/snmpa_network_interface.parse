@@ -1,5 +1,0 @@
-start_link@start_link(Prio, NoteStore, MasterAgent, Opts) -> {ok, Pid} | {error, Reason}@ 
-info@info(Pid) -> [{Key, Value}]@ 
-verbosity@verbosity(Pid, Verbosity) -> void()@ 
-get_log_type@get_log_type(Pid) -> {ok, LogType} | {error, Reason}@ 
-set_log_type@set_log_type(Pid, NewType) -> {ok, OldType} | {error, Reason}@ 

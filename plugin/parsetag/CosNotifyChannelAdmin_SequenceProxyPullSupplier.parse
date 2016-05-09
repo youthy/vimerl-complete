@@ -1,4 +1,0 @@
-connect_sequence_pull_consumer@connect_sequence_pull_consumer(SequenceProxyPullSupplier, PullConsumer) -> Reply@ 
-pull_structured_events@pull_structured_events(SequenceProxyPullSupplier, MaxEvents) -> Reply@ 
-try_pull_structured_events@try_pull_structured_events(SequenceProxyPullSupplier, MaxEvents) -> Reply@ 
-disconnect_sequence_pull_supplier@disconnect_sequence_pull_supplier(SequenceProxyPullSupplier) -> ok@ 

@@ -1,6 +1,0 @@
-open@open(FileName, IncludePath) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, Epp} | {error, ErrorDescriptor}@ FileName =  IncludePath = [DirectoryName ::  Epp =  ErrorDescriptor = term()   
-open@open(FileName, IncludePath, PredefMacros) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, Epp} | {error, ErrorDescriptor}@ FileName =  IncludePath = [DirectoryName ::  PredefMacros =  Epp =  ErrorDescriptor = term()   
-close@close(Epp) -> ok@ Epp =  epp_handle()    
-parse_erl_form@parse_erl_form(Epp) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, AbsForm} | {eof, Line} | {error, ErrorInfo}@ Epp =  AbsForm =  Line =  ErrorInfo =  erl_scan:error_info()  |  erl_parse:error_info()    
-parse_file@parse_file(FileName, IncludePath, PredefMacros) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, [Form]} | {error, OpenError}@ FileName =  IncludePath = [DirectoryName ::  Form =  PredefMacros =  Line =  ErrorInfo =  OpenError =  file:posix()  | badarg | system_limit   
-format_error@format_error(ErrorDescriptor) -> io_lib:chars() @ ErrorDescriptor = term()   

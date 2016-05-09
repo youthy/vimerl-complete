@@ -1,2 +1,0 @@
-core_transform@core_transform(Code::cerl() (see module cerl), Opts::[option() (see module compile)]) -> cerl() (see module cerl)
-transform@transform(Tree::cerl() (see module cerl)) -> cerl() (see module cerl)

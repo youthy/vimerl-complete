@@ -1,2 +1,0 @@
-commit@commit(Terminator, ReportHeuristics) -> Return@ 
-rollback@rollback(Terminator) -> Return@ 

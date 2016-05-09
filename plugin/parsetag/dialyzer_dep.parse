@@ -1,1 +1,0 @@
-analyze@analyze(Tree::c_module() (see module cerl)) -> {dict(), ordset(external | label()), dict()}

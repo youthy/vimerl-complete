@@ -1,3 +1,0 @@
-make_pattern@make_pattern(RawPattern) -> TracePattern@ 
-change_pattern@change_pattern(Pattern) -> ok@ 
-parse_event@parse_event(Mod, ValidTraceData) -> false | true | {true, Event}@ 

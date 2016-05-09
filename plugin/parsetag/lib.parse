@@ -1,6 +1,0 @@
-flush_receive@flush_receive() -> ok@ 
-error_message@error_message(Format, Args) -> ok@ Format =  Args = [term()]   
-progname@progname() -> atom()@ 
-nonl@nonl(String1) -> String2@ String1 = String2 = string()   
-send@send(To, Msg) -> Msg@ To = pid() | atom() | {atom(), node()} Msg = term()   
-sendw@sendw(To, Msg) -> Msg@ To = pid() | atom() | {atom(), node()} Msg = term()   

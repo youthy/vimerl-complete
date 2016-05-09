@@ -1,4 +1,0 @@
-stream@stream(Fname::string(), Options::option_list()) -> xmlElement()
-stream_sax@stream_sax(Fname, CallBack::CallBackModule, UserState, Options) -> xmlElement()
-file_sax@file_sax(Fname::string(), CallBackModule::atom(), UserState, Options::option_list()) -> NewUserState
-string_sax@string_sax(String::list(), CallBackModule::atom(), UserState, Options::option_list()) -> xmlElement()

@@ -1,2 +1,0 @@
-start@start() -> pid()
-interfaces@interfaces(UserDrv::pid()) -> [{current_group, pid()}]

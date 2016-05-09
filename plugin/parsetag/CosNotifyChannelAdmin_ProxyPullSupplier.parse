@@ -1,4 +1,0 @@
-connect_any_pull_consumer@connect_any_pull_consumer(ProxyPullSupplier, PullConsumer) -> Reply@ 
-pull@pull(ProxyPullSupplier) -> Reply@ 
-try_pull@try_pull(ProxyPullSupplier) -> Reply@ 
-disconnect_pull_supplier@disconnect_pull_supplier(ProxyPullSupplier) -> ok@ 

@@ -1,9 +1,0 @@
-run_test@run_test(Node, Opts) -> ok
-run@run(TestSpecs, AllowUserTerms, InclNodes, ExclNodes) -> ok
-run@run(TestSpecs, InclNodes, ExclNodes) -> ok
-run@run(TestSpecs) -> ok
-run_on_node@run_on_node(TestSpecs, AllowUserTerms, Node) -> ok
-run_on_node@run_on_node(TestSpecs, Node) -> ok
-abort@abort() -> ok
-abort@abort(Nodes) -> ok
-progress@progress() -> [{Node, Status}]

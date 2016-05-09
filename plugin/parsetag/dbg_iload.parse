@@ -1,1 +1,0 @@
-load_mod@load_mod(Mod, File::filename() (see module file), Binary::binary(), Db::tid() (see module ets)) -> {ok, Mod}

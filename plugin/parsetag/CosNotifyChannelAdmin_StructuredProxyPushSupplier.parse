@@ -1,4 +1,0 @@
-connect_structured_push_consumer@connect_structured_push_consumer(StructuredProxyPushSupplier, PushConsumer) -> Reply@ 
-suspend_connection@suspend_connection(StructuredProxyPushSupplier) -> Reply@ 
-resume_connection@resume_connection(StructuredProxyPushSupplier) -> Reply@ 
-disconnect_structured_push_supplier@disconnect_structured_push_supplier(StructuredProxyPushSupplier) -> ok@ 

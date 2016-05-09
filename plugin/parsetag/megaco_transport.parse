@@ -1,3 +1,0 @@
-send_message@Module:send_message(Handle, Msg) -> ok | {cancel, Reason} | Error@ 
-send_message@Module:send_message(Handle, Msg, Resend) -> ok | {cancel, Reason} | Error@ 
-resend_message@Module:resend_message(Handle, Msg) -> ok | {cancel, Reason} | Error@ 

@@ -1,6 +1,0 @@
-start@start/3@ 
-get_file@get_file/1@ 
-get_path@get_path/0@ 
-list_dir@list_dir/1@ 
-read_file_info@read_file_info/1@ 
-set_path@set_path/1@ 

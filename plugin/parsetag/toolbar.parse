@@ -1,6 +1,0 @@
-start@start() -> ok | already_started@ 
-version@version() -> string()@ 
-update@update() -> ok | {error,not_started}@ 
-quit@quit() -> ok | {error,not_started}@ 
-create_tool_file@create_tool_file() -> ok | {error,not_started}@ 
-add_gs_contribs@add_gs_contribs() -> ok | {error,not_started}@ 

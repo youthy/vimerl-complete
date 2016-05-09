@@ -1,4 +1,0 @@
-time_set@time_set(TimerEventHandler) -> Reply@ 
-set_timer@set_timer(TimerEventHandler, TimeType, TriggerTime) -> void()@ 
-cancel_timer@cancel_timer(TimerEventHandler) -> boolean()@ 
-set_data@set_data(TimerEventHandler, EventData) -> ok@ 

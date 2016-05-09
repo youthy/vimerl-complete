@@ -1,3 +1,0 @@
-next_one@next_one(Iterator) -> Return@ 
-next_n@next_n(Iterator, Max) -> Return@ 
-destroy@destroy(Iterator) -> ok@ 

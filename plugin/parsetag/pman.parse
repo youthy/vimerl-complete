@@ -1,6 +1,0 @@
-start@start()@ 
-start@start(Excluded)@ 
-start_notimeout@start_notimeout()@ 
-start_notimeout@start_notimeout(Excluded)@ 
-proc@proc(Process)@ 
-proc@proc(A, B, C)@ 

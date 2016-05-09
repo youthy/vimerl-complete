@@ -1,4 +1,0 @@
-to_string@to_string(NamingContext, Name) -> Return@ 
-to_name@to_name(NamingContext, NameString) -> Return@ 
-to_url@to_url(NamingContext, AddressString, NameString) -> Return@ 
-resolve_str@resolve_str(NamingContext, NameString) -> Return@ 

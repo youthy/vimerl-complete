@@ -1,6 +1,0 @@
-check_enum@check_enum(EnumString,ValidEnumStrings) -> Result@ 
-clean@clean(String) -> Stripped@ 
-custom_clean@custom_clean(String,Before,After) -> Stripped@ 
-is_directory@is_directory(FilePath) -> Result@ 
-is_file@is_file(FilePath) -> Result@ 
-make_integer@make_integer(String) -> Result@ 

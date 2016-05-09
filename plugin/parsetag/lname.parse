@@ -1,9 +1,0 @@
-create@create() -> Return@ 
-insert_component@insert_component(Name, N, NameComponent) -> Return@ 
-get_component@get_component(Name, N) -> Return@ 
-delete_component@delete_component(Name, N) -> Return@ 
-num_component@num_component(Name) -> Return@ 
-equal@equal(Name1, Name2) -> Return@ 
-less_than@less_than(Name1, Name2) -> Return@ 
-to_idl_form@to_idl_form(Name) -> Return@ 
-from_idl_form@from_idl_form(Name) -> Return@ 

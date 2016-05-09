@@ -1,6 +1,0 @@
-minmax@minmax(Data::[{X, Y}]) -> {MinX, MinY, MaxX, MaxY}
-mean@mean(List::[number()]) -> {Mean, StdDev, N}
-activities2count@activities2count(Acts::#activity{}, StartTs::timestamp()) -> Result
-waiting_activities@waiting_activities(Activities::[#activity{}]) -> FunctionList
-seconds2ts@seconds2ts(Seconds::float(), StartTs::{integer(), integer(), integer()}) -> timestamp()
-minmax_activities@minmax_activities(Activities::[#activity{}], Count::integer()) -> {integer(), integer()}

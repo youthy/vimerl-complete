@@ -1,2 +1,0 @@
-obtain_push_consumer@obtain_push_consumer(Object) -> Return@ 
-obtain_pull_consumer@obtain_pull_consumer(Object) -> Return@ 

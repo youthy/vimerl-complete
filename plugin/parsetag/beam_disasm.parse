@@ -1,3 +1,0 @@
-function__code@function__code(Function::#function{name=undefined | atom(), arity=undefined | byte(), entry=any(), code=[beam_instr()]}) -> [beam_instr()]
-format_error@format_error(X1::{internal, term()} | {error, atom(), term()}) -> string()
-file@file(File::filename() (see module file) | binary()) -> #beam_file{module=undefined | module(), labeled_exports=[labeled_entry() (see module beam_lib)], attributes=[attrib_entry() (see module beam_lib)], compile_info=[compinfo_entry() (see module beam_lib)], code=[#function{name=undefined | atom(), arity=undefined | byte(), entry=any(), code=[beam_instr()]}]} | {error, atom(), term()}

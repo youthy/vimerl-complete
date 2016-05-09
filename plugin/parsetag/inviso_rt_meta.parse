@@ -1,5 +1,0 @@
-tpm_ms@tpm_ms(Mod,Func,Arity,MSname,MS) -> {ok,0} | {ok,1} | {error,not_initiated}@ 
-tpm_ms_tracer@tpm_ms_tracer(Mod,Func,Arity,MSname,MS) -> {ok,0} | {ok,1} | {error,not_initiated}@ 
-list_tpm_ms@list_tpm_ms(Mod,Func,Arity) -> [MSname]@ 
-ctpm_ms@ctpm_ms(Mod,Func,Arity,MSname) -> ok@ 
-get_tracer@get_tracer() -> Tracer@ 

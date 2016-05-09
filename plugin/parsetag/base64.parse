@@ -1,6 +1,0 @@
-encode@encode(Data) -> Base64@ Data = string() | binary() Base64 = binary()   
-encode_to_string@encode_to_string(Data) -> Base64String@ Data = string() | binary() Base64String =  ascii_string()    
-decode@decode(Base64) -> Data@ Base64 = string() | binary() Data = binary()   
-decode_to_string@decode_to_string(Base64) -> DataString@ Base64 = string() | binary() DataString = string()   
-mime_decode@mime_decode(Base64) -> Data@ Base64 = string() | binary() Data = binary()   
-mime_decode_to_string@mime_decode_to_string(Base64) -> DataString@ Base64 = string() | binary() DataString = string()   

@@ -1,7 +1,0 @@
-file@file(File [, Options])@ 
-files@files(FileList [, Options])@ 
-dir@dir(Dir [, Options])@ 
-dirs@dirs(DirList [, Options])@ 
-subdir@subdir(Dir [, Options])@ 
-subdirs@subdirs(DirList [, Options])@ 
-root@root([Options])@ 

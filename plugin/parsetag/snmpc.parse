@@ -1,4 +1,0 @@
-compile@compile(File)@ 
-compile@compile(File, Options) -> {ok, BinFileName} | {error, Reason}@ 
-is_consistent@is_consistent(Mibs) -> ok | {error, Reason}@ 
-mib_to_hrl@mib_to_hrl(MibName) -> ok | {error, Reason}@ 

@@ -1,3 +1,0 @@
-parse_transform@parse_transform(Forms, Options) -> Forms@ Forms = [ Options = term()   
-transform_from_shell@transform_from_shell(Dialect, Clauses, BoundEnvironment) -> term()@ Dialect = ets | dbg Clauses = [ BoundEnvironment =  erl_eval:binding_struct()    
-format_error@format_error(Error) -> Chars@ Error = {error, module(), term()} Chars =  io_lib:chars()    

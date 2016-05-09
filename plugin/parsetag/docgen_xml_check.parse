@@ -1,1 +1,0 @@
-validate@validate(File) -> ok | error | {error, badfile}@ 

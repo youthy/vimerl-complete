@@ -1,5 +1,0 @@
-get_disk_data@get_disk_data() -> [DiskData]@ 
-get_check_interval@get_check_interval() -> MS@ 
-set_check_interval@set_check_interval(Minutes) -> ok@ 
-get_almost_full_threshold@get_almost_full_threshold() -> Percent@ 
-set_almost_full_threshold@set_almost_full_threshold(Float) -> ok@ 

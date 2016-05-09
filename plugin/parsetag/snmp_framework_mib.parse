@@ -1,4 +1,0 @@
-configure@configure(ConfDir) -> void()@ 
-init@init() -> void()@ 
-add_context@add_context(Ctx) -> Ret@ 
-delete_context@delete_context(Key) -> Ret@ 

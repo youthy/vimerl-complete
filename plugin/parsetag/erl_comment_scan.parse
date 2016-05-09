@@ -1,4 +1,0 @@
-file@file(FileName::filename() (see module file)) -> [Comment]
-string@string(Text::string()) -> [Comment]
-scan_lines@scan_lines(Text::string()) -> [CommentLine]
-join_lines@join_lines(Lines::[CommentLine]) -> [Comment]

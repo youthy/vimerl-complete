@@ -1,5 +1,0 @@
-encode@encode(Data::binary(), Password::string(), Cipher::string(), KeyDevParams::term()) -> binary()
-decode@decode(Data::binary(), Password::string(), Cipher::string(), KeyDevParams::term()) -> binary()
-pbdkdf1@pbdkdf1(Password::string(), Salt::iodata(), Count::integer(), Acc::atom()) -> binary()
-pbdkdf2@pbdkdf2(Password::string(), Salt::iodata(), Count::integer(), DerivedKeyLen::integer(), Prf::function(), PrfOutputLen::integer()) -> binary()
-decrypt_parameters@decrypt_parameters(EncryptedPrivateKeyInfo_encryptionAlgorithm::#'EncryptedPrivateKeyInfo_encryptionAlgorithm'{}) -> {Cipher::string(), #'PBES2-params'{}}

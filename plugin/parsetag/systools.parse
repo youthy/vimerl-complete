@@ -1,7 +1,0 @@
-make_relup@make_relup(Name, UpFrom, DownTo) -> Result@ 
-make_relup@make_relup(Name, UpFrom, DownTo, [Opt]) -> Result@ 
-make_script@make_script(Name) -> Result@ 
-make_script@make_script(Name, [Opt]) -> Result@ 
-make_tar@make_tar(Name) -> Result@ 
-make_tar@make_tar(Name, [Opt]) -> Result@ 
-script2boot@script2boot(File) -> ok | error@ 

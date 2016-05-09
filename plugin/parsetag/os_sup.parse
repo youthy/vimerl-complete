@@ -1,4 +1,0 @@
-enable@enable() -> ok | {error, Res}@ 
-enable@enable(Dir, Conf) -> ok | {error, Error}@ 
-disable@disable() -> ok | {error, Res}@ 
-disable@disable(Dir, Conf) -> ok | {error, Error}@ 

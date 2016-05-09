@@ -1,3 +1,0 @@
-is_new@is_new(SessionId::session_id(), ServerDecision::session_id()) -> boolean()
-id@id(ClientInfo::{host(), port_number() (see module inet), #ssl_options{}}, Cache::db_handle(), CacheCb::atom(), OwnCert::undefined | binary()) -> binary()
-valid_session@valid_session(Session::#session{}, LifeTime::seconds()) -> boolean()

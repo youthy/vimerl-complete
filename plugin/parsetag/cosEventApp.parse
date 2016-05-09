@@ -1,9 +1,0 @@
-install@install() -> Return@ 
-uninstall@uninstall() -> Return@ 
-start@start() -> Return@ 
-stop@stop() -> Return@ 
-start_channel@start_channel() -> Channel@ 
-start_channel@start_channel(Options) -> Channel@ 
-start_channel_link@start_channel_link() -> Channel@ 
-start_channel_link@start_channel_link(Options) -> Channel@ 
-stop_channel@stop_channel(Channel) -> Reply@ 

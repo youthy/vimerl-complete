@@ -1,7 +1,0 @@
-open@open(Port) -> {ok, Socket} | {error, Reason}@ Port =  Socket =  Reason =  inet:posix()    
-open@open(Port, Opts) -> {ok, Socket} | {error, Reason}@ Port =  Opts = [Option] Option = {ip,  Socket =  Reason =  inet:posix()    
-send@send(Socket, Address, Port, Packet) -> ok | {error, Reason}@ Socket =  Address =  Port =  Packet = iodata() Reason = not_owner |  inet:posix()    
-recv@recv(Socket, Length) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, {Address, Port, Packet}} | {error, Reason}@ Socket =  Length = integer() >= 0 Address =  Port =  Packet = string() | binary() Reason = not_owner |  inet:posix()    
-recv@recv(Socket, Length, Timeout) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, {Address, Port, Packet}} | {error, Reason}@ Socket =  Length = integer() >= 0 Timeout = timeout() Address =  Port =  Packet = string() | binary() Reason = not_owner |  inet:posix()    
-controlling_process@controlling_process(Socket, Pid) -> ok@ Socket =  Pid = pid()   
-close@close(Socket) -> ok@ Socket =  socket()    
