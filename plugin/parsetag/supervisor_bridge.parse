@@ -1,0 +1,4 @@
+start_link@start_link(Module, Args) -> Result@ Module = module() Args = term() Result = {ok, Pid} | ignore | {error, Error} Error = {already_started, Pid} | term() Pid = pid()   
+start_link@start_link(SupBridgeName, Module, Args) -> Result@ SupBridgeName = {local, Name} | {global, Name} Name = atom() Module = module() Args = term() Result = {ok, Pid} | ignore | {error, Error} Error = {already_started, Pid} | term() Pid = pid()   
+init@Module:init(Args) -> Result@ 
+terminate@Module:terminate(Reason, State)@ 

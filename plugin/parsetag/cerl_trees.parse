@@ -1,0 +1,9 @@
+depth@depth(Tree::cerl()) -> integer()
+size@size(Tree::cerl()) -> integer()
+map@map(F::Function, Tree::cerl()) -> cerl()
+fold@fold(F::Function, Unit::term(), Tree::cerl()) -> term()
+mapfold@mapfold(F::Function, Initial::term(), Tree::cerl()) -> {cerl(), term()}
+variables@variables(Tree::cerl()) -> [var_name()]
+free_variables@free_variables(Tree::cerl()) -> [var_name()]
+label@label(T::cerl() (see module cerl)) -> {cerl() (see module cerl), integer()}
+get_label@get_label(T::cerl() (see module cerl)) -> top | integer()

@@ -1,0 +1,2 @@
+undefined_function@undefined_function(Module, Function, Args) -> any()@ Module = Function = atom() Args = list()   
+undefined_lambda@undefined_lambda(Module, Fun, Args) -> term()@ Module = atom() Fun = function() Args = list()   

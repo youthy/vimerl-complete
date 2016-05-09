@@ -1,0 +1,3 @@
+connect_sequence_push_supplier@connect_sequence_push_supplier(SequenceProxyPushConsumer, PushSupplier) -> Reply@ 
+push_structured_events@push_structured_events(SequenceProxyPushConsumer, EventBatch) -> Reply@ 
+disconnect_sequence_push_consumer@disconnect_sequence_push_consumer(SequenceProxyPushConsumer) -> ok@ 

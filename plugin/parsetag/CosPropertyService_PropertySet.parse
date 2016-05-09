@@ -1,0 +1,11 @@
+define_property@define_property(PropertySet, Name, Value) -> Reply@ 
+define_properties@define_properties(PropertySet, Properties) -> Reply@ 
+get_number_of_properties@get_number_of_properties(PropertySet) -> ulong()@ 
+get_all_property_names@get_all_property_names(PropertySet, Max) -> Reply@ 
+get_property_value@get_property_value(PropertySet, Name) -> Reply@ 
+get_properties@get_properties(PropertySet, Names) -> Reply@ 
+get_all_properties@get_all_properties(PropertySet, Max) -> Reply@ 
+delete_property@delete_property(PropertySet, Name) -> Reply@ 
+delete_properties@delete_properties(PropertySet, Names) -> Reply@ 
+delete_all_properties@delete_all_properties(PropertySet) -> boolean()@ 
+is_property_defined@is_property_defined(PropertySet, Name) -> Reply@ 

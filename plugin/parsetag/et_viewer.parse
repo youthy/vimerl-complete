@@ -1,0 +1,6 @@
+file@file(FileName) -> {ok, ViewerPid} | {error, Reason}@ 
+start@start() -> ok@ 
+start@start(Options) -> ok@ 
+start_link@start_link(Options) -> {ok, ViewerPid} | {error, Reason}@ 
+get_collector_pid@get_collector_pid(ViewerPid) -> CollectorPid@ 
+stop@stop(ViewerPid) -> ok@ 

@@ -1,0 +1,6 @@
+parse_transform@parse_transform(Forms::[syntaxTree()], Options::[term()]) -> [syntaxTree()]
+merge@merge(Name::atom(), Files::[filename()]) -> [filename()]
+merge_files@merge_files(Name::atom(), Files::[filename()], Options::[term()]) -> {syntaxTree(), [stubDescriptor()]}
+merge_sources@merge_sources(Name::atom(), Sources::[Forms], Options::[term()]) -> {syntaxTree(), [stubDescriptor()]}
+create_stubs@create_stubs(Stubs::[stubDescriptor()], Options::[term()]) -> [string()]
+rename@rename(Files::[filename()], Renamings) -> [string()]

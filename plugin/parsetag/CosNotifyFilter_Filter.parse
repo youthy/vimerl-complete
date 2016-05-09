@@ -1,0 +1,12 @@
+_get_constraint_grammar@_get_constraint_grammar(Filter) -> Grammar@ 
+add_constraints@add_constraints(Filter, ConstraintExpSeq) -> Reply@ 
+modify_constraints@modify_constraints(Filter, ConstraintIDSeq, ConstraintInfoSeq) -> Reply@ 
+get_constraints@get_constraints(Filter, ConstraintIDSeq) -> Reply@ 
+get_all_constraints@get_all_constraints(Filter) -> ConstraintInfoSeq@ 
+remove_all_constraints@remove_all_constraints(Filter) -> ok@ 
+destroy@destroy(Filter) -> ok@ 
+match@match(Filter, Event) -> Reply@ 
+match_structured@match_structured(Filter, Event) -> Reply@ 
+attach_callback@attach_callback(Filter, NotifySubscribe) -> CallbackID@ 
+detach_callback@detach_callback(Filter, CallbackID) -> Reply@ 
+get_callbacks@get_callbacks(Filter) -> CallbackIDSeq@ 

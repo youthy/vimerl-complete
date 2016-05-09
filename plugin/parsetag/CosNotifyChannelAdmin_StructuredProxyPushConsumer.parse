@@ -1,0 +1,3 @@
+connect_structured_push_supplier@connect_structured_push_supplier(StructuredProxyPushConsumer, PushSupplier) -> Reply@ 
+push_structured_event@push_structured_event(StructuredProxyPushConsumer, StructuredEvent) -> Reply@ 
+disconnect_structured_push_consumer@disconnect_structured_push_consumer(StructuredProxyPushConsumer) -> ok@ 

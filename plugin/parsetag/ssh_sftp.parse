@@ -1,0 +1,47 @@
+start_channel@start_channel(ConnectionRef) -> @ 
+start_channel@start_channel(ConnectionRef, Options) -> @ 
+stop_channel@stop_channel(ChannelPid) -> ok@ 
+read_file@read_file(ChannelPid, File) -> @ 
+read_file@read_file(ChannelPid, File, Timeout) -> {ok, Data} | {error, Reason}@ 
+write_file@write_file(ChannelPid, File, Iolist) -> @ 
+write_file@write_file(ChannelPid, File, Iolist, Timeout) -> ok | {error, Reason}@ 
+list_dir@list_dir(ChannelPid, Path) -> @ 
+list_dir@list_dir(ChannelPid, Path, Timeout) -> {ok, Filenames} | {error, Reason}@ 
+open@open(ChannelPid, File, Mode) -> @ 
+open@open(ChannelPid, File, Mode, Timeout) -> {ok, Handle} | {error, Reason}@ 
+opendir@opendir(ChannelPid, Path) -> @ 
+opendir@opendir(ChannelPid, Path, Timeout) -> {ok, Handle} | {error, Reason}@ 
+close@close(ChannelPid, Handle) -> @ 
+close@close(ChannelPid, Handle, Timeout) -> ok | {error, Reason}@ 
+read@read(ChannelPid, Handle, Len) -> @ 
+read@read(ChannelPid, Handle, Len, Timeout) -> {ok, Data} | eof | {error, Error}@ 
+pread@pread(ChannelPid, Handle, Position, Len) -> @ 
+pread@pread(ChannelPid, Handle, Position, Len, Timeout) -> {ok, Data} | eof | {error, Error}@ 
+aread@aread(ChannelPid, Handle, Len) -> {async, N} | {error, Error}@ 
+apread@apread(ChannelPid, Handle, Position, Len) -> {async, N} | {error, Error}@ 
+write@write(ChannelPid, Handle, Data) ->@ 
+write@write(ChannelPid, Handle, Data, Timeout) -> ok | {error, Error}@ 
+pwrite@pwrite(ChannelPid, Handle, Position, Data) -> ok @ 
+pwrite@pwrite(ChannelPid, Handle, Position, Data, Timeout) -> ok | {error, Error}@ 
+awrite@awrite(ChannelPid, Handle, Data) -> ok | {error, Reason} @ 
+apwrite@apwrite(ChannelPid, Handle, Position, Data) -> ok | {error, Reason}@ 
+position@position(ChannelPid, Handle, Location) -> @ 
+position@position(ChannelPid, Handle, Location, Timeout) -> {ok, NewPosition | {error, Error}@ 
+read_file_info@read_file_info(ChannelPid, Name) -> @ 
+read_file_info@read_file_info(ChannelPid, Name, Timeout) -> {ok, FileInfo} | {error, Reason}@ 
+read_link_info@read_link_info(ChannelPid, Name) -> {ok, FileInfo} | {error, Reason}@ 
+read_link_info@read_link_info(ChannelPid, Name, Timeout) -> {ok, FileInfo} | {error, Reason}@ 
+write_file_info@write_file_info(ChannelPid, Name, Info) -> @ 
+write_file_info@write_file_info(ChannelPid, Name, Info, Timeout) -> ok | {error, Reason}@ 
+read_link@read_link(ChannelPid, Name) -> @ 
+read_link@read_link(ChannelPid, Name, Timeout) -> {ok, Target} | {error, Reason}@ 
+make_symlink@make_symlink(ChannelPid, Name, Target) -> @ 
+make_symlink@make_symlink(ChannelPid, Name, Target, Timeout) -> ok | {error, Reason}@ 
+rename@rename(ChannelPid, OldName, NewName) ->  @ 
+rename@rename(ChannelPid, OldName, NewName, Timeout) -> ok | {error, Reason}@ 
+delete@delete(ChannelPid, Name) -> @ 
+delete@delete(ChannelPid, Name, Timeout) -> ok | {error, Reason}@ 
+make_dir@make_dir(ChannelPid, Name) -> @ 
+make_dir@make_dir(ChannelPid, Name, Timeout) -> ok | {error, Reason}@ 
+del_dir@del_dir(ChannelPid, Name) -> @ 
+del_dir@del_dir(ChannelPid, Name, Timeout) -> ok | {error, Reason}@ 

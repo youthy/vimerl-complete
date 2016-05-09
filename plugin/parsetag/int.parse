@@ -1,0 +1,27 @@
+i@i(AbsModule) -> {module,Module} | error@ 
+ni@ni(AbsModule) -> {module,Module} | error@ 
+n@n(AbsModule) -> ok@ 
+nn@nn(AbsModule) -> ok@ 
+interpreted@interpreted() -> [Module]@ 
+file@file(Module) -> File | {error,not_loaded}@ 
+interpretable@interpretable(AbsModule) -> true | {error,Reason}@ 
+auto_attach@auto_attach() -> false | {Flags,Function}@ 
+auto_attach@auto_attach(false)@ 
+auto_attach@auto_attach(Flags, Function)@ 
+stack_trace@stack_trace() -> Flag@ 
+stack_trace@stack_trace(Flag)@ 
+break@break(Module, Line) -> ok | {error,break_exists}@ 
+delete_break@delete_break(Module, Line) -> ok@ 
+no_break@no_break() -> ok@ 
+no_break@no_break(Module) -> ok@ 
+disable_break@disable_break(Module, Line) -> ok@ 
+enable_break@enable_break(Module, Line) -> ok@ 
+action_at_break@action_at_break(Module, Line, Action) -> ok@ 
+test_at_break@test_at_break(Module, Line, Function) -> ok@ 
+get_binding@get_binding(Var, Bindings) -> {value,Value} | unbound@ 
+all_breaks@all_breaks() -> [Break]@ 
+all_breaks@all_breaks(Module) -> [Break]@ 
+snapshot@snapshot() -> [Snapshot]@ 
+clear@clear() -> ok@ 
+continue@continue(Pid) -> ok | {error,not_interpreted}@ 
+continue@continue(X,Y,Z) -> ok | {error,not_interpreted}@ 

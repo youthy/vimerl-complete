@@ -1,0 +1,12 @@
+config@config(GSObj, Options) -> ok@ 
+create@create(ObjType, Parent) -> ObjId@ 
+create@create(ObjType, Parent, Options) -> ObjId@ 
+create@create(ObjType, Name, Parent, Options) -> ObjId@ 
+create_tree@create_tree(Parent, Tree) -> ok@ 
+destroy@destroy(GSObj) -> void()@ 
+ObjType@ObjType(Parent)@ 
+ObjType@ObjType(Parent, Options)@ 
+ObjType@ObjType(Name, Parent, Options)@ 
+read@read(GSObj, Key) -> Value@ 
+start@start() -> ObjId@ 
+stop@stop() -> void()@ 

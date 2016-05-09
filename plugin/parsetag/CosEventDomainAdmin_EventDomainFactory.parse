@@ -1,0 +1,3 @@
+create_event_domain@create_event_domain(Factory, QoS, Admin) -> Reply@ 
+get_all_domains@get_all_domains(Factory) -> DomainIDSeq@ 
+get_event_domain@get_event_domain(Factory, DomainID) -> Reply@ 

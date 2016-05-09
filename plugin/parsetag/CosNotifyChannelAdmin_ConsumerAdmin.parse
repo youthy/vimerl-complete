@@ -1,0 +1,15 @@
+_get_MyID@_get_MyID(ConsumerAdmin) -> AdminID@ 
+_get_MyChannel@_get_MyChannel(ConsumerAdmin) -> Channel@ 
+_get_MyOperator@_get_MyOperator(ConsumerAdmin) -> OpType@ 
+_get_priority_filter@_get_priority_filter(ConsumerAdmin) -> MappingFilter@ 
+_set_priority_filter@_set_priority_filter(ConsumerAdmin, MappingFilter) -> ok@ 
+_get_lifetime_filter@_get_lifetime_filter(ConsumerAdmin) -> MappingFilter@ 
+_set_lifetime_filter@_set_lifetime_filter(ConsumerAdmin, MappingFilter) -> ok@ 
+_get_pull_suppliers@_get_pull_suppliers(ConsumerAdmin) -> ProxyIDSeq@ 
+_get_push_suppliers@_get_push_suppliers(ConsumerAdmin) -> ProxyIDSeq@ 
+get_proxy_supplier@get_proxy_supplier(ConsumerAdmin, ProxyID) -> Reply@ 
+obtain_notification_pull_supplier@obtain_notification_pull_supplier(ConsumerAdmin, ConsumerType) -> Reply@ 
+obtain_pull_supplier@obtain_pull_supplier(ConsumerAdmin) -> Proxy@ 
+obtain_notification_push_supplier@obtain_notification_push_supplier(ConsumerAdmin, ConsumerType) -> Reply@ 
+obtain_push_supplier@obtain_push_supplier(ConsumerAdmin) -> Proxy@ 
+destroy@destroy(ConsumerAdmin) -> ok@ 

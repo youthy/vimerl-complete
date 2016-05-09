@@ -1,0 +1,10 @@
+security_parameters@security_parameters(CipherSuite::cipher_suite(), Security_parameters::#security_parameters{}) -> #security_parameters{}
+cipher@cipher(X1::cipher_enum(), Cipher_state::#cipher_state{}, Mac::binary(), Fragment::binary()) -> {binary(), #cipher_state{}}
+decipher@decipher(X1::cipher_enum(), HashSz::integer(), Cipher_state::#cipher_state{}, Fragment::binary(), Version::tls_version()) -> {binary(), binary(), #cipher_state{}} | #alert{}
+suites@suites(X1::tls_version()) -> [cipher_suite()]
+anonymous_suites@anonymous_suites() -> [cipher_suite()]
+suite_definition@suite_definition(X1::cipher_suite()) -> erl_cipher_suite()
+suite@suite(X1::erl_cipher_suite()) -> cipher_suite()
+openssl_suite@openssl_suite(X1::openssl_cipher_suite()) -> cipher_suite()
+openssl_suite_name@openssl_suite_name(Cipher::cipher_suite()) -> openssl_cipher_suite()
+filter@filter(DerCert::undefined | binary(), Ciphers::[cipher_suite()]) -> [cipher_suite()]

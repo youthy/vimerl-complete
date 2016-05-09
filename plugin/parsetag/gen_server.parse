@@ -1,0 +1,23 @@
+start_link@start_link(Module, Args, Options) -> Result@ 
+start_link@start_link(ServerName, Module, Args, Options) -> Result@ 
+start@start(Module, Args, Options) -> Result@ 
+start@start(ServerName, Module, Args, Options) -> Result@ 
+call@call(ServerRef, Request) -> Reply@ 
+call@call(ServerRef, Request, Timeout) -> Reply@ 
+multi_call@multi_call(Name, Request) -> Result@ 
+multi_call@multi_call(Nodes, Name, Request) -> Result@ 
+multi_call@multi_call(Nodes, Name, Request, Timeout) -> Result@ 
+cast@cast(ServerRef, Request) -> ok@ 
+abcast@abcast(Name, Request) -> abcast@ 
+abcast@abcast(Nodes, Name, Request) -> abcast@ 
+reply@reply(Client, Reply) -> Result@ 
+enter_loop@enter_loop(Module, Options, State)@ 
+enter_loop@enter_loop(Module, Options, State, ServerName)@ 
+enter_loop@enter_loop(Module, Options, State, ServerName, Timeout)@ 
+init@Module:init(Args) -> Result@ 
+handle_call@Module:handle_call(Request, From, State) -> Result@ 
+handle_cast@Module:handle_cast(Request, State) -> Result@ 
+handle_info@Module:handle_info(Info, State) -> Result@ 
+terminate@Module:terminate(Reason, State)@ 
+code_change@Module:code_change(OldVsn, State, Extra) -> {ok, NewState} | {error, Reason}@ 
+format_status@Module:format_status(Opt, [PDict, State]) -> Status@ 

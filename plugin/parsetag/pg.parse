@@ -1,0 +1,6 @@
+create@create(PgName) -> ok | {error, Reason}@ PgName = term() Reason = already_created | term()   
+create@create(PgName, Node) -> ok | {error, Reason}@ PgName = term() Node = node() Reason = already_created | term()   
+join@join(PgName, Pid) -> Members@ PgName = term() Pid = pid() Members = [pid()]   
+send@send(PgName, Msg) -> ok@ PgName = Msg = term()   
+esend@esend(PgName, Msg) -> ok@ PgName = Msg = term()   
+members@members(PgName) -> Members@ PgName = term() Members = [pid()]   

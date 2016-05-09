@@ -1,0 +1,4 @@
+system_bitdefault@system_bitdefault() -> no_system_bitdefault
+system_bittypes@system_bittypes() -> no_system_types
+as_list@as_list(Bittype::#bittype{type=undefined | bt_type(), unit=undefined | bt_unit(), sign=undefined | bt_sign(), endian=undefined | bt_endian()}) -> [bt_endian() | bt_sign() | bt_type() | {unit, undefined | bt_unit()}]
+set_bit_type@set_bit_type(Size::default | size(), TypeList::default | [type()]) -> {ok, undefined | size(), #bittype{type=undefined | bt_type(), unit=undefined | bt_unit(), sign=undefined | bt_sign(), endian=undefined | bt_endian()}} | {error, {undefined_bittype, term()}} | {error, {bittype_mismatch, term(), term(), string()}}

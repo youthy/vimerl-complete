@@ -1,0 +1,2 @@
+create_table@create_table(Tab) -> ok | exit(Reason)@ 
+create_table@create_table(Tab, TabDef) -> ok | exit(Reason)@ 

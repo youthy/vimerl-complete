@@ -1,0 +1,8 @@
+parse_form@parse_form(Tokens) -> {ok, AbsForm} | {error, ErrorInfo}@ Tokens = [ AbsForm =  ErrorInfo =  error_info()    
+parse_exprs@parse_exprs(Tokens) -> {ok, ExprList} | {error, ErrorInfo}@ Tokens = [ ExprList = [ ErrorInfo =  error_info()    
+parse_term@parse_term(Tokens) -> {ok, Term} | {error, ErrorInfo}@ Tokens = [ Term = term() ErrorInfo =  error_info()    
+format_error@format_error(ErrorDescriptor) -> Chars@ 
+tokens@tokens(AbsTerm) -> Tokens@ AbsTerm =  Tokens = [ token() ]   
+tokens@tokens(AbsTerm, MoreTokens) -> Tokens@ AbsTerm =  MoreTokens = Tokens = [ token() ]   
+normalise@normalise(AbsTerm) -> Data@ AbsTerm =  Data = term()   
+abstract@abstract(Data) -> AbsTerm@ Data = term() AbsTerm =  abstract_expr()    

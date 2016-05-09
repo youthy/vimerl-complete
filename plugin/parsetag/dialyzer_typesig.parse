@@ -1,0 +1,2 @@
+analyze_scc@analyze_scc(SCC::typesig_scc(), NextLabel::label(), CallGraph::callgraph() (see module dialyzer_callgraph), Plt::plt() (see module dialyzer_plt), PropTypes::dict()) -> dict()
+get_safe_underapprox@get_safe_underapprox(Pats::[c_values() (see module cerl)], Guard::cerl() (see module cerl)) -> erl_type() (see module erl_types)

@@ -1,0 +1,25 @@
+commit@commit(Ref, CommitMode) ->@ 
+commit@commit(Ref, CommitMode, TimeOut) -> ok | {error, Reason} @ 
+connect@connect(ConnectStr, Options) -> {ok, Ref} | {error, Reason} @ 
+disconnect@disconnect(Ref) -> ok | {error, Reason} @ 
+describe_table@describe_table(Ref, Table) -> @ 
+describe_table@describe_table(Ref, Table, Timeout) -> {ok, Description} | {error, Reason} @ 
+first@first(Ref) ->@ 
+first@first(Ref, Timeout) -> {selected, ColNames, Rows} | {error, Reason} @ 
+last@last(Ref) ->@ 
+last@last(Ref, TimeOut) -> {selected, ColNames, Rows} | {error, Reason} @ 
+next@next(Ref) -> @ 
+next@next(Ref, TimeOut) -> {selected, ColNames, Rows} | {error, Reason} @ 
+param_query@param_query(Ref, SQLQuery, Params) -> @ 
+param_query@param_query(Ref, SQLQuery, Params, TimeOut) -> ResultTuple | {error, Reason} @ 
+prev@prev(Ref) -> @ 
+prev@prev(ConnectionReference, TimeOut) -> {selected, ColNames, Rows} | {error, Reason} @ 
+start@start() -> @ 
+start@start(Type) -> ok | {error, Reason}@ 
+stop@stop() -> ok @ 
+sql_query@sql_query(Ref, SQLQuery) -> @ 
+sql_query@sql_query(Ref, SQLQuery, TimeOut) -> ResultTuple | [ResultTuple] |{error, Reason}@ 
+select_count@select_count(Ref, SelectQuery) -> @ 
+select_count@select_count(Ref, SelectQuery, TimeOut) -> {ok, NrRows} | {error, Reason} @ 
+select@select(Ref, Position, N) ->@ 
+select@select(Ref, Position, N, TimeOut) -> {selected, ColNames, Rows} | {error, Reason} @ 

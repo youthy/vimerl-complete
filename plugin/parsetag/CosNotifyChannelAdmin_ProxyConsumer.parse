@@ -1,0 +1,4 @@
+_get_MyType@_get_MyType(ProxyConsumer) -> ProxyType@ 
+_get_MyAdmin@_get_MyAdmin(ProxyConsumer) -> AdminObject@ 
+obtain_subscription_types@obtain_subscription_types(ProxyConsumer, ObtainInfoMode) -> EventTypeSeq@ 
+validate_event_qos@validate_event_qos(ProxyConsumer, QoSProperties) -> Reply@ 

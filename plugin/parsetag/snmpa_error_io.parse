@@ -1,0 +1,2 @@
+config_err@config_err(Format, Args) -> void()@ 
+user_err@user_err(Format, Args) -> void()@ 

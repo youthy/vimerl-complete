@@ -1,0 +1,10 @@
+get_contract_return@get_contract_return(Contract::#contract{contracts=[contract_pair()], args=[erl_type() (see module erl_types)], forms=[{term(), term()}]}) -> erl_type() (see module erl_types)
+get_contract_args@get_contract_args(Contract::#contract{contracts=[contract_pair()], args=[erl_type() (see module erl_types)], forms=[{term(), term()}]}) -> [erl_type() (see module erl_types)]
+is_overloaded@is_overloaded(Contract::#contract{contracts=[contract_pair()], args=[erl_type() (see module erl_types)], forms=[{term(), term()}]}) -> boolean()
+contract_to_string@contract_to_string(Contract::#contract{contracts=[contract_pair()], args=[erl_type() (see module erl_types)], forms=[{term(), term()}]}) -> string()
+process_contract_remote_types@process_contract_remote_types(CodeServer::codeserver() (see module dialyzer_codeserver)) -> codeserver() (see module dialyzer_codeserver)
+check_contracts@check_contracts(Contracts::[{mfa(), file_contract()}], Callgraph::callgraph() (see module dialyzer_callgraph), FunTypes::dict()) -> plt_contracts()
+check_contract@check_contract(Contract::#contract{contracts=[contract_pair()], args=[erl_type() (see module erl_types)], forms=[{term(), term()}]}, SuccType::erl_type() (see module erl_types)) -> ok | {error, term()}
+contracts_without_fun@contracts_without_fun(Contracts::dict(), AllFuns0::[term()], Callgraph::callgraph() (see module dialyzer_callgraph)) -> [dial_warning()]
+store_tmp_contract@store_tmp_contract(MFA::mfa(), FileLine::file_line(), TypeSpec::[term()], SpecDict::dict(), RecordsDict::dict()) -> dict()
+get_invalid_contract_warnings@get_invalid_contract_warnings(Modules::[module()], CodeServer::codeserver() (see module dialyzer_codeserver), Plt::plt() (see module dialyzer_plt)) -> [dial_warning()]

@@ -1,0 +1,3 @@
+start_link@start_link() -> ignore | {error, term()} | {ok, pid()}
+terminate@terminate(Reason::term(), Pid::pid()) -> ok
+init@init(X1::[]) -> {error, no_stderror} | {ok, pid(), pid()}

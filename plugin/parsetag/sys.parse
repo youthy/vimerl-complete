@@ -1,0 +1,30 @@
+log@log(Name, Flag) -> ok | {ok, [<a href="#type-system_event" class="seealso">system_event() ]}@ Name =  Flag = true | {true, N :: integer() >= 1} | false | get | print   
+log@log(Name, Flag, Timeout) -> ok | {ok, [<a href="#type-system_event" class="seealso">system_event() ]}@ Name =  Flag = true | {true, N :: integer() >= 1} | false | get | print Timeout = timeout()   
+log_to_file@log_to_file(Name, Flag) -> ok | {error, open_file}@ Name =  Flag = (FileName :: string()) | false   
+log_to_file@log_to_file(Name, Flag, Timeout) -> ok | {error, open_file}@ Name =  Flag = (FileName :: string()) | false Timeout = timeout()   
+statistics@statistics(Name, Flag) -> ok | {ok, Statistics}@ Name =  Flag = true | false | get Statistics = [StatisticsTuple] | no_statistics StatisticsTuple = {start_time, DateTime1} DateTime1 = DateTime2 =  file:date_time()    
+statistics@statistics(Name, Flag, Timeout) -> ok | {ok, Statistics}@ Name =  Flag = true | false | get Statistics = [StatisticsTuple] | no_statistics StatisticsTuple = {start_time, DateTime1} DateTime1 = DateTime2 =  Timeout = timeout()   
+trace@trace(Name, Flag) -> ok@ Name =  Flag = boolean()   
+trace@trace(Name, Flag, Timeout) -> ok@ Name =  Flag = boolean() Timeout = timeout()   
+no_debug@no_debug(Name) -> ok@ Name =  name()    
+no_debug@no_debug(Name, Timeout) -> ok@ Name =  Timeout = timeout()   
+suspend@suspend(Name) -> Void@ Name =  Void = term()   
+suspend@suspend(Name, Timeout) -> Void@ Name =  Timeout = timeout() Void = term()   
+resume@resume(Name) -> Void@ Name =  Void = term()   
+resume@resume(Name, Timeout) -> Void@ Name =  Timeout = timeout() Void = term()   
+change_code@change_code(Name, Module, OldVsn, Extra) -> ok | {error, Reason}@ Name =  Module = module() OldVsn = undefined | term() Extra = Reason = term()   
+change_code@change_code(Name, Module, OldVsn, Extra, Timeout) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ok | {error, Reason}@ Name =  Module = module() OldVsn = undefined | term() Extra = term() Timeout = timeout() Reason = term()   
+get_status@get_status(Name) -> Status@ Name =  Status =  SItem = (PDict :: [{Key :: term(), Value :: term()}])<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (SysState :: running | suspended)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Parent :: pid())<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Dbg ::  dbg_opt() )<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Misc :: term())   
+get_status@get_status(Name, Timeout) -> Status@ Name =  Timeout = timeout() Status =  SItem = (PDict :: [{Key :: term(), Value :: term()}])<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (SysState :: running | suspended)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Parent :: pid())<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Dbg ::  dbg_opt() )<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Misc :: term())   
+install@install(Name, FuncSpec) -> Void@ Name =  FuncSpec = {Func, FuncState} Func =  FuncState = Void = term()   
+install@install(Name, FuncSpec, Timeout) -> Void@ Name =  FuncSpec = {Func, FuncState} Func =  FuncState = term() Timeout = timeout() Void = term()   
+remove@remove(Name, Func) -> Void@ Name =  Func =  Void = term()   
+remove@remove(Name, Func, Timeout) -> Void@ Name =  Func =  Timeout = timeout() Void = term()   
+debug_options@debug_options(Options) -> [<a href="#type-dbg_opt" class="seealso">dbg_opt() ]@ Options = [Opt] Opt = trace FileName =  FuncSpec = {Func, FuncState} Func =  FuncState = term()   
+get_debug@get_debug(Item, Debug, Default) -> term()@ Item = log | statistics Debug = [ Default = term()   
+handle_debug@handle_debug(Debug, FormFunc, Extra, Event) -> [<a href="#type-dbg_opt" class="seealso">dbg_opt() ]@ Debug = [ FormFunc =  Extra = term() Event =  system_event()    
+handle_system_msg@handle_system_msg(Msg, From, Parent, Module, Debug, Misc) -> Void@ Msg = term() From = {pid(), Tag :: term()} Parent = pid() Module = module() Debug = [ Misc = Void = term()   
+print_log@print_log(Debug) -> Void@ Debug = [ Void = term()   
+system_continue@Mod:system_continue(Parent, Debug, Misc) -> none()@ 
+system_terminate@Mod:system_terminate(Reason, Parent, Debug, Misc) -> none()@ 
+system_code_change@Mod:system_code_change(Misc, Module, OldVsn, Extra) -> {ok, NMisc}@ 

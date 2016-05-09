@@ -1,0 +1,4 @@
+save_scenario@save_scenario() -> ok | {error, Error}@ 
+make_config@make_config() -> ok | {error, Error}@ 
+make_config@make_config(FileNameOrIODev) -> ok | {error, Error}@ 
+stop@stop() -> ok | {error, Error}@ 

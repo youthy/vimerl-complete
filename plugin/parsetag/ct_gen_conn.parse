@@ -1,0 +1,3 @@
+start@start(Name, Address, InitData, CallbackMod) -> {ok, Handle} | {error, Reason}
+stop@stop(Pid::Handle) -> ok
+do_within_time@do_within_time(Fun, Timeout) -> FunResult | {error, Reason}

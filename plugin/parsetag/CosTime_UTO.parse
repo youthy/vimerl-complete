@@ -1,0 +1,4 @@
+absolute_time@absolute_time(UTO) -> OtherUTO@ 
+compare_time@compare_time(UTO, ComparisonType, OtherUTO) -> Reply@ 
+time_to_interval@time_to_interval(UTO, OtherUTO) -> TIO@ 
+interval@interval(UTO) -> TIO@ 

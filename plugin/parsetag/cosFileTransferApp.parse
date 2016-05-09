@@ -1,0 +1,11 @@
+install@install() -> Return@ 
+uninstall@uninstall() -> Return@ 
+start@start() -> Return@ 
+stop@stop() -> Return@ 
+create_VFS@create_VFS(Type, Content, Host, Port [,Options]) -> Return@ 
+ssl_server_certfile@ssl_server_certfile() -> string()@ 
+ssl_client_certfile@ssl_client_certfile() -> string()@ 
+ssl_server_verify@ssl_server_verify() -> 0 | 1 | 2@ 
+ssl_client_verify@ssl_client_verify() -> 0 | 1 | 2@ 
+ssl_server_depth@ssl_server_depth() -> int()@ 
+ssl_client_depth@ssl_client_depth() ->  int()@ 

@@ -1,0 +1,56 @@
+agent_entry@agent_entry(Tag, Val) -> agent_entry()@ 
+write_agent_config@write_agent_config(Dir, Conf) -> ok@ 
+write_agent_config@write_agent_config(Dir, Hdr, Conf) -> ok@ 
+append_agent_config@append_agent_config(Dir, Conf) -> ok@ 
+read_agent_config@read_agent_config(Dir) -> Conf@ 
+standard_entry@standard_entry(Tag, Val) -> standard_entry()@ 
+write_standard_config@write_standard_config(Dir, Conf) -> ok@ 
+write_standard_config@write_standard_config(Dir, Hdr, Conf) -> ok@ 
+append_standard_config@append_standard_config(Dir, Conf) -> ok@ 
+read_standard_config@read_standard_config(Dir) -> Conf@ 
+context_entry@context_entry(Context) -> context_entry()@ 
+write_context_config@write_context_config(Dir, Conf) -> ok@ 
+write_context_config@write_context_config(Dir, Hdr, Conf) -> ok@ 
+append_context_config@append_context_config(Dir, Conf) -> ok@ 
+read_context_config@read_context_config(Dir) -> Conf@ 
+community_entry@community_entry(CommunityIndex) -> community_entry()@ 
+community_entry@community_entry(CommunityIndex, CommunityName, SecName, ContextName, TransportTag) -> community_entry()@ 
+write_community_config@write_community_config(Dir, Conf) -> ok@ 
+write_community_config@write_community_config(Dir, Hdr, Conf) -> ok@ 
+append_community_config@append_community_config(Dir, Conf) -> ok@ 
+read_community_config@read_community_config(Dir) -> Conf@ 
+target_addr_entry@target_addr_entry(Name, Ip, TagList, ParamsName, EngineId) -> target_addr_entry()@ 
+target_addr_entry@target_addr_entry(Name, Ip, TagList, ParamsName, EngineId, TMask) -> target_addr_entry()@ 
+target_addr_entry@target_addr_entry(Name, Ip, Udp, TagList, ParamsName, EngineId, TMask, MaxMessageSize) -> target_addr_entry()@ 
+target_addr_entry@target_addr_entry(Name, Ip, Udp, Timeout, RetryCount, TagList, ParamsName, EngineId, TMask, MaxMessageSize) -> target_addr_entry()@ 
+target_addr_entry@target_addr_entry(Name, Domain, Ip, Udp, Timeout, RetryCount, TagList, ParamsName, EngineId, TMask, MaxMessageSize) -> target_addr_entry()@ 
+write_target_addr_config@write_target_addr_config(Dir, Conf) -> ok@ 
+write_target_addr_config@write_target_addr_config(Dir, Hdr, Conf) -> ok@ 
+append_target_addr_config@append_target_addr_config(Dir, Conf) -> ok@ 
+read_target_addr_config@read_target_addr_config(Dir) -> Conf@ 
+target_params_entry@target_params_entry(Name, Vsn) -> target_params_entry()@ 
+target_params_entry@target_params_entry(Name, Vsn, SecName, SecLevel) -> target_params_entry()@ 
+target_params_entry@target_params_entry(Name, MPModel, SecModel, SecName, SecLevel) -> target_params_entry()@ 
+write_target_params_config@write_target_params_config(Dir, Conf) -> ok@ 
+write_target_params_config@write_target_params_config(Dir, Hdr, Conf) -> ok@ 
+append_target_params_config@append_target_params_config(Dir, Conf) -> ok@ 
+read_target_params_config@read_target_params_config(Dir) -> Conf@ 
+vacm_s2g_entry@vacm_s2g_entry(SecModel, SecName, GroupName) -> vacm_s2g_entry()@ 
+vacm_acc_entry@vacm_acc_entry(GroupName, Prefix, SecModel, SecLevel, Match, ReadView, WriteView, NotifyView) -> vacm_acc_entry()@ 
+vacm_vtf_entry@vacm_vtf_entry(ViewIndex, ViewSubtree) -> vacm_vtf_entry()@ 
+vacm_vtf_entry@vacm_vtf_entry(ViewIndex, ViewSubtree, ViewStatus, ViewMask) -> vacm_vtf_entry()@ 
+write_vacm_config@write_vacm_config(Dir, Conf) -> ok@ 
+write_vacm_config@write_vacm_config(Dir, Hdr, Conf) -> ok@ 
+append_vacm_config@append_vacm_config(Dir, Conf) -> ok@ 
+read_vacm_config@read_vacm_config(Dir) -> Conf@ 
+usm_entry@usm_entry(EngineId) -> usm_entry()@ 
+usm_entry@usm_entry(EngineID, UserName, SecName, Clone, AuthP, AuthKeyC, OwnAuthKeyC, PrivP, PrivKeyC, OwnPrivKeyC, Public, AuthKey, PrivKey) -> usm_entry()@ 
+write_usm_config@write_usm_config(Dir, Conf) -> ok@ 
+write_usm_config@write_usm_config(Dir, Hdr, Conf) -> ok@ 
+append_usm_config@append_usm_config(Dir, Conf) -> ok@ 
+read_usm_config@read_usm_config(Dir) -> Conf@ 
+notify_entry@notify_entry(Name, Tag, Type) -> notify_entry()@ 
+write_notify_config@write_notify_config(Dir, Conf) -> ok@ 
+write_notify_config@write_notify_config(Dir, Hdr, Conf) -> ok@ 
+append_notify_config@append_notify_config(Dir, Conf) -> ok@ 
+read_notify_config@read_notify_config(Dir) -> Conf@ 

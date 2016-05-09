@@ -1,0 +1,4 @@
+start@start()@ 
+start@start(File)@ 
+start@start(Mode, File)@ 
+quick@quick(Module, Name, Args)@ 

@@ -1,0 +1,8 @@
+get_allowed_property_types@get_allowed_property_types(PropertySetDef) -> Reply@ 
+get_allowed_properties@get_allowed_properties(PropertySetDef) -> Reply@ 
+define_property_with_mode@define_property_with_mode(PropertySetDef, Name, Value, Mode) -> Reply@ 
+define_properties_with_modes@define_properties_with_modes(PropertySetDef, PropertyDefs) -> Reply@ 
+get_property_mode@get_property_mode(PropertySetDef, Name) -> Reply@ 
+get_property_modes@get_property_modes(PropertySetDef, Names) -> Reply@ 
+set_property_mode@set_property_mode(PropertySetDef, Name, Mode) -> Reply@ 
+set_property_modes@set_property_modes(PropertySetDef, PropertyModes) -> Reply@ 

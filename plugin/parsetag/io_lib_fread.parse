@@ -1,0 +1,2 @@
+fread@fread(Continuation, String, Format) -> Return
+fread@fread(Format, String) -> Result

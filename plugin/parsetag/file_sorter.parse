@@ -1,0 +1,14 @@
+sort@sort(FileName) -> Reply@ FileName =  Reply = ok | {error,  reason() } |  input_reply()  |  output_reply()    
+sort@sort(Input, Output) -> Reply@ Input =  Output =  Reply = ok | {error,  reason() } |  input_reply()  |  output_reply()    
+sort@sort(Input, Output, Options) -> Reply@ Input =  Output =  Options =  Reply = ok | {error,  reason() } |  input_reply()  |  output_reply()    
+keysort@keysort(KeyPos, FileName) -> Reply@ KeyPos =  FileName =  Reply = ok | {error,  reason() } |  input_reply()  |  output_reply()    
+keysort@keysort(KeyPos, Input, Output) -> Reply@ KeyPos =  Input =  Output =  Reply = ok | {error,  reason() } |  input_reply()  |  output_reply()    
+keysort@keysort(KeyPos, Input, Output, Options) -> Reply@ KeyPos =  Input =  Output =  Options =  Reply = ok | {error,  reason() } |  input_reply()  |  output_reply()    
+merge@merge(FileNames, Output) -> Reply@ FileNames =  Output =  Reply = ok | {error,  reason() } |  output_reply()    
+merge@merge(FileNames, Output, Options) -> Reply@ FileNames =  Output =  Options =  Reply = ok | {error,  reason() } |  output_reply()    
+keymerge@keymerge(KeyPos, FileNames, Output) -> Reply@ KeyPos =  FileNames =  Output =  Reply = ok | {error,  reason() } |  output_reply()    
+keymerge@keymerge(KeyPos, FileNames, Output, Options) -> Reply@ KeyPos =  FileNames =  Output =  Options =  Reply = ok | {error,  reason() } |  output_reply()    
+check@check(FileName) -> Reply@ FileName =  Reply = {ok, [Result]} | {error,  Result = {FileName, TermPosition, term()} TermPosition = integer() >= 1   
+check@check(FileNames, Options) -> Reply@ FileNames =  Options =  Reply = {ok, [Result]} | {error,  Result = {FileName, TermPosition, term()} FileName =  TermPosition = integer() >= 1   
+keycheck@keycheck(KeyPos, FileName) -> Reply@ KeyPos =  FileName =  Reply = {ok, [Result]} | {error,  Result = {FileName, TermPosition, term()} TermPosition = integer() >= 1   
+keycheck@keycheck(KeyPos, FileNames, Options) -> Reply@ KeyPos =  FileNames =  Options =  Reply = {ok, [Result]} | {error,  Result = {FileName, TermPosition, term()} FileName =  TermPosition = integer() >= 1   

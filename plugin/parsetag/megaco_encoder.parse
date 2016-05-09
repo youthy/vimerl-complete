@@ -1,0 +1,6 @@
+encode_message@Module:encode_message(EncodingConfig, Version, Message) -> {ok, Bin} | Error@ 
+decode_message@Module:decode_message(EncodingConfig, Version, Bin) -> {ok, Message} | Error@ 
+decode_mini_message@Module:decode_mini_message(EncodingConfig, Version, Bin) -> {ok, Message} | Error@ 
+encode_transaction@Module:encode_transaction(EncodingConfig, Version, Transaction) -> OK | Error@ 
+encode_action_requests@Module:encode_action_requests(EncodingConfig, Version, ARs) -> OK | Error@ 
+encode_action_reply@Module:encode_action_reply(EncodingConfig, Version, AR) -> OK | Error@ 

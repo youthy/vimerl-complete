@@ -1,0 +1,14 @@
+start@start(Config, MgrAgentConfName) -> ok
+start@start(Config, MgrAgentConfName, SnmpAppConfName) -> ok
+stop@stop(Config) -> ok
+get_values@get_values(Agent, Oids, MgrAgentConfName) -> SnmpReply
+get_next_values@get_next_values(Agent, Oids, MgrAgentConfName) -> SnmpReply
+set_values@set_values(Agent, VarsAndVals, MgrAgentConfName, Config) -> SnmpReply
+set_info@set_info(Config) -> [{Agent, OldVarsAndVals, NewVarsAndVals}]
+register_users@register_users(MgrAgentConfName, Users) -> ok | {error, Reason}
+register_agents@register_agents(MgrAgentConfName, ManagedAgents) -> ok | {error, Reason}
+register_usm_users@register_usm_users(MgrAgentConfName, UsmUsers) -> ok | {error, Reason}
+unregister_users@unregister_users(MgrAgentConfName) -> ok | {error, Reason}
+unregister_agents@unregister_agents(MgrAgentConfName) -> ok | {error, Reason}
+update_usm_users@update_usm_users(MgrAgentConfName, UsmUsers) -> ok | {error, Reason}
+load_mibs@load_mibs(Mibs) -> ok | {error, Reason}

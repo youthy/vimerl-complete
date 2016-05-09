@@ -1,0 +1,7 @@
+get_anno@get_anno(C::cerl() (see module cerl)) -> term()
+set_anno@set_anno(C::cerl() (see module cerl), A::term()) -> cerl() (see module cerl)
+is_literal@is_literal(C_literal::cerl() (see module cerl)) -> boolean()
+is_literal_list@is_literal_list(Es::[cerl() (see module cerl)]) -> boolean()
+literal_value@literal_value(C_literal::c_literal() (see module cerl) | c_binary() (see module cerl) | c_cons() (see module cerl) | c_tuple() (see module cerl)) -> term()
+make_values@make_values(Es::[cerl() (see module cerl)] | cerl() (see module cerl)) -> cerl() (see module cerl)
+is_var_used@is_var_used(V::var_name() (see module cerl), B::cerl() (see module cerl)) -> boolean()

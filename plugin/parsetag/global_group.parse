@@ -1,0 +1,10 @@
+global_groups@global_groups() -> {GroupName, GroupNames} | undefined@ GroupName =  GroupNames = [GroupName]   
+info@info() -> [<a href="#type-info_item" class="seealso">info_item() ]@ info_item() = {state, State ::  sync_state() }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {own_group_name, GroupName ::  group_name() }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {own_group_nodes, Nodes :: [node()]}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {synched_nodes, Nodes :: [node()]}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {sync_error, Nodes :: [node()]}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {no_contact, Nodes :: [node()]}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {other_groups, Groups :: [ group_tuple() ]}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {monitoring, Pids :: [pid()]}   
+monitor_nodes@monitor_nodes(Flag) -> ok@ Flag = boolean()   
+own_nodes@own_nodes() -> Nodes@ Nodes = [Node :: node()]   
+registered_names@registered_names(Where) -> Names@ Where =  Names = [Name ::  name() ]   
+send@send(Name, Msg) -> pid() | {badarg, {Name, Msg}}@ Name =  Msg = term()   
+send@send(Where, Name, Msg) -> pid() | {badarg, {Name, Msg}}@ Where =  Name =  Msg = term()   
+sync@sync() -> ok@ 
+whereis_name@whereis_name(Name) -> pid() | undefined@ Name =  name()    
+whereis_name@whereis_name(Where, Name) -> pid() | undefined@ Where =  Name =  name()    

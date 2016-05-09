@@ -1,0 +1,4 @@
+xslapply@xslapply(Fun::Function, EList::list()) -> List
+value_of@value_of(E) -> List
+select@select(String::string(), E) -> E
+built_in_rules@built_in_rules(Fun, E) -> List

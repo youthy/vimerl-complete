@@ -1,0 +1,2 @@
+commit_participant@commit_participant(Coord::term(), Tid::term(), Bin::term(), DiscNs::term(), RamNs::term()) -> no_return()
+system_terminate@system_terminate(Reason::term(), Parent::term(), Debug::term(), State::term()) -> no_return()

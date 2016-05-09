@@ -1,0 +1,25 @@
+date_to_gregorian_days@date_to_gregorian_days(Date) -> Days@ Date =  Days = integer() >= 0   
+date_to_gregorian_days@date_to_gregorian_days(Year, Month, Day) -> Days@ Year =  Month =  Day =  Days = integer() >= 0   
+datetime_to_gregorian_seconds@datetime_to_gregorian_seconds(DateTime) -> Seconds@ DateTime =  Seconds = integer() >= 0   
+day_of_the_week@day_of_the_week(Date) -> daynum() @ Date =  date()    
+day_of_the_week@day_of_the_week(Year, Month, Day) -> daynum() @ Year =  Month =  Day =  day()    
+gregorian_days_to_date@gregorian_days_to_date(Days) -> date() @ Days = integer() >= 0   
+gregorian_seconds_to_datetime@gregorian_seconds_to_datetime(Seconds) -> datetime() @ Seconds = integer() >= 0   
+is_leap_year@is_leap_year(Year) -> boolean()@ Year =  year()    
+iso_week_number@iso_week_number() -> yearweeknum() @ 
+iso_week_number@iso_week_number(Date) -> yearweeknum() @ Date =  date()    
+last_day_of_the_month@last_day_of_the_month(Year, Month) -> LastDay@ Year =  Month =  LastDay =  ldom()    
+local_time@local_time() -> datetime() @ 
+local_time_to_universal_time@local_time_to_universal_time(DateTime1) -> DateTime2@ DateTime1 = DateTime2 =  datetime1970()    
+local_time_to_universal_time_dst@local_time_to_universal_time_dst(DateTime1) -> [DateTime]@ DateTime1 = DateTime =  datetime1970()    
+now_to_local_time@now_to_local_time(Now) -> datetime1970() @ Now =  erlang:timestamp()    
+now_to_universal_time@now_to_universal_time(Now) -> datetime1970() @ Now =  erlang:timestamp()    
+now_to_datetime@now_to_datetime(Now) -> datetime1970() @ Now =  erlang:timestamp()    
+seconds_to_daystime@seconds_to_daystime(Seconds) -> {Days, Time}@ Seconds = Days = integer() Time =  time()    
+seconds_to_time@seconds_to_time(Seconds) -> time() @ Seconds =  secs_per_day()    
+time_difference@time_difference(T1, T2) -> {Days, Time}@ T1 = T2 =  Days = integer() Time =  time()    
+time_to_seconds@time_to_seconds(Time) -> secs_per_day() @ Time =  time()    
+universal_time@universal_time() -> datetime() @ 
+universal_time_to_local_time@universal_time_to_local_time(DateTime) -> datetime() @ DateTime =  datetime1970()    
+valid_date@valid_date(Date) -> boolean()@ Date =  date()    
+valid_date@valid_date(Year, Month, Day) -> boolean()@ Year = Month = Day = integer()   

@@ -1,0 +1,9 @@
+info@info(Pid) ->@ 
+info@info(Pid, Properties) -> [{Option, Value}]@ 
+info@info(Address, Port, Properties) -> [{Option, Value}] @ 
+reload_config@reload_config(Config, Mode) -> ok | {error, Reason}@ 
+do@Module:do(ModData)-> {proceed, OldData} | {proceed, NewData} | {break, NewData} | done@ 
+load@Module:load(Line, AccIn)-> eof | ok | {ok, AccOut} |  {ok, AccOut, {Option, Value}} | {ok, AccOut, [{Option, Value}]} | {error, Reason}  @ 
+store@Module:store({Option, Value}, Config)-> {ok, {Option, NewValue}} | {error, Reason}  @ 
+remove@Module:remove(ConfigDB) -> ok | {error, Reason}  @ 
+parse_query@parse_query(QueryString) ->  [{Key,Value}]@ 

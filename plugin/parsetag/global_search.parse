@@ -1,0 +1,3 @@
+init_send@init_send(X1::term()) -> no_return()
+init_whereis@init_whereis(X1::term()) -> no_return()
+init_names@init_names(X1::term()) -> no_return()

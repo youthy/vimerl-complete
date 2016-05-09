@@ -1,0 +1,3 @@
+merge@merge(Files, OutFile) ->@ 
+merge@merge(Files, WorkHFun, InitHandlerData) ->@ 
+merge@merge(Files, BeginHFun, WorkHFun, EndHFun, InitHandlerData) -> {ok, Count} | {error, Reason}@ 

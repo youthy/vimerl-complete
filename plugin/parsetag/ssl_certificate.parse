@@ -1,0 +1,8 @@
+trusted_cert_and_path@trusted_cert_and_path(CertChain::[der_cert()], CertDbHandle::db_handle(), CertDbRef::certdb_ref()) -> {der_cert() | unknown_ca, [der_cert()]}
+certificate_chain@certificate_chain(OwnCert::undefined | binary(), CertDbHandle::db_handle(), CertsDbRef::certdb_ref()) -> {error, no_cert} | {ok, [der_cert()]}
+file_to_certificats@file_to_certificats(File::string(), DbHandle::term()) -> [der_cert()]
+validate_extension@validate_extension(X1::term(), Reason::#'Extension'{} | {bad_cert, atom()} | valid, Role::term()) -> {valid, term()} | {fail, tuple()} | {unknown, term()}
+is_valid_key_usage@is_valid_key_usage(KeyUse::list(), Use::term()) -> boolean()
+select_extension@select_extension(Id::term(), Extensions::list()) -> undefined | #'Extension'{}
+extensions_list@extensions_list(Extensions::asn1_NOVALUE | list()) -> list()
+signature_type@signature_type(RSA::term()) -> rsa | dsa

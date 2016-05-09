@@ -1,0 +1,3 @@
+next_one@next_one(BindinIterator) -> Return@ 
+next_n@next_n(BindinIterator, HowMany) -> Return@ 
+destroy@destroy(BindingIterator) -> Return@ 

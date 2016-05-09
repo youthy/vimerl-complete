@@ -1,0 +1,5 @@
+configure@configure(ConfDir) -> void()@ 
+reconfigure@reconfigure(ConfDir) -> void()@ 
+add_community@add_community(Idx, CommName, SecName, CtxName, TransportTag) -> Ret@ 
+add_community@add_community(Idx, CommName, SecName, EngineId, CtxName, TransportTag) -> Ret@ 
+delete_community@delete_community(Key) -> Ret@ 

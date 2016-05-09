@@ -1,0 +1,12 @@
+dec_message@dec_message([byte()]) -> Message@ 
+dec_message_only@dec_message_only([byte()]) -> Message@ 
+dec_pdu@dec_pdu([byte()]) -> Pdu@ 
+dec_scoped_pdu@dec_scoped_pdu([byte()]) -> ScopedPdu@ 
+dec_scoped_pdu_data@dec_scoped_pdu_data([byte()]) -> ScopedPduData@ 
+dec_usm_security_parameters@dec_usm_security_parameters([byte()]) -> UsmSecParams@ 
+enc_encrypted_scoped_pdu@enc_encrypted_scoped_pdu(EncryptedScopedPdu) -> [byte()]@ 
+enc_message@enc_message(Message) -> [byte()]@ 
+enc_message_only@enc_message_only(Message) -> [byte()]@ 
+enc_pdu@enc_pdu(Pd) -> [byte()]@ 
+enc_scoped_pdu@enc_scoped_pdu(ScopedPdu) -> [byte()]@ 
+enc_usm_security_parameters@enc_usm_security_parameters(UsmSecParams) -> [byte()]@ 

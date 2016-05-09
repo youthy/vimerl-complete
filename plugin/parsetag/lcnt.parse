@@ -1,0 +1,29 @@
+start@start() -> {ok, Pid} | {error, {already_started, Pid}} @ 
+stop@stop() -> ok@ 
+collect@collect() -> ok@ 
+collect@collect(Node) -> ok@ 
+clear@clear() -> ok@ 
+clear@clear(Node) -> ok@ 
+conflicts@conflicts() -> ok@ 
+conflicts@conflicts([Option]) -> ok@ 
+locations@locations() -> ok@ 
+locations@locations([Option]) -> ok@ 
+inspect@inspect(Lock) -> ok@ 
+inspect@inspect(Lock, [Option]) -> ok@ 
+information@information() -> ok@ 
+swap_pid_keys@swap_pid_keys() -> ok@ 
+load@load(Filename) -> ok@ 
+save@save(Filename) -> ok@ 
+apply@apply(Fun) -> term()@ 
+apply@apply(Fun, Args) -> term()@ 
+apply@apply(Module, Function, Args) -> term()@ 
+pid@pid(Id, Serial) -> pid()@ 
+pid@pid(Node, Id, Serial) -> pid()@ 
+port@port(Id) -> port()@ 
+port@port(Node, Id) -> port()@ 
+rt_collect@rt_collect() -> [lock_counter_data()]@ 
+rt_collect@rt_collect(Node) -> [lock_counter_data()]@ 
+rt_clear@rt_clear() -> ok@ 
+rt_clear@rt_clear(Node) -> ok@ 
+rt_opt@rt_opt({Type, bool()}) -> bool()@ 
+rt_opt@rt_opt(Node, {Type, bool()}) -> bool()@ 

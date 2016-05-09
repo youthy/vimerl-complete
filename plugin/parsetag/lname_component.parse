@@ -1,0 +1,5 @@
+create@create() -> Return@ 
+get_id@get_id(NameComponent) -> Return@ 
+set_id@set_id(NameComponent, Id) -> Return@ 
+get_kind@get_kind(NameComponent) -> Return@ 
+set_kind@set_kind(NameComponent, Kind) -> Return@ 

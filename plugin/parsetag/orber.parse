@@ -1,0 +1,44 @@
+start@start() -> ok@ 
+start@start(Type) -> ok@ 
+jump_start@jump_start(Attributes) -> ok | {'EXIT', Reason}@ 
+stop@stop() -> ok@ 
+info@info() -> ok@ 
+info@info(IoType) -> ok | {'EXIT', Reason} | string()@ 
+exception_info@exception_info(Exception) -> {ok, string()} | {error, Reason}@ 
+is_system_exception@is_system_exception(Exception) -> true | false@ 
+get_tables@get_tables() -> [Tables]@ 
+get_ORBInitRef@get_ORBInitRef() -> string() | undefined@ 
+get_ORBDefaultInitRef@get_ORBDefaultInitRef() -> string() | undefined@ 
+domain@domain() -> string()@ 
+iiop_port@iiop_port() -> int()@ 
+iiop_out_ports@iiop_out_ports() -> 0 | {Min, Max}@ 
+iiop_out_ports_random@iiop_out_ports_random() -> true | false@ 
+iiop_out_ports_attempts@iiop_out_ports_attempts() -> int()@ 
+iiop_ssl_port@iiop_ssl_port() -> int()@ 
+iiop_timeout@iiop_timeout() -> int() (milliseconds)@ 
+iiop_connection_timeout@iiop_connection_timeout() -> int() (milliseconds)@ 
+iiop_connections@iiop_connections() -> Result@ 
+iiop_connections@iiop_connections(Direction) -> Result@ 
+iiop_connections_pending@iiop_connections_pending() -> Result@ 
+iiop_in_connection_timeout@iiop_in_connection_timeout() -> int() (milliseconds)@ 
+iiop_acl@iiop_acl() -> Result@ 
+activate_audit_trail@activate_audit_trail() -> Result@ 
+activate_audit_trail@activate_audit_trail(Verbosity) -> Result@ 
+deactivate_audit_trail@deactivate_audit_trail() -> Result@ 
+add_listen_interface@add_listen_interface(IP, Type) -> Result@ 
+add_listen_interface@add_listen_interface(IP, Type, Port) -> Result@ 
+remove_listen_interface@remove_listen_interface(Ref) -> ok@ 
+close_connection@close_connection(Connection) -> Result@ 
+close_connection@close_connection(Connection, Interface) -> Result@ 
+secure@secure() -> no | ssl@ 
+ssl_server_options@ssl_server_options() -> list()@ 
+ssl_client_options@ssl_client_options() -> list()@ 
+set_ssl_client_options@set_ssl_client_options(Options) -> ok@ 
+objectkeys_gc_time@objectkeys_gc_time() -> int() (seconds)@ 
+orber_nodes@orber_nodes() -> RetVal@ 
+install@install(NodeList) -> ok@ 
+install@install(NodeList, Options) -> ok@ 
+uninstall@uninstall() -> ok@ 
+add_node@add_node(Node, Options) -> RetVal@ 
+remove_node@remove_node(Node) -> RetVal@ 
+configure@configure(Key, Value) -> ok | {'EXIT', Reason}@ 

@@ -1,0 +1,10 @@
+file@file(Name::filename()) -> ok
+files@files(Files::[filename() | {package(), [filename()]}]) -> ok
+packages@packages(Packages::[package()]) -> ok
+application@application(Application::atom()) -> ok
+run@run(Packages::[package()], Files::[filename() | {package(), [filename()]}], Options::proplist()) -> ok
+read@read(File::filename()) -> string()
+layout@layout(Doc::edoc_module()) -> string()
+read_comments@read_comments(File) -> [comment()]
+read_source@read_source(Name::File) -> [syntaxTree()]
+get_doc@get_doc(File::filename()) -> {ModuleName, edoc_module()}

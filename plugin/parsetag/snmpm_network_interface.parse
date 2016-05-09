@@ -1,0 +1,9 @@
+start_link@start_link(Server, NoteStore) -> {ok, Pid} | {error, Reason}@ 
+stop@stop(Pid) -> void()@ 
+send_pdu@send_pdu(Pid, Pdu, Vsn, MsgData, Addr, Port, ExtraInfo) -> void()@ 
+inform_response@inform_response(Pid, Ref, Addr, Port) -> void()@ 
+note_store@note_store(Pid, NoteStore) -> void()@ 
+info@info(Pid) -> [{Key, Value}]@ 
+verbosity@verbosity(Pid, Verbosity) -> void()@ 
+get_log_type@get_log_type(Pid) -> {ok, LogType} | {error, Reason}@ 
+set_log_type@set_log_type(Pid, NewType) -> {ok, OldType} | {error, Reason}@ 

@@ -1,0 +1,5 @@
+chunk@chunk(Continuation) -> chunk_ret() @ Continuation =  continuation()    
+chunk@chunk(Continuation, N) -> chunk_ret() @ Continuation =  N = infinity | integer() >= 1   
+close@close(Continuation) -> ok | {error, Reason}@ Continuation =  Reason =  file:posix()    
+open@open(Filename) -> open_ret() @ Filename = string() | atom()   
+open@open(Filename, N) -> open_ret() @ Filename = string() | atom() N = integer()   

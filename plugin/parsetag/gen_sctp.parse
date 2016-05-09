@@ -1,0 +1,18 @@
+abort@abort(Socket, Assoc) -> ok | {error, inet:posix() }@ Socket =  Assoc = #sctp_assoc_change{}   
+close@close(Socket) -> ok | {error, inet:posix() }@ Socket =  sctp_socket()    
+connect@connect(Socket, Addr, Port, Opts) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, Assoc} | {error, inet:posix() }@ Socket =  Addr =  Port =  Opts = [Opt ::  Assoc = #sctp_assoc_change{}   
+connect@connect(Socket, Addr, Port, Opts, Timeout) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, Assoc} | {error, inet:posix() }@ Socket =  Addr =  Port =  Opts = [Opt ::  Timeout = timeout() Assoc = #sctp_assoc_change{}   
+connect_init@connect_init(Socket, Addr, Port, Opts) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ok | {error, inet:posix() }@ Socket =  Addr =  Port =  Opts = [ option() ]   
+connect_init@connect_init(Socket, Addr, Port, Opts, Timeout) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ok | {error, inet:posix() }@ Socket =  Addr =  Port =  Opts = [ Timeout = timeout()   
+controlling_process@controlling_process(Socket, Pid) -> ok@ Socket =  Pid = pid()   
+eof@eof(Socket, Assoc) -> ok | {error, Reason}@ Socket =  Assoc = #sctp_assoc_change{} Reason = term()   
+listen@listen(Socket, IsServer) -> ok | {error, Reason}</h3><h3>listen(Socket, Backlog) -> ok | {error, Reason}@ Socket =  IsServer = boolean() Reason = term() Backlog = integer()   
+open@open() -> {ok, Socket} | {error, inet:posix() }@ Socket =  sctp_socket()    
+open@open(Port) -> {ok, Socket} | {error, inet:posix() }@ Port =  Socket =  Opts = [Opt] Opt = {ip, IP} IP =  SockType = seqpacket | stream   
+open@open(Port, Opts) -> {ok, Socket} | {error, inet:posix() }@ Opts = [Opt] Opt = {ip, IP} IP =  Port =  SockType = seqpacket | stream Socket =  sctp_socket()    
+peeloff@peeloff(Socket, Assoc) -> {ok, NewSocket} | {error, Reason}@ Socket =  Assoc = #sctp_assoc_change{} |  NewSocket =  Reason = term()   
+recv@recv(Socket) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, {FromIP, FromPort, AncData, Data}} | {error, Reason}@ Socket =  FromIP =  FromPort =  AncData = [#sctp_sndrcvinfo{}] Data = binary() Reason =  inet:posix() <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| #sctp_send_failed{}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| #sctp_paddr_change{}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| #sctp_pdapi_event{}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| #sctp_remote_error{}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| #sctp_shutdown_event{}   
+recv@recv(Socket, Timeout) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, {FromIP, FromPort, AncData, Data}} | {error, Reason}@ Socket =  Timeout = timeout() FromIP =  FromPort =  AncData = [#sctp_sndrcvinfo{}] Data = binary() Reason =  inet:posix() <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| #sctp_send_failed{}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| #sctp_paddr_change{}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| #sctp_pdapi_event{}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| #sctp_remote_error{}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| #sctp_shutdown_event{}   
+send@send(Socket, SndRcvInfo, Data) -> ok | {error, Reason}@ Socket =  SndRcvInfo = #sctp_sndrcvinfo{} Data = binary | iolist() Reason = term()   
+send@send(Socket, Assoc, Stream, Data) -> ok | {error, Reason}@ Socket =  Assoc = #sctp_assoc_change{} |  Stream = integer() Data = binary | iolist() Reason = term()   
+error_string@error_string(ErrorNumber) -> ok | string() | unknown_error@ ErrorNumber = integer()   

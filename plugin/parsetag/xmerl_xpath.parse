@@ -1,0 +1,3 @@
+string@string(Str, Doc) -> [docEntity()] | Scalar
+string@string(Str, Doc, Options) -> [docEntity()] | Scalar
+string@string(Str, Node, Parents, Doc, Options) -> [docEntity()] | Scalar

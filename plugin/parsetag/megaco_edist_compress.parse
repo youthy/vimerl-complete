@@ -1,0 +1,2 @@
+encode@Module:encode(R, Version) -> T@ 
+decode@Module:decode(T, Version) -> R@ 

@@ -1,0 +1,8 @@
+configure@configure(ConfDir) -> void()@ 
+reconfigure@reconfigure(ConfDir) -> void()@ 
+add_sec2group@add_sec2group(SecModel, SecName, GroupName) -> Ret@ 
+delete_sec2group@delete_sec2group(Key) -> Ret@ 
+add_access@add_access(GroupName, Prefix, SecModel, SecLevel, Match, RV, WV, NV) -> Ret@ 
+delete_access@delete_access(Key) -> Ret@ 
+add_view_tree_fam@add_view_tree_fam(ViewIndex, SubTree, Status, Mask) -> Ret@ 
+delete_view_tree_fam@delete_view_tree_fam(Key) -> Ret@ 

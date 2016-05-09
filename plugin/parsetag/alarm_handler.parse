@@ -1,0 +1,3 @@
+clear_alarm@clear_alarm(AlarmId) -> void()@ 
+get_alarms@get_alarms() -> [alarm()]@ 
+set_alarm@set_alarm(alarm())@ 

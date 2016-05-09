@@ -1,0 +1,35 @@
+config@config() -> ok | {error, Reason}@ 
+start@start() -> ok | {error, Reason}@ 
+start@start(Type) -> ok | {error, Reason}@ 
+start_agent@start_agent() -> ok | {error, Reason}@ 
+start_agent@start_agent(Type) -> ok | {error, Reason}@ 
+start_manager@start_manager() -> ok | {error, Reason}@ 
+start_manager@start_manager(Type) -> ok | {error, Reason}@ 
+date_and_time@date_and_time() -> DateAndTime@ 
+date_and_time_to_universal_time_dst@date_and_time_to_universal_time_dst(DateAndTime) -> [utc()]@ 
+date_and_time_to_string@date_and_time_to_string(DateAndTime) -> string()@ 
+date_and_time_to_string@date_and_time_to_string(DateAndTime, Validate) -> string()@ 
+date_and_time_to_string2@date_and_time_to_string2(DateAndTime) -> string()@ 
+local_time_to_date_and_time_dst@local_time_to_date_and_time_dst(Local) -> [DateAndTime]@ 
+universal_time_to_date_and_time@universal_time_to_date_and_time(UTC) -> DateAndTime@ 
+validate_date_and_time@validate_date_and_time(DateAndTime) -> bool()@ 
+validate_date_and_time@validate_date_and_time(DateAndTime, Validate) -> bool()@ 
+passwd2localized_key@passwd2localized_key(Alg, Passwd, EngineID) -> Key@ 
+octet_string_to_bits@octet_string_to_bits(S) -> Val@ 
+bits_to_octet_string@bits_to_octet_string(B) -> Val@ 
+read_mib@read_mib(FileName) -> {ok, mib()} | {error, Reason}@ 
+log_to_txt@log_to_txt(LogDir, Mibs, OutFile, LogName, LogFile) ->  ok | {error, Reason}@ 
+log_to_txt@log_to_txt(LogDir, Mibs, OutFile, LogName, LogFile, Start) ->  ok | {error, Reason}@ 
+log_to_txt@log_to_txt(LogDir, Mibs, OutFile, LogName, LogFile, Start, Stop) -> ok | {error, Reason}@ 
+change_log_size@change_log_size(LogName, NewSize) -> ok | {error, Reason}@ 
+print_version_info@print_version_info() -> void()@ 
+print_version_info@print_version_info(Prefix) -> void()@ 
+versions1@versions1() -> {ok, Info} | {error, Reason}@ 
+versions2@versions2() -> {ok, Info} | {error, Reason}@ 
+print_versions@print_versions(VersionInfo) -> void()@ 
+print_versions@print_versions(Prefix, VersionInfo) -> void()@ 
+enable_trace@enable_trace() -> void()@ 
+disable_trace@disable_trace() -> void()@ 
+set_trace@set_trace(Targets) -> void()@ 
+reset_trace@reset_trace(Targets) -> void()@ 
+set_trace@set_trace(Targets, Opts) -> void()@ 

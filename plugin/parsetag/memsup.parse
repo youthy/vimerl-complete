@@ -1,0 +1,11 @@
+get_memory_data@get_memory_data() -> {Total,Allocated,Worst}@ 
+get_system_memory_data@get_system_memory_data() -> MemDataList@ 
+get_os_wordsize@get_os_wordsize() -> Wordsize@ 
+get_check_interval@get_check_interval() -> MS@ 
+set_check_interval@set_check_interval(Minutes) -> ok@ 
+get_procmem_high_watermark@get_procmem_high_watermark() -> int()@ 
+set_procmem_high_watermark@set_procmem_high_watermark(Float) -> ok@ 
+get_sysmem_high_watermark@get_sysmem_high_watermark() -> int()@ 
+set_sysmem_high_watermark@set_sysmem_high_watermark(Float) -> ok@ 
+get_helper_timeout@get_helper_timeout() -> Seconds@ 
+set_helper_timeout@set_helper_timeout(Seconds) -> ok@ 

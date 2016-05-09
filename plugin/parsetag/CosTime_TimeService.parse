@@ -1,0 +1,4 @@
+universal_time@universal_time(TimeService) -> Reply@ 
+new_universal_time@new_universal_time(TimeService, Time, Inaccuracy, Tdf) -> UTO@ 
+uto_from_utc@uto_from_utc(TimeService, Utc) -> UTO@ 
+new_interval@new_interval(TimeService, Lower, Upper) -> TIO@ 

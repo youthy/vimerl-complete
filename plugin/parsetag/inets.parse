@@ -1,0 +1,9 @@
+services@services() -> [{Service, Pid}]@ 
+services_info@services_info() -> [{Service, Pid, Info}]@ 
+service_names@service_names() -> [Service] @ 
+start@start() -> @ 
+start@start(Type) -> ok | {error, Reason}@ 
+stop@stop() -> ok @ 
+start@start(Service, ServiceConfig) -> {ok, Pid} | {error, Reason}@ 
+start@start(Service, ServiceConfig, How) -> {ok, Pid} | {error, Reason}@ 
+stop@stop(Service, Reference) -> ok | {error, Reason} @ 

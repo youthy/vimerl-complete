@@ -1,0 +1,17 @@
+getbyname@getbyname(Name, Type) -> {ok, Hostent} | {error, Reason}@ Name =  Type =  Hostent =  Reason =  inet:posix()  |  res_error()    
+getbyname@getbyname(Name, Type, Timeout) -> {ok, Hostent} | {error, Reason}@ Name =  Type =  Timeout = timeout() Hostent =  Reason =  inet:posix()  |  res_error()    
+gethostbyaddr@gethostbyaddr(Address) -> {ok, Hostent} | {error, Reason}@ Address =  Hostent =  Reason =  inet:posix()  |  res_error()    
+gethostbyaddr@gethostbyaddr(Address, Timeout) -> {ok, Hostent} | {error, Reason}@ Address =  Timeout = timeout() Hostent =  Reason =  inet:posix()  |  res_error()    
+gethostbyname@gethostbyname(Name) -> {ok, Hostent} | {error, Reason}@ Name =  Hostent =  Reason =  inet:posix()  |  res_error()    
+gethostbyname@gethostbyname(Name, Family) -> {ok, Hostent} | {error, Reason}@ Name =  Hostent =  Family =  Reason =  inet:posix()  |  res_error()    
+gethostbyname@gethostbyname(Name, Family, Timeout) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, Hostent} | {error, Reason}@ Name =  Hostent =  Timeout = timeout() Family =  Reason =  inet:posix()  |  res_error()    
+lookup@lookup(Name, Class, Type) -> [<a href="#type-dns_data" class="seealso">dns_data() ]@ Name =  Class =  Type =  rr_type()    
+lookup@lookup(Name, Class, Type, Opts) -> [<a href="#type-dns_data" class="seealso">dns_data() ]@ Name =  Class =  Type =  Opts = [ res_option()  | verbose]   
+lookup@lookup(Name, Class, Type, Opts, Timeout) -> [<a href="#type-dns_data" class="seealso">dns_data() ]@ Name =  Class =  Type =  Opts = [ Timeout = timeout()   
+resolve@resolve(Name, Class, Type) -> {ok, dns_msg() } | Error@ Name =  Class =  Type =  Error = {error, Reason} | {error, {Reason,  Reason =  inet:posix()  |  res_error()    
+resolve@resolve(Name, Class, Type, Opts) -> {ok, dns_msg() } | Error@ Name =  Class =  Type =  Opts = [Opt] Opt =  Error = {error, Reason} | {error, {Reason,  Reason =  inet:posix()  |  res_error()    
+resolve@resolve(Name, Class, Type, Opts, Timeout) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, dns_msg() } | Error@ Name =  Class =  Type =  Opts = [Opt] Opt =  Timeout = timeout() Error = {error, Reason} | {error, {Reason,  Reason =  inet:posix()  |  res_error()    
+nslookup@nslookup(Name, Class, Type) -> {ok, dns_msg() } | {error, Reason}@ Name =  Class =  Type =  Reason =  inet:posix()  |  res_error()    
+nslookup@nslookup(Name, Class, Type, Timeout) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, dns_msg() } | {error, Reason}@ Name =  Class =  Type =  Timeout = timeout() Reason =  Nameservers = [ nameserver() ]   
+nnslookup@nnslookup(Name, Class, Type, Nameservers) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, dns_msg() } | {error, Reason}@ Name =  Class =  Type =  Nameservers = [ Reason =  inet:posix()    
+nnslookup@nnslookup(Name, Class, Type, Nameservers, Timeout) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, dns_msg() } | {error, Reason}@ Name =  Class =  Type =  Timeout = timeout() Nameservers = [ Reason =  inet:posix()    

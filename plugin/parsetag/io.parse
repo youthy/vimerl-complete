@@ -1,0 +1,41 @@
+columns@columns() -> {ok, integer() >= 1} | {error, enotsup}@ 
+columns@columns(IoDevice) -> {ok, integer() >= 1} | {error, enotsup}@ IoDevice =  device()    
+put_chars@put_chars(CharData) -> ok@ CharData =  unicode:chardata()    
+put_chars@put_chars(IoDevice, IoData) -> ok@ IoDevice =  IoData =  unicode:chardata()    
+nl@nl() -> ok@ 
+nl@nl(IoDevice) -> ok@ IoDevice =  device()    
+get_chars@get_chars(Prompt, Count) -> Data | eof@ Prompt =  Count = integer() >= 0 Data = [ unicode:unicode_char() ] |  unicode:unicode_binary()    
+get_chars@get_chars(IoDevice, Prompt, Count) -> Data | eof | {error, Reason}@ IoDevice =  Prompt =  Count = integer() >= 0 Reason = term() Data = [ unicode:unicode_char() ] |  unicode:unicode_binary()    
+get_line@get_line(Prompt) -> Data | eof | {error, Reason}@ Prompt =  Reason = term() Data = [ unicode:unicode_char() ] |  unicode:unicode_binary()    
+get_line@get_line(IoDevice, Prompt) -> Data | eof | {error, term()}@ IoDevice =  Prompt =  Data = [ unicode:unicode_char() ] |  unicode:unicode_binary()    
+getopts@getopts() -> [<a href="#type-opt_pair" class="seealso">opt_pair() ]@ 
+getopts@getopts(IoDevice) -> [<a href="#type-opt_pair" class="seealso">opt_pair() ]@ IoDevice =  device()    
+setopts@setopts(Opts) -> ok | {error, Reason}@ Opts = [ Reason = term()   
+setopts@setopts(IoDevice, Opts) -> ok | {error, Reason}@ IoDevice =  Opts = [ Reason = term()   
+write@write(Term) -> ok@ Term = term()   
+write@write(IoDevice, Term) -> ok@ IoDevice =  Term = term()   
+read@read(Prompt) -> Result@ Prompt =  Result = {ok, Term :: term()}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| eof<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {error, ErrorInfo ::  erl_scan:error_info() }   
+read@read(IoDevice, Prompt) -> Result@ IoDevice =  Prompt =  Result = {ok, Term :: term()}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| eof<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {error, ErrorInfo ::  erl_scan:error_info() }   
+read@read(IoDevice, Prompt, StartLine) -> Result@ IoDevice =  Prompt =  StartLine =  Result = {ok, Term :: term(), EndLine ::  line() }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {eof, EndLine ::  line() }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {error,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ErrorInfo ::  erl_scan:error_info() ,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ErrorLine ::  line() }   
+fwrite@fwrite(Format) -> ok@ Format =  format()    
+fwrite@fwrite(Format, Data) -> ok@ Format =  Data = [term()]   
+fwrite@fwrite(IoDevice, Format, Data) -> ok@ IoDevice =  Format =  Data = [term()]   
+format@format(Format) -> ok@ Format =  format()    
+format@format(Format, Data) -> ok@ Format =  Data = [term()]   
+format@format(IoDevice, Format, Data) -> ok@ IoDevice =  Format =  Data = [term()]   
+fread@fread(Prompt, Format) -> Result@ Prompt =  Format =  Result = {ok, Terms :: [term()]}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| eof<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {error, What :: term()}   
+fread@fread(IoDevice, Prompt, Format) -> Result@ IoDevice =  Prompt =  Format =  Result = {ok, Terms :: [term()]}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| eof<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {error, What :: term()}   
+rows@rows() -> {ok, integer() >= 1} | {error, enotsup}@ 
+rows@rows(IoDevice) -> {ok, integer() >= 1} | {error, enotsup}@ IoDevice =  device()    
+scan_erl_exprs@scan_erl_exprs(Prompt) -> Result@ Prompt =  Result =  erl_scan:tokens_result()  |  request_error()    
+scan_erl_exprs@scan_erl_exprs(Device, Prompt) -> Result@ Device =  Prompt =  Result =  erl_scan:tokens_result()  |  request_error()    
+scan_erl_exprs@scan_erl_exprs(Device, Prompt, StartLine) -> Result@ Device =  Prompt =  StartLine =  Result =  erl_scan:tokens_result()  |  request_error()    
+scan_erl_form@scan_erl_form(Prompt) -> Result@ Prompt =  Result =  erl_scan:tokens_result()  |  request_error()    
+scan_erl_form@scan_erl_form(IoDevice, Prompt) -> Result@ IoDevice =  Prompt =  Result =  erl_scan:tokens_result()  |  request_error()    
+scan_erl_form@scan_erl_form(IoDevice, Prompt, StartLine) -> Result@ IoDevice =  Prompt =  StartLine =  Result =  erl_scan:tokens_result()  |  request_error()    
+parse_erl_exprs@parse_erl_exprs(Prompt) -> Result@ Prompt =  Result =  parse_ret()    
+parse_erl_exprs@parse_erl_exprs(IoDevice, Prompt) -> Result@ IoDevice =  Prompt =  Result =  parse_ret()    
+parse_erl_exprs@parse_erl_exprs(IoDevice, Prompt, StartLine) -> Result@ IoDevice =  Prompt =  StartLine =  Result =  parse_ret()    
+parse_erl_form@parse_erl_form(Prompt) -> Result@ Prompt =  Result =  parse_form_ret()    
+parse_erl_form@parse_erl_form(IoDevice, Prompt) -> Result@ IoDevice =  Prompt =  Result =  parse_form_ret()    
+parse_erl_form@parse_erl_form(IoDevice, Prompt, StartLine) -> Result@ IoDevice =  Prompt =  StartLine =  Result =  parse_form_ret()    

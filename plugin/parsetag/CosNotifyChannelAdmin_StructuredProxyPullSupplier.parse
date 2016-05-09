@@ -1,0 +1,4 @@
+connect_structured_pull_consumer@connect_structured_pull_consumer(StructuredProxyPullSupplier, PullConsumer) -> Reply@ 
+pull_structured_event@pull_structured_event(StructuredProxyPullSupplier) -> Reply@ 
+try_pull_structured_event@try_pull_structured_event(StructuredProxyPullSupplier) -> Reply@ 
+disconnect_structured_pull_supplier@disconnect_structured_pull_supplier(StructuredProxyPullSupplier) -> ok@ 

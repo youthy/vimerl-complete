@@ -1,0 +1,19 @@
+analyse@analyse() -> {AllCallCount, ModAnalysisList}@ 
+analyse@analyse(Limit) -> {AllCallCount, ModAnalysisList}@ 
+analyse@analyse(Mod, Limit) -> ModAnalysis@ 
+pause@pause() -> integer()@ 
+pause@pause(FuncSpec) -> integer()@ 
+pause@pause(Mod, Func) -> integer()@ 
+pause@pause(Mod, Func, Arity) -> integer()@ 
+restart@restart() -> integer()@ 
+restart@restart(FuncSpec) -> integer()@ 
+restart@restart(Mod, Func) -> integer()@ 
+restart@restart(Mod, Func, Arity) -> integer()@ 
+start@start() -> integer()@ 
+start@start(FuncSpec) -> integer()@ 
+start@start(Mod, Func) -> integer()@ 
+start@start(Mod, Func, Arity) -> integer()@ 
+stop@stop() -> integer()@ 
+stop@stop(FuncSpec) -> integer()@ 
+stop@stop(Mod, Func) -> integer()@ 
+stop@stop(Mod, Func, Arity) -> integer()@ 

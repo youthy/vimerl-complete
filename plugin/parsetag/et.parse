@@ -1,0 +1,6 @@
+trace_me@trace_me(DetailLevel, From, To, Label, Contents) -> hopefully_traced@ 
+trace_me@trace_me(DetailLevel, FromTo, Label, Contents) -> hopefully_traced@ 
+phone_home@phone_home(DetailLevel, FromTo, Label, Contents) -> hopefully_traced@ 
+phone_home@phone_home(DetailLevel, From, To, Label, Contents) -> hopefully_traced@ 
+report_event@report_event(DetailLevel, FromTo, Label, Contents) -> hopefully_traced@ 
+report_event@report_event(DetailLevel, From, To, Label, Contents) -> hopefully_traced@ 

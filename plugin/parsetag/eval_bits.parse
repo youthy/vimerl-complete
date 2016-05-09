@@ -1,0 +1,3 @@
+expr_grp@expr_grp(Fields::[field()], Bindings::bindings(), EvalFun::evalfun(), ListOfBits::term(), X5::term()) -> {value, binary(), bindings()}
+bin_gen@bin_gen(BinPattern::{bin, integer(), [field()]}, Bin::binary(), GlobalEnv::bindings(), LocalEnv::bindings(), MatchFun::matchfun(), EvalFun::evalfun()) -> {match, binary(), bindings()} | {nomatch, binary()} | done
+match_bits@match_bits(Fields::[field()], Bin::binary(), GlobalEnv::bindings(), LocalEnv::bindings(), MatchFun::matchfun(), EvalFun::evalfun(), X7::term()) -> {match, bindings()}

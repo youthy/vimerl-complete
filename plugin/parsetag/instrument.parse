@@ -1,0 +1,16 @@
+allocator_descr@allocator_descr(MemoryData, TypeNo) -> AllocDescr | invalid_type | "unknown"@ 
+block_header_size@block_header_size(MemoryData) -> int()@ 
+class_descr@class_descr(MemoryData, TypeNo) -> ClassDescr | invalid_type | "unknown"@ 
+descr@descr(MemoryData) -> DescrMemoryData@ 
+holes@holes(MemoryData) -> ok@ 
+mem_limits@mem_limits(MemoryData) -> {Low, High}@ 
+memory_data@memory_data() -> MemoryData | false@ 
+memory_status@memory_status(StatusType) -> [StatusInfo] | false@ 
+read_memory_data@read_memory_data(File) -> MemoryData | {error, Reason}@ 
+read_memory_status@read_memory_status(File) -> MemoryStatus | {error, Reason}@ 
+sort@sort(MemoryData) -> MemoryData@ 
+store_memory_data@store_memory_data(File) -> true|false@ 
+store_memory_status@store_memory_status(File) -> true|false@ 
+sum_blocks@sum_blocks(MemoryData) -> int()@ 
+type_descr@type_descr(MemoryData, TypeNo) -> TypeDescr | invalid_type@ 
+type_no_range@type_no_range(MemoryData) -> {Min, Max}@ 

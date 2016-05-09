@@ -1,0 +1,9 @@
+install@install() -> Return@ 
+uninstall@uninstall() -> Return@ 
+start@start() -> Return@ 
+stop@stop() -> Return@ 
+start_factory@start_factory() -> Factory@ 
+start_factory@start_factory(Options) -> Factory@ 
+start_factory_link@start_factory_link() -> Factory@ 
+start_factory_link@start_factory_link(Options) -> Factory@ 
+stop_factory@stop_factory(Factory) -> Reply@ 

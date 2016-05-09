@@ -1,0 +1,22 @@
+start_link@start_link() -> Result@ 
+start_link@start_link(EventMgrName) -> Result@ 
+start@start() -> Result@ 
+start@start(EventMgrName) -> Result@ 
+add_handler@add_handler(EventMgrRef, Handler, Args) -> Result@ 
+add_sup_handler@add_sup_handler(EventMgrRef, Handler, Args) -> Result@ 
+notify@notify(EventMgrRef, Event) -> ok@ 
+sync_notify@sync_notify(EventMgrRef, Event) -> ok@ 
+call@call(EventMgrRef, Handler, Request) -> Result@ 
+call@call(EventMgrRef, Handler, Request, Timeout) -> Result@ 
+delete_handler@delete_handler(EventMgrRef, Handler, Args) -> Result@ 
+swap_handler@swap_handler(EventMgrRef, {Handler1,Args1}, {Handler2,Args2}) -> Result@ 
+swap_sup_handler@swap_sup_handler(EventMgrRef, {Handler1,Args1}, {Handler2,Args2}) -> Result@ 
+which_handlers@which_handlers(EventMgrRef) -> [Handler]@ 
+stop@stop(EventMgrRef) -> ok@ 
+init@Module:init(InitArgs) -> {ok,State} | {ok,State,hibernate} | {error,Reason}@ 
+handle_event@Module:handle_event(Event, State) -> Result@ 
+handle_call@Module:handle_call(Request, State) -> Result@ 
+handle_info@Module:handle_info(Info, State) -> Result@ 
+terminate@Module:terminate(Arg, State) -> term()@ 
+code_change@Module:code_change(OldVsn, State, Extra) -> {ok, NewState}@ 
+format_status@Module:format_status(Opt, [PDict, State]) -> Status@ 

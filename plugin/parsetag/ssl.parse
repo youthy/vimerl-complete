@@ -1,0 +1,18 @@
+cipher_suites@cipher_suites() ->@ 
+cipher_suites@cipher_suites(Type) -> ciphers()@ 
+connect@connect(Socket, SslOptions) -> @ 
+close@close(SslSocket) -> ok | {error, Reason}@ 
+format_error@format_error(Reason) -> string()@ 
+peercert@peercert(Socket) -> {ok, Cert} | {error, Reason}@ 
+recv@recv(Socket, Length) -> @ 
+renegotiate@renegotiate(Socket) -> ok | {error, Reason}@ 
+send@send(Socket, Data) -> ok | {error, Reason}@ 
+setopts@setopts(Socket, Options) -> ok | {error, Reason}@ 
+shutdown@shutdown(Socket, How) -> ok | {error, Reason}@ 
+ssl_accept@ssl_accept(ListenSocket) -> @ 
+ssl_accept@ssl_accept(ListenSocket, Timeout) -> ok | {error, Reason}@ 
+ssl_accept@ssl_accept(ListenSocket, SslOptions, Timeout) -> {ok, Socket} | {error, Reason}@ 
+start@start() -> @ 
+start@start(Type) -> ok | {error, Reason}@ 
+stop@stop() -> ok @ 
+transport_accept@transport_accept(Socket) ->@ 

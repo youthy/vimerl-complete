@@ -1,0 +1,3 @@
+create_channel@create_channel(ChannelFactory, InitialQoS, InitialAdmin) -> Return@ 
+get_all_channels@get_all_channels(ChannelFactory) -> ChannelIDSeq@ 
+get_event_channel@get_event_channel(ChannelFactory, ChannelID) -> Return@ 

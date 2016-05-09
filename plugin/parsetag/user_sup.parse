@@ -1,0 +1,4 @@
+start@start() -> {error, {already_started, pid()}} | {ok, pid()}
+init@init(X1::[]) -> ignore | {error, nouser} | {ok, pid(), pid()}
+relay@relay(Pid::pid()) -> no_return()
+terminate@terminate(Reason::term(), UserPid::pid()) -> ok

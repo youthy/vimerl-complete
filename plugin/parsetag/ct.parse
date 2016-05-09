@@ -1,0 +1,49 @@
+install@install(Opts) -> ok | {error, Reason}
+run@run(TestDir, Suite, Cases) -> Result
+run@run(TestDir, Suite) -> Result
+run@run(TestDirs) -> Result
+run_test@run_test(Opts) -> Result
+run_testspec@run_testspec(TestSpec) -> Result
+step@step(TestDir, Suite, Case) -> Result
+step@step(TestDir, Suite, Case, Opts) -> Result
+start_interactive@start_interactive() -> ok
+stop_interactive@stop_interactive() -> ok
+require@require(Required) -> ok | {error, Reason}
+require@require(Name, Required) -> ok | {error, Reason}
+get_config@get_config(Required) -> Value
+get_config@get_config(Required, Default) -> Value
+get_config@get_config(Required, Default, Opts) -> ValueOrElement
+reload_config@reload_config(Required) -> ValueOrElement
+log@log(Format) -> ok
+log@log(X1, X2) -> ok
+log@log(Category, Format, Args) -> ok
+print@print(Format) -> ok
+print@print(Category, Format, Args) -> ok
+pal@pal(Format) -> ok
+pal@pal(X1, X2) -> ok
+pal@pal(Category, Format, Args) -> ok
+capture_start@capture_start() -> ok
+capture_stop@capture_stop() -> ok
+capture_get@capture_get() -> ListOfStrings
+capture_get@capture_get(ExclCategories) -> ListOfStrings
+fail@fail(Reason) -> void()
+fail@fail(Format, Args) -> void()
+comment@comment(Comment) -> void()
+comment@comment(Format, Args) -> void()
+get_target_name@get_target_name(Handle) -> {ok, TargetName} | {error, Reason}
+parse_table@parse_table(Data) -> {Heading, Table}
+listenv@listenv(Telnet) -> [Env]
+testcases@testcases(TestDir, Suite) -> Testcases | {error, Reason}
+userdata@userdata(TestDir, Suite) -> SuiteUserData | {error, Reason}
+userdata@userdata(TestDir, Suite, Case::GroupOrCase) -> TCUserData | {error, Reason}
+get_status@get_status() -> TestStatus | {error, Reason} | no_tests_running
+abort_current_testcase@abort_current_testcase(Reason) -> ok | {error, no_testcase_running}
+encrypt_config_file@encrypt_config_file(SrcFileName, EncryptFileName) -> ok | {error, Reason}
+encrypt_config_file@encrypt_config_file(SrcFileName, EncryptFileName, KeyOrFile) -> ok | {error, Reason}
+decrypt_config_file@decrypt_config_file(EncryptFileName, TargetFileName) -> ok | {error, Reason}
+decrypt_config_file@decrypt_config_file(EncryptFileName, TargetFileName, KeyOrFile) -> ok | {error, Reason}
+add_config@add_config(Callback, Config) -> ok | {error, Reason}
+remove_config@remove_config(Callback, Config) -> ok
+timetrap@timetrap(Time) -> ok
+get_timetrap_info@get_timetrap_info() -> {Time, Scale}
+sleep@sleep(Time) -> ok

@@ -1,0 +1,5 @@
+module@module(AbsForms) -> {ok, Warnings} | {error, Errors, Warnings}@ AbsForms = [ Warnings = [{ Errors = [{FileName2 ::  ErrorInfo =  error_info()    
+module@module(AbsForms, FileName) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, Warnings} | {error, Errors, Warnings}@ AbsForms = [ FileName = atom() | string() Warnings = [{ Errors = [{FileName2 ::  ErrorInfo =  error_info()    
+module@module(AbsForms, FileName, CompileOptions) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok, Warnings} | {error, Errors, Warnings}@ AbsForms = [ FileName = atom() | string() CompileOptions = [ Warnings = [{ Errors = [{FileName2 ::  ErrorInfo =  error_info()    
+is_guard_test@is_guard_test(Expr) -> boolean()@ Expr =  erl_parse:abstract_expr()    
+format_error@format_error(ErrorDescriptor) -> io_lib:chars() @ ErrorDescriptor =  error_description()    

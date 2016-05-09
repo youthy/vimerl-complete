@@ -1,0 +1,13 @@
+change_key@change_key(RegHandle, Key) -> ReturnValue@ RegHandle =  Key = string() ReturnValue = ok | {error, ErrorId :: atom()}   
+change_key_create@change_key_create(RegHandle, Key) -> ReturnValue@ RegHandle =  Key = string() ReturnValue = ok | {error, ErrorId :: atom()}   
+close@close(RegHandle) -> ok@ RegHandle =  reg_handle()    
+current_key@current_key(RegHandle) -> ReturnValue@ RegHandle =  ReturnValue = {ok, string()}   
+delete_key@delete_key(RegHandle) -> ReturnValue@ RegHandle =  ReturnValue = ok | {error, ErrorId :: atom()}   
+delete_value@delete_value(RegHandle, Name) -> ReturnValue@ RegHandle =  Name =  ReturnValue = ok | {error, ErrorId :: atom()}   
+expand@expand(String) -> ExpandedString@ String = ExpandedString = string()   
+format_error@format_error(ErrorId) -> ErrorString@ ErrorId = atom() ErrorString = string()   
+open@open(OpenModeList) -> ReturnValue@ OpenModeList = [OpenMode] OpenMode = read | write ReturnValue = {ok, RegHandle} | {error, ErrorId :: enotsup} RegHandle =  reg_handle()    
+set_value@set_value(RegHandle, Name, Value) -> ReturnValue@ RegHandle =  Name =  Value =  ReturnValue = ok | {error, ErrorId :: atom()}   
+sub_keys@sub_keys(RegHandle) -> ReturnValue@ RegHandle =  ReturnValue = {ok, [SubKey]} | {error, ErrorId :: atom()} SubKey = string()   
+value@value(RegHandle, Name) -> ReturnValue@ RegHandle =  Name =  ReturnValue = {ok, Value ::  value() }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {error, ErrorId :: atom()}   
+values@values(RegHandle) -> ReturnValue@ RegHandle =  ReturnValue = {ok, [ValuePair]} | {error, ErrorId :: atom()} ValuePair = {Name ::  name() , Value ::  value() }   

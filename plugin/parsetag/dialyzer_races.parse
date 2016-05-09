@@ -1,0 +1,20 @@
+store_race_call@store_race_call(Fun::mfa_or_funlbl(), ArgTypes::[erl_type() (see module erl_types)], Args::[core_vars()], FileLine::file_line(), State::state() (see module dialyzer_dataflow)) -> state() (see module dialyzer_dataflow)
+race@race(State::state() (see module dialyzer_dataflow)) -> state() (see module dialyzer_dataflow)
+format_args@format_args(ArgList::[core_vars()], TypeList::[erl_type() (see module erl_types)], State::state() (see module dialyzer_dataflow), Call::call()) -> args()
+get_race_warnings@get_race_warnings(Races::races(), State::state() (see module dialyzer_dataflow)) -> {races(), state() (see module dialyzer_dataflow)}
+beg_clause_new@beg_clause_new(Arg::var_to_map1(), Pats::var_to_map1(), Guard::cerl() (see module cerl)) -> #beg_clause{arg=undefined | var_to_map1(), pats=undefined | var_to_map1(), guard=undefined | cerl() (see module cerl)}
+cleanup@cleanup(Races::races()) -> races()
+end_case_new@end_case_new(End_clause::[#end_clause{arg=undefined | var_to_map1(), pats=undefined | var_to_map1(), guard=undefined | cerl() (see module cerl)}]) -> #end_case{clauses=undefined | [#end_clause{arg=undefined | var_to_map1(), pats=undefined | var_to_map1(), guard=undefined | cerl() (see module cerl)}]}
+end_clause_new@end_clause_new(Arg::var_to_map1(), Pats::var_to_map1(), Guard::cerl() (see module cerl)) -> #end_clause{arg=undefined | var_to_map1(), pats=undefined | var_to_map1(), guard=undefined | cerl() (see module cerl)}
+get_curr_fun@get_curr_fun(Races::races()) -> mfa_or_funlbl()
+get_curr_fun_args@get_curr_fun_args(Races::races()) -> core_args()
+get_new_table@get_new_table(Races::races()) -> table()
+get_race_analysis@get_race_analysis(Races::races()) -> boolean()
+get_race_list@get_race_list(Races::races()) -> code()
+get_race_list_size@get_race_list_size(Races::races()) -> non_neg_integer()
+let_tag_new@let_tag_new(Var::var_to_map1(), Arg::var_to_map1()) -> #let_tag{var=undefined | var_to_map1(), arg=undefined | var_to_map1()}
+new@new() -> races()
+put_curr_fun@put_curr_fun(CurrFun::mfa_or_funlbl(), CurrFunLabel::label(), Races::races()) -> races()
+put_fun_args@put_fun_args(Args::core_args(), Races::races()) -> races()
+put_race_analysis@put_race_analysis(Analysis::boolean(), Races::races()) -> races()
+put_race_list@put_race_list(RaceList::code(), RaceListSize::non_neg_integer(), Races::races()) -> races()

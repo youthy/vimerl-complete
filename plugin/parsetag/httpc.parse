@@ -1,0 +1,18 @@
+request@request(Url) -> @ 
+request@request(Url, Profile) -> {ok, Result} | {error, Reason}@ 
+request@request(Method, Request, HTTPOptions, Options) -> @ 
+request@request(Method, Request, HTTPOptions, Options, Profile) -> {ok, Result} | {ok, saved_to_file} | {error, Reason}@ 
+cancel_request@cancel_request(RequestId) -> @ 
+cancel_request@cancel_request(RequestId, Profile) -> ok@ 
+set_options@set_options(Options) -> @ 
+set_options@set_options(Options, Profile) -> ok | {error, Reason}@ 
+stream_next@stream_next(Pid) -> ok@ 
+store_cookies@store_cookies(SetCookieHeaders, Url) -> @ 
+store_cookies@store_cookies(SetCookieHeaders, Url, Profile) -> ok | {error, Reason}@ 
+cookie_header@cookie_header(Url) -> @ 
+cookie_header@cookie_header(Url, Profile | Opts) -> header() | {error, Reason}@ 
+cookie_header@cookie_header(Url, Opts, Profile) -> header() | {error, Reason}@ 
+reset_cookies@reset_cookies() -> void()@ 
+reset_cookies@reset_cookies(Profile) -> void()@ 
+which_cookies@which_cookies() -> cookies()@ 
+which_cookies@which_cookies(Profile) -> cookies()@ 

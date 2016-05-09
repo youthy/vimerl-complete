@@ -1,0 +1,8 @@
+compile@compile(Asn1module) -> ok | {error,Reason}@ 
+compile@compile(Asn1module , Options) -> ok | {error,Reason}@ 
+encode@encode(Module,Type,Value)-> {ok,Bytes} | {error,Reason}@ 
+decode@decode(Module,Type,Bytes) -> {ok,Value}|{error,Reason}@ 
+value@value(Module ,Type) -> {ok,Value} | {error,Reason}@ 
+test@test(Module) -> ok | {error,Reason}@ 
+test@test(Module,Type) -> ok | {error,Reason}@ 
+test@test(Module,Type,Value) -> ok | {error,Reason}@ 

@@ -1,0 +1,3 @@
+get_qos@get_qos(Object) -> Reply@ 
+set_qos@set_qos(Object, QoS) -> Reply@ 
+validate_qos@validate_qos(Object, QoS) -> Reply@ 

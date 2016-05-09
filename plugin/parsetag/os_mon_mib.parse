@@ -1,0 +1,2 @@
+load@load(Agent) -> ok | {error, Reason}@ 
+unload@unload(Agent) -> ok | {error, Reason}@ 

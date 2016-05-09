@@ -1,0 +1,80 @@
+start@start() -> ok@ 
+stop@stop() -> ok@ 
+info@info() -> [atom()]@ 
+info_lib@info_lib() -> [{Name,VerNum,VerStr}]@ 
+md4@md4(Data) -> Digest@ 
+md4_init@md4_init() -> Context@ 
+md4_update@md4_update(Context, Data) -> NewContext@ 
+md4_final@md4_final(Context) -> Digest@ 
+md5@md5(Data) -> Digest@ 
+md5_init@md5_init() -> Context@ 
+md5_update@md5_update(Context, Data) -> NewContext@ 
+md5_final@md5_final(Context) -> Digest@ 
+sha@sha(Data) -> Digest@ 
+sha_init@sha_init() -> Context@ 
+sha_update@sha_update(Context, Data) -> NewContext@ 
+sha_final@sha_final(Context) -> Digest@ 
+md5_mac@md5_mac(Key, Data) -> Mac@ 
+md5_mac_96@md5_mac_96(Key, Data) -> Mac@ 
+hmac_init@hmac_init(Type, Key) -> Context@ 
+hmac_update@hmac_update(Context, Data) -> NewContext@ 
+hmac_final@hmac_final(Context) -> Mac@ 
+hmac_final_n@hmac_final_n(Context, HashLen) -> Mac@ 
+sha_mac@sha_mac(Key, Data) -> Mac@ 
+sha_mac@sha_mac(Key, Data, MacLength) -> Mac@ 
+sha_mac_96@sha_mac_96(Key, Data) -> Mac@ 
+des_cbc_encrypt@des_cbc_encrypt(Key, IVec, Text) -> Cipher@ 
+des_cbc_decrypt@des_cbc_decrypt(Key, IVec, Cipher) -> Text@ 
+des_cbc_ivec@des_cbc_ivec(Data) -> IVec@ 
+des_cfb_encrypt@des_cfb_encrypt(Key, IVec, Text) -> Cipher@ 
+des_cfb_decrypt@des_cfb_decrypt(Key, IVec, Cipher) -> Text@ 
+des_cfb_ivec@des_cfb_ivec(IVec, Data) -> NextIVec@ 
+des3_cbc_encrypt@des3_cbc_encrypt(Key1, Key2, Key3, IVec, Text) -> Cipher@ 
+des3_cbc_decrypt@des3_cbc_decrypt(Key1, Key2, Key3, IVec, Cipher) -> Text@ 
+des3_cfb_encrypt@des3_cfb_encrypt(Key1, Key2, Key3, IVec, Text) -> Cipher@ 
+des3_cfb_decrypt@des3_cfb_decrypt(Key1, Key2, Key3, IVec, Cipher) -> Text@ 
+des_ecb_encrypt@des_ecb_encrypt(Key, Text) -> Cipher@ 
+des_ecb_decrypt@des_ecb_decrypt(Key, Cipher) -> Text@ 
+blowfish_ecb_encrypt@blowfish_ecb_encrypt(Key, Text) -> Cipher@ 
+blowfish_ecb_decrypt@blowfish_ecb_decrypt(Key, Text) -> Cipher@ 
+blowfish_cbc_encrypt@blowfish_cbc_encrypt(Key, IVec, Text) -> Cipher@ 
+blowfish_cbc_decrypt@blowfish_cbc_decrypt(Key, IVec, Text) -> Cipher@ 
+blowfish_cfb64_encrypt@blowfish_cfb64_encrypt(Key, IVec, Text) -> Cipher@ 
+blowfish_cfb64_decrypt@blowfish_cfb64_decrypt(Key, IVec, Text) -> Cipher@ 
+blowfish_ofb64_encrypt@blowfish_ofb64_encrypt(Key, IVec, Text) -> Cipher@ 
+aes_cfb_128_encrypt@aes_cfb_128_encrypt(Key, IVec, Text) -> Cipher@ 
+aes_cbc_128_encrypt@aes_cbc_128_encrypt(Key, IVec, Text) -> Cipher@ 
+aes_cfb_128_decrypt@aes_cfb_128_decrypt(Key, IVec, Cipher) -> Text@ 
+aes_cbc_128_decrypt@aes_cbc_128_decrypt(Key, IVec, Cipher) -> Text@ 
+aes_cbc_ivec@aes_cbc_ivec(Data) -> IVec@ 
+aes_ctr_encrypt@aes_ctr_encrypt(Key, IVec, Text) -> Cipher@ 
+aes_ctr_decrypt@aes_ctr_decrypt(Key, IVec, Cipher) -> Text@ 
+aes_ctr_stream_init@aes_ctr_stream_init(Key, IVec) -> State@ 
+aes_ctr_stream_encrypt@aes_ctr_stream_encrypt(State, Text) -> { NewState, Cipher}@ 
+aes_ctr_stream_decrypt@aes_ctr_stream_decrypt(State, Cipher) -> { NewState, Text }@ 
+erlint@erlint(Mpint) -> N@ 
+mpint@mpint(N) -> Mpint@ 
+rand_bytes@rand_bytes(N) -> binary()@ 
+strong_rand_bytes@strong_rand_bytes(N) -> binary()@ 
+rand_uniform@rand_uniform(Lo, Hi) -> N@ 
+strong_rand_mpint@strong_rand_mpint(N, Top, Bottom) -> Mpint@ 
+mod_exp@mod_exp(N, P, M) -> Result@ 
+rsa_sign@rsa_sign(Data, Key) -> Signature@ 
+rsa_sign@rsa_sign(DigestType, Data, Key) -> Signature@ 
+rsa_verify@rsa_verify(Data, Signature, Key) -> Verified@ 
+rsa_verify@rsa_verify(DigestType, Data, Signature, Key) -> Verified @ 
+rsa_public_encrypt@rsa_public_encrypt(PlainText, PublicKey, Padding) -> ChipherText@ 
+rsa_private_decrypt@rsa_private_decrypt(ChipherText, PrivateKey, Padding) -> PlainText@ 
+rsa_private_encrypt@rsa_private_encrypt(PlainText, PrivateKey, Padding) -> ChipherText@ 
+rsa_public_decrypt@rsa_public_decrypt(ChipherText, PublicKey, Padding) -> PlainText@ 
+dss_sign@dss_sign(Data, Key) -> Signature@ 
+dss_sign@dss_sign(DigestType, Data, Key) -> Signature@ 
+dss_verify@dss_verify(Data, Signature, Key) -> Verified@ 
+dss_verify@dss_verify(DigestType, Data, Signature, Key) -> Verified@ 
+rc2_cbc_encrypt@rc2_cbc_encrypt(Key, IVec, Text) -> Cipher@ 
+rc2_cbc_decrypt@rc2_cbc_decrypt(Key, IVec, Cipher) -> Text@ 
+rc4_encrypt@rc4_encrypt(Key, Data) -> Result@ 
+dh_generate_key@dh_generate_key(DHParams) -> {PublicKey,PrivateKey} @ 
+dh_generate_key@dh_generate_key(PrivateKey, DHParams) -> {PublicKey,PrivateKey} @ 
+dh_compute_key@dh_compute_key(OthersPublicKey, MyPrivateKey, DHParams) -> SharedSecret@ 
+exor@exor(Data1, Data2) -> Result@ 

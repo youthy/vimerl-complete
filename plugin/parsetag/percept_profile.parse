@@ -1,0 +1,2 @@
+start@start(Filename::string()) -> {ok, Port} | {already_started, Port}
+stop@stop() -> ok | {error, not_started}

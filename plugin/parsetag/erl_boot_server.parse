@@ -1,0 +1,5 @@
+start@start(Slaves) -> {ok, Pid} | {error, What}@ Slaves = [Host] Host = atom() Pid = pid() What = any()   
+start_link@start_link(Slaves) -> {ok, Pid} | {error, What}@ Slaves = [Host] Host = atom() Pid = pid() What = any()   
+add_slave@add_slave(Slave) -> ok | {error, What}@ Slave = Host Host = atom() What = any()   
+delete_slave@delete_slave(Slave) -> ok | {error, What}@ Slave = Host Host = atom() What = any()   
+which_slaves@which_slaves() -> Slaves@ Slaves = [Host] Host = atom()   

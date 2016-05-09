@@ -1,0 +1,17 @@
+new@new/0@ 
+is_set@is_set/1@ 
+size@size/1@ 
+to_list@to_list/1@ 
+from_list@from_list/1@ 
+is_element@is_element/2@ 
+add_element@add_element/2@ 
+del_element@del_element/2@ 
+union@union/2@ 
+union@union/1@ 
+intersection@intersection/2@ 
+intersection@intersection/1@ 
+is_disjoint@is_disjoint/2@ 
+subtract@subtract/2@ 
+is_subset@is_subset/2@ 
+fold@fold/3@ 
+filter@filter/2@ 

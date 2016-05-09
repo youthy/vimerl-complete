@@ -1,0 +1,13 @@
+add@add(TarDescriptor, Filename, Options) -> RetValue@ 
+add@add(TarDescriptor, FilenameOrBin, NameInArchive, Options) -> RetValue @ 
+close@close(TarDescriptor)@ 
+create@create(Name, FileList) ->RetValue @ 
+create@create(Name, FileList, OptionList)@ 
+extract@extract(Name) -> RetValue@ 
+extract@extract(Name, OptionList)@ 
+format_error@format_error(Reason) -> string()@ 
+open@open(Name, OpenModeList) -> RetValue@ 
+table@table(Name) -> RetValue@ 
+table@table(Name, Options)@ 
+t@t(Name)@ 
+tt@tt(Name)@ 

@@ -1,0 +1,28 @@
+bt@bt(Pid) -> ok | undefined@ Pid = pid()   
+c@c(File) -> {ok, Module} | error@ File =  Module = module()   
+c@c(File, Options) -> {ok, Module} | error@ File =  Options = [ Module = module()   
+cd@cd(Dir) -> ok@ Dir =  file:name()    
+flush@flush() -> ok@ 
+help@help() -> ok@ 
+i@i() -> ok@ 
+ni@ni() -> ok@ 
+i@i(X, Y, Z) -> [{atom(), term()}]@ X = Y = Z = integer() >= 0   
+l@l(Module) -> code:load_ret() @ Module = module()   
+lc@lc(Files) -> ok@ 
+ls@ls() -> ok@ 
+ls@ls(Dir) -> ok@ Dir =  file:name()    
+m@m() -> ok@ 
+m@m(Module) -> ok@ Module = module()   
+memory@memory() -> [{Type, Size}]@ Type = atom() Size = integer() >= 0   
+memory@memory(Type) -> Size</h3><h3>memory(Types) -> [{Type, Size}]@ Type = atom() Size = integer() >= 0 Types = [Type]   
+nc@nc(File) -> {ok, Module} | error@ File =  Module = module()   
+nc@nc(File, Options) -> {ok, Module} | error@ File =  Options = [Option] | Option Option =  Module = module()   
+nl@nl(Module) -> abcast | error@ Module = module()   
+pid@pid(X, Y, Z) -> pid()@ X = Y = Z = integer() >= 0   
+pwd@pwd() -> ok@ 
+q@q() -> no_return()@ 
+regs@regs() -> ok@ 
+nregs@nregs() -> ok@ 
+xm@xm(ModSpec) -> void()@ 
+y@y(File) -> YeccRet@ 
+y@y(File, Options) -> YeccRet@ 

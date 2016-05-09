@@ -1,0 +1,4 @@
+init_mpd@init_mpd(Vsns) -> mpd_state()@ 
+process_msg@process_msg(Msg, TDomain, Addr, Port, State, NoteStore, Logger) -> {ok, Vsn, Pdu, PduMS, MsgData} | {discarded, Reason}@ 
+generate_msg@generate_msg(Vsn, NoteStore, Pdu, MsgData, Logger) -> {ok, Packet} | {discarded, Reason}@ 
+generate_response_msg@generate_response_msg(Vsn, Pdu, MsgData, Logger) -> {ok, Packet} | {discarded, Reason}@ 

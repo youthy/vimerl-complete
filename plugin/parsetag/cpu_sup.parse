@@ -1,0 +1,6 @@
+nprocs@nprocs() -> UnixProcesses | {error, Reason}@ 
+avg1@avg1() -> SystemLoad | {error, Reason}@ 
+avg5@avg5() -> SystemLoad | {error, Reason}@ 
+avg15@avg15() -> SystemLoad | {error, Reason}@ 
+util@util() -> CpuUtil | {error, Reason}@ 
+util@util(Opts) -> UtilSpec | {error, Reason}@ 

@@ -1,0 +1,8 @@
+delete@delete(Index) -> true@ 
+delete@delete(Index, Key) -> NewIndex@ 
+get@get(Index, KeyOid) -> {ok, {KeyOid, Value}} | undefined@ 
+get_last@get_last(Index) -> {ok, {KeyOid, Value}} | undefined@ 
+get_next@get_next(Index, KeyOid) -> {ok, {NextKeyOid, Value}} | undefined@ 
+insert@insert(Index, Key, Value) -> NewIndex@ 
+key_to_oid@key_to_oid(Index, Key) -> KeyOid@ 
+new@new(KeyTypes) -> Index@ 

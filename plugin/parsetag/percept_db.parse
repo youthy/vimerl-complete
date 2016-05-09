@@ -1,0 +1,5 @@
+start@start() -> ok | {started, Pid} | {restarted, Pid}
+stop@stop() -> not_started | {stopped, Pid}
+insert@insert(Trace::tuple()) -> ok
+select@select(Query::{atom(), Options}) -> Result
+consolidate@consolidate() -> Result

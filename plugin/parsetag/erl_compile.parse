@@ -1,0 +1,1 @@
+compile_cmdline@compile_cmdline(List::[cmd_line_arg()]) -> no_return()

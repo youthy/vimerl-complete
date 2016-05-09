@@ -1,0 +1,30 @@
+null@null() -> TC@ 
+void@void() -> TC@ 
+short@short() -> TC@ 
+unsigned_short@unsigned_short() -> TC@ 
+long@long() -> TC@ 
+unsigned_long@unsigned_long() -> TC@ 
+long_long@long_long() -> TC@ 
+unsigned_long_long@unsigned_long_long() -> TC@ 
+wchar@wchar() -> TC@ 
+float@float() -> TC@ 
+double@double() -> TC@ 
+boolean@boolean() -> TC@ 
+char@char() -> TC@ 
+octet@octet() -> TC@ 
+any@any() -> TC@ 
+typecode@typecode() -> TC@ 
+principal@principal() -> TC@ 
+object_reference@object_reference(Id, Name) -> TC@ 
+struct@struct(Id, Name, ElementList) -> TC@ 
+union@union(Id, Name, DiscrTC, Default, ElementList) -> TC@ 
+enum@enum(Id, Name, ElementList) -> TC@ 
+string@string(Length) -> TC@ 
+wstring@wstring(Length) -> TC@ 
+fixed@fixed(Digits, Scale) -> TC@ 
+sequence@sequence(ElemTC, Length) -> TC@ 
+array@array(ElemTC, Length) -> TC@ 
+alias@alias(Id, Name, AliasTC) -> TC@ 
+exception@exception(Id, Name, ElementList) -> TC@ 
+get_tc@get_tc(Object) -> TC@ 
+check_tc@check_tc(TC) -> boolean()@ 

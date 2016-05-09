@@ -1,0 +1,3 @@
+file@file(Name::filename() (see module file)) -> ok | {error, term()}
+files@files(Fs::[filename() (see module file)]) -> ok
+format_error@format_error(Es::term()) -> iolist()

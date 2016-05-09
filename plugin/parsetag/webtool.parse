@@ -1,0 +1,6 @@
+start@start()-> {ok,Pid}| {stop,Reason}@ 
+start@start(Path,Data)->{ok,Pid}|{stop,Reason}@ 
+stop@stop()->void@ 
+debug_app@debug_app(Module)->void@ 
+stop_debug@stop_debug()->void@ 
+Func@Module:Func(Data)-> {Name,WebData}|error@ 

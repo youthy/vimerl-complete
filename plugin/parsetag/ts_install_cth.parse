@@ -1,0 +1,15 @@
+id@id(Opts::term()) -> Id::term()
+init@init(Id::term(), Opts::proplist() (see module proplists)) -> {ok, State::#state{}}
+pre_init_per_suite@pre_init_per_suite(Suite::atom(), Config::config(), State::#state{}) -> {config() | skip_or_fail(), NewState::#state{}}
+post_init_per_suite@post_init_per_suite(Suite::atom(), Config::config(), Return::config() | skip_or_fail(), State::#state{}) -> {config() | skip_or_fail(), NewState::#state{}}
+pre_end_per_suite@pre_end_per_suite(Suite::atom(), Config::config() | skip_or_fail(), State::#state{}) -> {ok | skip_or_fail(), NewState::#state{}}
+post_end_per_suite@post_end_per_suite(Suite::atom(), Config::config(), Return::term(), State::#state{}) -> {ok | skip_or_fail(), NewState::#state{}}
+pre_init_per_group@pre_init_per_group(Group::atom(), Config::config(), State::#state{}) -> {config() | skip_or_fail(), NewState::#state{}}
+post_init_per_group@post_init_per_group(Group::atom(), Config::config(), Return::config() | skip_or_fail(), State::#state{}) -> {config() | skip_or_fail(), NewState::#state{}}
+pre_end_per_group@pre_end_per_group(Group::atom(), Config::config() | skip_or_fail(), State::#state{}) -> {ok | skip_or_fail(), NewState::#state{}}
+post_end_per_group@post_end_per_group(Group::atom(), Config::config(), Return::term(), State::#state{}) -> {ok | skip_or_fail(), NewState::#state{}}
+pre_init_per_testcase@pre_init_per_testcase(TC::atom(), Config::config(), State::#state{}) -> {config() | skip_or_fail(), NewState::#state{}}
+post_end_per_testcase@post_end_per_testcase(TC::atom(), Config::config(), Return::term(), State::#state{}) -> {ok | skip_or_fail(), NewState::#state{}}
+on_tc_fail@on_tc_fail(TC::init_per_suite | end_per_suite | init_per_group | end_per_group | atom(), Reason::term(), State::#state{}) -> NewState::#state{}
+on_tc_skip@on_tc_skip(TC::end_per_suite | init_per_group | end_per_group | atom(), Reason::{tc_auto_skip, {failed, {Mod::atom(), Function::atom(), Reason::term()}}} | {tc_user_skip, {skipped, Reason::term()}}, State::#state{}) -> NewState::#state{}
+terminate@terminate(State::#state{}) -> term()

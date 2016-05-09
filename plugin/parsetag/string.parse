@@ -1,0 +1,35 @@
+len@len/1@ 
+equal@equal/2@ 
+concat@concat/2@ 
+chr@chr/2@ 
+rchr@rchr/2@ 
+str@str/2@ 
+rstr@rstr/2@ 
+span@span/2@ 
+cspan@cspan/2@ 
+substr@substr/2@ 
+substr@substr/3@ 
+tokens@tokens/2@ 
+join@join/2@ 
+chars@chars/2@ 
+chars@chars/3@ 
+copies@copies/2@ 
+words@words/1@ 
+words@words/2@ 
+sub_word@sub_word/2@ 
+sub_word@sub_word/3@ 
+strip@strip/1@ 
+strip@strip/2@ 
+strip@strip/3@ 
+left@left/2@ 
+left@left/3@ 
+right@right/2@ 
+right@right/3@ 
+centre@centre/2@ 
+centre@centre/3@ 
+sub_string@sub_string/2@ 
+sub_string@sub_string/3@ 
+to_float@to_float(String) -> {Float,Rest} | {error,Reason} @ 
+to_integer@to_integer(String) -> {Int,Rest} | {error,Reason} @ 
+to_lower@to_lower/1@ 
+to_upper@to_upper/1@ 

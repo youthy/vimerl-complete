@@ -1,0 +1,23 @@
+send@send(Pid::pid(), Data::iodata()) -> ok | {error, reason()}
+recv@recv(Pid::pid(), Length::integer(), Timeout::timeout()) -> {ok, binary() | list()} | {error, reason()}
+connect@connect(Host::host(), Port::port_number() (see module inet), Socket::port(), Options::{#ssl_options{}, #socket_options{}}, User::pid(), CbInfo::tuple(), Timeout::timeout()) -> {ok, #sslsocket{}} | {error, reason()}
+ssl_accept@ssl_accept(Port::port_number() (see module inet), Socket::port(), Opts::{#ssl_options{}, #socket_options{}}, User::pid(), CbInfo::tuple(), Timeout::timeout()) -> {ok, #sslsocket{}} | {error, reason()}
+handshake@handshake(Sslsocket::#sslsocket{}, Timeout::timeout()) -> ok | {error, reason()}
+socket_control@socket_control(Socket::port(), Pid::pid(), CbModule::atom()) -> {ok, #sslsocket{}} | {error, reason()}
+close@close(ConnectionPid::pid()) -> ok | {error, reason()}
+shutdown@shutdown(ConnectionPid::pid(), How::atom()) -> ok | {error, reason()}
+new_user@new_user(ConnectionPid::pid(), User::pid()) -> ok | {error, reason()}
+sockname@sockname(ConnectionPid::pid()) -> {ok, {ip_address() (see module inet), port_number() (see module inet)}} | {error, reason()}
+peername@peername(ConnectionPid::pid()) -> {ok, {ip_address() (see module inet), port_number() (see module inet)}} | {error, reason()}
+get_opts@get_opts(ConnectionPid::pid(), OptTags::list()) -> {ok, list()} | {error, reason()}
+set_opts@set_opts(ConnectionPid::pid(), Options::list()) -> ok | {error, reason()}
+info@info(ConnectionPid::pid()) -> {ok, {atom(), tuple()}} | {error, reason()}
+session_info@session_info(ConnectionPid::pid()) -> {ok, list()} | {error, reason()}
+peer_certificate@peer_certificate(ConnectionPid::pid()) -> {ok, binary() | undefined} | {error, reason()}
+renegotiation@renegotiation(ConnectionPid::pid()) -> ok | {error, reason()}
+start_link@start_link(Role::atom(), Host::host(), Port::port_number() (see module inet), Socket::port(), Options::list(), User::pid(), CbInfo::tuple()) -> {ok, pid()} | ignore | {error, reason()}
+hello@hello(Hello_request::start | #hello_request{} | #client_hello{} | #server_hello{} | term(), State::#state{}) -> gen_fsm_state_return()
+abbreviated@abbreviated(Hello_request::#hello_request{} | #finished{} | term(), State::#state{}) -> gen_fsm_state_return()
+certify@certify(Hello_request::#hello_request{} | #certificate{} | #server_key_exchange{} | #certificate_request{} | #server_hello_done{} | #client_key_exchange{} | term(), State::#state{}) -> gen_fsm_state_return()
+cipher@cipher(Hello_request::#hello_request{} | #certificate_verify{} | #finished{} | term(), State::#state{}) -> gen_fsm_state_return()
+connection@connection(Hello_request::#hello_request{} | #client_hello{} | term(), State::#state{}) -> gen_fsm_state_return()

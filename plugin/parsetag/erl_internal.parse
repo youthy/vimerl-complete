@@ -1,0 +1,9 @@
+bif@bif(Name, Arity) -> boolean()@ Name = atom() Arity = arity()   
+guard_bif@guard_bif(Name, Arity) -> boolean()@ Name = atom() Arity = arity()   
+type_test@type_test(Name, Arity) -> boolean()@ Name = atom() Arity = arity()   
+arith_op@arith_op(OpName, Arity) -> boolean()@ OpName = atom() Arity = arity()   
+bool_op@bool_op(OpName, Arity) -> boolean()@ OpName = atom() Arity = arity()   
+comp_op@comp_op(OpName, Arity) -> boolean()@ OpName = atom() Arity = arity()   
+list_op@list_op(OpName, Arity) -> boolean()@ OpName = atom() Arity = arity()   
+send_op@send_op(OpName, Arity) -> boolean()@ OpName = atom() Arity = arity()   
+op_type@op_type(OpName, Arity) -> Type@ OpName = atom() Arity = arity() Type = arith | bool | comp | list | send   

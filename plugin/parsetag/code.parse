@@ -1,0 +1,35 @@
+set_path@set_path(Path) -> true | {error, What}@ Path = [Dir ::  What = bad_directory | bad_path   
+get_path@get_path() -> Path@ Path = [Dir ::  file:filename() ]   
+add_path@add_path(Dir) -> add_path_ret() @ Dir =  file:filename()    
+add_pathz@add_pathz(Dir) -> add_path_ret() @ Dir =  file:filename()    
+add_patha@add_patha(Dir) -> add_path_ret() @ Dir =  file:filename()    
+add_paths@add_paths(Dirs) -> ok@ Dirs = [Dir ::  file:filename() ]   
+add_pathsz@add_pathsz(Dirs) -> ok@ Dirs = [Dir ::  file:filename() ]   
+add_pathsa@add_pathsa(Dirs) -> ok@ Dirs = [Dir ::  file:filename() ]   
+del_path@del_path(NameOrDir) -> boolean() | {error, What}@ NameOrDir = Name | Dir Name = atom() Dir =  What = bad_name   
+replace_path@replace_path(Name, Dir) -> true | {error, What}@ Name = atom() Dir =  What = bad_directory | bad_name | {badarg, term()}   
+load_file@load_file(Module) -> load_ret() @ Module = module()   
+load_abs@load_abs(Filename) -> load_ret() @ Filename =  file:filename()    
+ensure_loaded@ensure_loaded(Module) -> {module, Module} | {error, What}@ Module = module() What = embedded | badfile | native_code | nofile | on_load   
+load_binary@load_binary(Module, Filename, Binary) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{module, Module} | {error, What}@ Module = module() Filename =  Binary = binary() What = badarg |  load_error_rsn()    
+delete@delete(Module) -> boolean()@ Module = module()   
+purge@purge(Module) -> boolean()@ Module = module()   
+soft_purge@soft_purge(Module) -> boolean()@ Module = module()   
+is_loaded@is_loaded(Module) -> {file, Loaded} | false@ Module = module() Loaded =  loaded_filename()    
+all_loaded@all_loaded() -> [{Module, Loaded}]@ Module = module() Loaded =  loaded_filename()    
+which@which(Module) -> Which@ Module = module() Which =  file:filename()  |  loaded_ret_atoms()  | non_existing   
+get_object_code@get_object_code(Module) -> {Module, Binary, Filename} | error@ Module = module() Binary = binary() Filename =  file:filename()    
+root_dir@root_dir() -> file:filename() @ 
+lib_dir@lib_dir() -> file:filename() @ 
+lib_dir@lib_dir(Name) -> file:filename()  | {error, bad_name}@ Name = atom()   
+lib_dir@lib_dir(Name, SubDir) -> file:filename()  | {error, bad_name}@ Name = SubDir = atom()   
+compiler_dir@compiler_dir() -> file:filename() @ 
+priv_dir@priv_dir(Name) -> file:filename()  | {error, bad_name}@ Name = atom()   
+objfile_extension@objfile_extension() -> nonempty_string()@ 
+stick_dir@stick_dir(Dir) -> ok | error@ Dir =  file:filename()    
+unstick_dir@unstick_dir(Dir) -> ok | error@ Dir =  file:filename()    
+is_sticky@is_sticky(Module) -> boolean()@ Module = module()   
+rehash@rehash() -> ok@ 
+where_is_file@where_is_file(Filename) -> non_existing | Absname@ Filename = Absname =  file:filename()    
+clash@clash() -> ok@ 
+is_module_native@is_module_native(Module) -> boolean() | undefined@ 

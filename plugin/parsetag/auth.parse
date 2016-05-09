@@ -1,0 +1,5 @@
+is_auth@is_auth(Node) -> yes | no@ Node = node()   
+cookie@cookie() -> Cookie@ Cookie =  cookie()    
+cookie@cookie(TheCookie) -> true@ TheCookie = Cookie | [Cookie] Cookie =  cookie()    
+node_cookie@node_cookie([Node, Cookie]) -> yes | no@ 
+node_cookie@node_cookie(Node, Cookie) -> yes | no@ Node = node() Cookie =  cookie()    

@@ -1,0 +1,14 @@
+start@start() -> {ok, Pid} | {error, {already_started, Pid}}@ 
+stop@stop() -> ok@ 
+stop@stop(Reason) -> ok@ 
+apply@apply(Func, Args) -> term()@ 
+apply@apply(Module, Function, Args) -> term()@ 
+apply@apply(Module, Function, Args, OptionList) -> term()@ 
+trace@trace(start, Filename) -> ok | {error, Reason} |  {'EXIT', ServerPid, Reason}@ 
+trace@trace(verbose) -> ok | {error, Reason} |  {'EXIT', ServerPid, Reason}@ 
+profile@profile() -> ok | {error, Reason} |  {'EXIT', ServerPid, Reason}@ 
+profile@profile(OptionName, OptionValue) -> ok | {error, Reason} |  {'EXIT', ServerPid, Reason}@ 
+profile@profile(OptionName) -> ok | {error, Reason} |  {'EXIT', ServerPid, Reason}@ 
+analyse@analyse() -> ok | {error, Reason} |  {'EXIT', ServerPid, Reason}@ 
+analyse@analyse(OptionName, OptionValue) -> ok | {error, Reason} |  {'EXIT', ServerPid, Reason}@ 
+analyse@analyse(OptionName) -> ok | {error, Reason} |  {'EXIT', ServerPid, Reason}@ 

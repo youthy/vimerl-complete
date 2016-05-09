@@ -1,0 +1,6 @@
+history@history(N) -> integer() >= 0@ N = integer() >= 0   
+results@results(N) -> integer() >= 0@ N = integer() >= 0   
+catch_exception@catch_exception(Bool) -> Bool@ 
+prompt_func@prompt_func(PromptFunc) -> PromptFunc@ PromptFunc = default | {module(), atom()}   
+start_restricted@start_restricted(Module) -> {error, Reason}@ Module = module() Reason =  code:load_error_rsn()    
+stop_restricted@stop_restricted() -> no_return()@ 

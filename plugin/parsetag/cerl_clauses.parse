@@ -1,0 +1,7 @@
+is_catchall@is_catchall(Clause::cerl()) -> boolean()
+any_catchall@any_catchall(Clauses::[cerl()]) -> boolean()
+eval_guard@eval_guard(Expr::cerl()) -> none | {value, term()}
+reduce@reduce(Cs::Clauses) -> {true, {Clause, Bindings}} | {false, Clauses}
+reduce@reduce(Clauses::[Clause], Exprs::[Expr]) -> {true, {Clause, Bindings}} | {false, [Clause]}
+match@match(Pattern::cerl(), E::Expr) -> none | {true, Bindings} | {false, Bindings}
+match_list@match_list(Patterns::[cerl()], Exprs::[Expr]) -> none | {true, Bindings} | {false, Bindings}

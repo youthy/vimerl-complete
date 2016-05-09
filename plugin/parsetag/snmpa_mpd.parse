@@ -1,0 +1,8 @@
+init@init(Vsns) -> mpd_state()@ 
+process_packet@process_packet(Packet, TDomain, TAddress, State, NoteStore, Log) -> {ok, Vsn, Pdu, PduMS, ACMData} | {discarded, Reason} | {discovery, DiscoPacket}@ 
+process_packet@process_packet(Packet, TDomain, TAddress, LocalEngineID, State, NoteStore, Log) -> {ok, Vsn, Pdu, PduMS, ACMData} | {discarded, Reason} | {discovery, DiscoPacket}@ 
+generate_response_msg@generate_response_msg(Vsn, RePdu, Type, ACMData, Log) -> {ok, Packet} | {discarded, Reason}@ 
+generate_response_msg@generate_response_msg(Vsn, RePdu, Type, ACMData, LocalEngineID, Log) -> {ok, Packet} | {discarded, Reason}@ 
+generate_msg@generate_msg(Vsn, NoteStore, Pdu, MsgData, To) -> {ok, PacketsAndAddresses} | {discarded, Reason}@ 
+generate_msg@generate_msg(Vsn, NoteStore, Pdu, MsgData, LocalEngineID, To) -> {ok, PacketsAndAddresses} | {discarded, Reason}@ 
+discarded_pdu@discarded_pdu(Variable) -> void()@ 

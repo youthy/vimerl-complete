@@ -1,0 +1,2 @@
+decode@decode(Bin::binary(), Type::public_key | ssh_file()) -> [{public_key(), Attributes::list()}]
+encode@encode(Entries::[{public_key(), Attributes::list()}], Type::ssh_file()) -> binary()

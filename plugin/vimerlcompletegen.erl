@@ -4,6 +4,7 @@
 -define(RE_FUNCTION, "<h3 id=\"(?<name>\\w+)\/\\d+\">(?<detail>.*)</h3>\\s+(?<type><ul.*/ul>\|\\s+)").
 
 main([Path]) ->
+    delete_previous_file(),
     Files = filelib:wildcard(Path ++"/" ++ "*/*.html"),
     lists:map(fun parse_file/1, Files),
     io:format("~p~n", [Files]).
@@ -14,6 +15,10 @@ parse_file(FileName) ->
     BaseName = filename:basename(FileName),
     [Module, _] = string:tokens(BaseName, "."),
     ok = file:write_file(get_output_file(Module), Data).
+
+delete_previous_file() ->
+    Files = filelib:wildcard(get_output_dir() ++ "*.parse"),
+    lists:map(fun(F) -> file:delete(F) end, Files).
 
 parse_bin(Bin) ->
     case re:run(Bin, ?RE_FUNCTION, [global, {capture, [name, detail, type], binary}]) of

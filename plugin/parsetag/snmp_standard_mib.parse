@@ -1,0 +1,6 @@
+configure@configure(ConfDir) -> void()@ 
+inc@inc(Name) -> void()@ 
+inc@inc(Name, N) -> void()@ 
+reconfigure@reconfigure(ConfDir) -> void()@ 
+reset@reset() -> void()@ 
+sys_up_time@sys_up_time() -> Time@ 

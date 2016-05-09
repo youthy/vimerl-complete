@@ -1,0 +1,2 @@
+fallback_receiver@fallback_receiver(Master::pid(), FA::fallback_args()) -> no_return()
+uninstall_fallback_master@uninstall_fallback_master(ClientPid::pid(), FA::fallback_args()) -> no_return()

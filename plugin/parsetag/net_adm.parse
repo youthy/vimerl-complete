@@ -1,0 +1,10 @@
+dns_hostname@dns_hostname(Host) -> {ok, Name} | {error, Host}@ Host = atom() | string() Name = string()   
+host_file@host_file() -> Hosts | {error, Reason}@ Hosts = [Host :: atom()] Reason =  file:posix() <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| badarg<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| terminated<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| system_limit<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {Line :: integer(), Mod :: module(), Term :: term()}   
+localhost@localhost() -> Name@ Name = string()   
+names@names() -> {ok, [{Name, Port}]} | {error, Reason}@ Name = string() Port = integer() >= 0 Reason = address |  file:posix()    
+names@names(Host) -> {ok, [{Name, Port}]} | {error, Reason}@ Host = atom() | string() Name = string() Port = integer() >= 0 Reason = address |  file:posix()    
+ping@ping(Node) -> pong | pang@ Node = atom()   
+world@world() -> [node()]@ 
+world@world(Arg) -> [node()]@ Arg =  verbosity()    
+world_list@world_list(Hosts) -> [node()]@ Hosts = [atom()]   
+world_list@world_list(Hosts, Arg) -> [node()]@ Hosts = [atom()] Arg =  verbosity()    

@@ -1,0 +1,3 @@
+quick_recomment_forms@quick_recomment_forms(Tree::Forms, Comments::[Comment]) -> syntaxTree()
+recomment_forms@recomment_forms(Tree::Forms, Comments::[Comment]) -> syntaxTree()
+recomment_tree@recomment_tree(Tree::syntaxTree(), Comments::[Comment]) -> {syntaxTree(), [Comment]}

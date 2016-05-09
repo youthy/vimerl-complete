@@ -1,0 +1,5 @@
+chunk_name@chunk_name(Architecture::hipe_architecture()) -> string()
+load_native_code@load_native_code(Mod, Bin::binary()) -> no_native | {module, Mod}
+post_beam_load@post_beam_load(Mod::atom()) -> ok
+load_module@load_module(Mod, Bin::binary(), Beam::term()) -> bad_crc | {module, Mod}
+load@load(Mod, Bin::binary()) -> bad_crc | {module, Mod}

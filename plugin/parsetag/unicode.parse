@@ -1,0 +1,7 @@
+bom_to_encoding@bom_to_encoding(Bin) -> {Encoding, Length}@ Bin = binary() Encoding = latin1 Length = integer() >= 0   
+characters_to_list@characters_to_list(Data) -> Result@ Data =  Result = list() RestData =  latin1_chardata()  |  chardata()  |  external_chardata()    
+characters_to_list@characters_to_list(Data, InEncoding) -> Result@ 
+characters_to_binary@characters_to_binary(Data) -> Result@ Data =  Result = binary() RestData =  latin1_chardata()  |  chardata()  |  external_chardata()    
+characters_to_binary@characters_to_binary(Data,InEncoding) -> Result@ 
+characters_to_binary@characters_to_binary(Data, InEncoding, OutEncoding) -> Result@ Data =  InEncoding = OutEncoding =  Result = binary() RestData =  latin1_chardata()  |  chardata()  |  external_chardata()    
+encoding_to_bom@encoding_to_bom(InEncoding) -> Bin@ Bin = binary() InEncoding =  encoding()    

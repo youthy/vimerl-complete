@@ -1,0 +1,11 @@
+dump@dump() -> ok | {error, Reason}@ 
+match@match(NameDb, Pattern)@ 
+print@print()@ 
+print@print(TableName)@ 
+print@print(TableName, Db)@ 
+table_create@table_create(NameDb) -> bool()@ 
+table_create_row@table_create_row(NameDb, RowIndex, Row) -> bool()@ 
+table_delete@table_delete(NameDb) -> void()@ 
+table_delete_row@table_delete_row(NameDb, RowIndex) -> bool()@ 
+table_exists@table_exists(NameDb) -> bool()@ 
+table_get_row@table_get_row(NameDb, RowIndex) -> Row | undefined@ 

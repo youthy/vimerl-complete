@@ -1,0 +1,1 @@
+module@module(M0::c_module() (see module cerl), Options::[option() (see module compile)]) -> {ok, c_module() (see module cerl)}

@@ -1,0 +1,3 @@
+parse@parse(Tokens::list()) -> yecc_ret()
+parse_and_scan@parse_and_scan(X1::{function() | {atom(), atom()}, [term()]} | {atom(), atom(), [term()]}) -> yecc_ret()
+format_error@format_error(Message::any()) -> [char() | list()]

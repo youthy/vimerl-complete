@@ -1,0 +1,13 @@
+get_warnings@get_warnings(Tree::c_module() (see module cerl), Plt::plt() (see module dialyzer_plt), Callgraph::callgraph() (see module dialyzer_callgraph), Records::dict(), NoWarnUnused::set()) -> {[dial_warning()], dict(), dict(), [label()], [string()]}
+get_fun_types@get_fun_types(Tree::c_module() (see module cerl), Plt::plt() (see module dialyzer_plt), Callgraph::callgraph() (see module dialyzer_callgraph), Records::dict()) -> {dict(), dict(), [label()], [string()]}
+pp@pp(File::filename() (see module file)) -> ok
+get_top_level_signatures@get_top_level_signatures(Code::c_module() (see module cerl), Records::dict()) -> [{{atom(), arity()}, erl_type() (see module erl_types)}]
+state__add_warning@state__add_warning(Warn::dial_warning(), State::state()) -> state()
+state__cleanup@state__cleanup(State::state()) -> state()
+state__get_callgraph@state__get_callgraph(State::state()) -> callgraph() (see module dialyzer_callgraph)
+state__get_races@state__get_races(State::state()) -> races() (see module dialyzer_races)
+state__get_records@state__get_records(State::state()) -> dict()
+state__put_callgraph@state__put_callgraph(Callgraph::callgraph() (see module dialyzer_callgraph), State::state()) -> state()
+state__put_races@state__put_races(Races::races() (see module dialyzer_races), State::state()) -> state()
+state__records_only@state__records_only(State::state()) -> state()
+format_args@format_args(ArgList::[cerl() (see module cerl)], TypeList::[erl_type() (see module erl_types)], State::state()) -> nonempty_string()

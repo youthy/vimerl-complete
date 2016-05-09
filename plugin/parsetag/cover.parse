@@ -1,0 +1,33 @@
+start@start() -> {ok,Pid} | {error,Reason}@ 
+start@start(Nodes) -> {ok,StartedNodes} | {error,not_main_node}@ 
+compile@compile(ModFile) -> Result@ 
+compile@compile(ModFile, Options) -> Result@ 
+compile_module@compile_module(ModFile) -> Result@ 
+compile_module@compile_module(ModFile, Options) -> Result@ 
+compile_directory@compile_directory() -> [Result] | {error,Reason}@ 
+compile_directory@compile_directory(Dir) -> [Result] | {error,Reason}@ 
+compile_directory@compile_directory(Dir, Options) -> [Result] | {error,Reason}@ 
+compile_beam@compile_beam(ModFile) -> Result@ 
+compile_beam_directory@compile_beam_directory() -> [Result] | {error,Reason}@ 
+compile_beam_directory@compile_beam_directory(Dir) -> [Result] | {error,Reason}@ 
+analyse@analyse(Module) -> {ok,Answer} | {error,Error}@ 
+analyse@analyse(Module, Analysis) -> {ok,Answer} | {error,Error}@ 
+analyse@analyse(Module, Analysis, Level) -> {ok,Answer} | {error,Error}@ 
+analyse_to_file@analyse_to_file(Module) -> @ 
+analyse_to_file@analyse_to_file(Module,Options) -> @ 
+analyse_to_file@analyse_to_file(Module, OutFile, Options) ->  {ok,OutFile} | {error,Error}@ 
+async_analyse_to_file@async_analyse_to_file(Module) -> @ 
+async_analyse_to_file@async_analyse_to_file(Module,Options) -> @ 
+async_analyse_to_file@async_analyse_to_file(Module, OutFile, Options) ->  pid()@ 
+modules@modules() -> [Module] | {error,not_main_node}@ 
+imported_modules@imported_modules() -> [Module] | {error,not_main_node}@ 
+imported@imported() -> [File] | {error,not_main_node}@ 
+which_nodes@which_nodes() -> [Node] | {error,not_main_node}@ 
+is_compiled@is_compiled(Module) -> {file,File} | false |  {error,not_main_node}@ 
+reset@reset(Module) ->@ 
+reset@reset() ->  ok | {error,not_main_node}@ 
+export@export(ExportFile)@ 
+export@export(ExportFile,Module) -> ok | {error,Reason}@ 
+import@import(ExportFile) -> ok | {error,Reason}@ 
+stop@stop() -> ok | {error,not_main_node}@ 
+stop@stop(Nodes) -> ok | {error,not_main_node}@ 

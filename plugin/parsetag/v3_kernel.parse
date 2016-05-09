@@ -1,0 +1,2 @@
+module@module(C_module::c_module() (see module cerl), Options::[option() (see module compile)]) -> {ok, #k_mdef{}, [warning()]}
+format_error@format_error(X1::error()) -> string()

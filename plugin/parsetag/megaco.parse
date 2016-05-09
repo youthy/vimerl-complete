@@ -1,0 +1,49 @@
+start@start() -> ok | {error, Reason}@ 
+stop@stop() -> ok | {error, Reason}@ 
+start_user@start_user(UserMid, Config) -> ok | {error, Reason}@ 
+stop_user@stop_user(UserMid) -> ok | {error, Reason}@ 
+user_info@user_info(UserMid) -> [{Item, Value}]@ 
+user_info@user_info(UserMid, Item) -> Value | exit(Reason)@ 
+update_user_info@update_user_info(UserMid, Item, Value) -> ok | {error, Reason}@ 
+conn_info@conn_info(ConnHandle) -> [{Item, Value}]@ 
+conn_info@conn_info(ConnHandle, Item) -> Value | exit(Reason)@ 
+update_conn_info@update_conn_info(ConnHandle, Item, Value) -> ok | {error, Reason}@ 
+system_info@system_info() -> [{Item, Value}] | exit(Reason)@ 
+system_info@system_info(Item) -> Value | exit(Reason)@ 
+info@info() -> Info@ 
+connect@connect(ReceiveHandle, RemoteMid, SendHandle, ControlPid) -> {ok, ConnHandle} | {error, Reason}@ 
+connect@connect(ReceiveHandle, RemoteMid, SendHandle, ControlPid, Extra) -> {ok, ConnHandle} | {error, Reason}@ 
+disconnect@disconnect(ConnHandle, DiscoReason) -> ok | {error, ErrReason}@ 
+call@call(ConnHandle, Actions, Options) -> {ProtocolVersion, UserReply}@ 
+cast@cast(ConnHandle, Actions, Options) -> ok | {error, Reason}@ 
+encode_actions@encode_actions(ConnHandle, Actions, Options) -> {ok, BinOrBins} | {error, Reason}@ 
+token_tag2string@token_tag2string(Tag) -> Result@ 
+token_tag2string@token_tag2string(Tag, EncoderMod) -> Result@ 
+token_tag2string@token_tag2string(Tag, EncoderMod, Version) -> Result@ 
+cancel@cancel(ConnHandle, CancelReason) -> ok | {error, ErrReason}@ 
+process_received_message@process_received_message(ReceiveHandle, ControlPid, SendHandle, BinMsg) -> ok@ 
+process_received_message@process_received_message(ReceiveHandle, ControlPid, SendHandle, BinMsg, Extra) -> ok@ 
+receive_message@receive_message(ReceiveHandle, ControlPid, SendHandle, BinMsg) -> ok@ 
+receive_message@receive_message(ReceiveHandle, ControlPid, SendHandle, BinMsg, Extra) -> ok@ 
+parse_digit_map@parse_digit_map(DigitMapBody) -> {ok, ParsedDigitMap} | {error, Reason}@ 
+eval_digit_map@eval_digit_map(DigitMap) -> {ok, MatchResult} | {error, Reason}@ 
+eval_digit_map@eval_digit_map(DigitMap, Timers) -> {ok, MatchResult} | {error, Reason}@ 
+report_digit_event@report_digit_event(DigitMapEvalPid, Events) -> ok | {error, Reason}@ 
+test_digit_event@test_digit_event(DigitMap, Events) -> {ok, Kind, Letters} | {error, Reason}@ 
+encode_sdp@encode_sdp(SDP) -> {ok, PP} | {error, Reason}@ 
+decode_sdp@decode_sdp(PP) -> {ok, SDP} | {error, Reason}@ 
+get_sdp_record_from_PropertGroup@get_sdp_record_from_PropertGroup(Type, PG) -> [sdp()]@ 
+versions1@versions1() -> {ok, VersionInfo} | {error, Reason}@ 
+versions2@versions2() -> {ok, Info} | {error, Reason}@ 
+print_version_info@print_version_info() -> void()@ 
+print_version_info@print_version_info(VersionInfo) -> void()@ 
+enable_trace@enable_trace(Level, Destination) -> void()@ 
+disable_trace@disable_trace() -> void()@ 
+set_trace@set_trace(Level) -> void()@ 
+get_stats@get_stats() -> {ok, TotalStats} | {error, Reason}@ 
+get_stats@get_stats(GlobalCounter) -> {ok, CounterStats} | {error, Reason}@ 
+get_stats@get_stats(ConnHandle, Counter) -> {ok, integer()} | {error, Reason}@ 
+reset_stats@reset_stats() -> void()@ 
+reset_stats@reset_stats(ConnHandle) -> void()@ 
+test_request@test_request(ConnHandle, Version, EncodingMod, EncodingConfig, Actions) -> {MegaMsg, EncodeRes}@ 
+test_reply@test_reply(ConnHandle, Version, EncodingMod, EncodingConfig, Reply) -> {MegaMsg, EncodeRes}@ 

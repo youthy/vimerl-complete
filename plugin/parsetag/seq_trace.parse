@@ -1,0 +1,9 @@
+set_token@set_token(Token) -> PreviousToken | ok@ Token = PreviousToken = [] |  token()    
+set_token@set_token(Component, Val) -> {Component, OldVal}@ Component =  Val = OldVal =  value()    
+get_token@get_token() -> [] | token() @ 
+get_token@get_token(Component) -> {Component, Val}@ Component =  Val =  value()    
+print@print(TraceInfo) -> ok@ TraceInfo = term()   
+print@print(Label, TraceInfo) -> ok@ Label = integer() TraceInfo = term()   
+reset_trace@reset_trace() -> true@ 
+set_system_tracer@set_system_tracer(Tracer) -> OldTracer@ Tracer = OldTracer =  tracer()    
+get_system_tracer@get_system_tracer() -> Tracer@ Tracer =  tracer()    

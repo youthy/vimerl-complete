@@ -1,0 +1,4 @@
+connect_sequence_pull_supplier@connect_sequence_pull_supplier(SequenceProxyPullConsumer, PullSupplier) -> Reply@ 
+suspend_connection@suspend_connection(SequenceProxyPullConsumer) -> Reply@ 
+resume_connection@resume_connection(SequenceProxyPullConsumer) -> Reply@ 
+disconnect_sequence_pull_consumer@disconnect_sequence_pull_consumer(SequenceProxyPullConsumer) -> ok@ 

@@ -1,0 +1,5 @@
+dir@dir() -> ok
+dir@dir(Dir) -> ok
+file@file(Name) -> ok
+module@module(Forms) -> syntaxTree()
+module@module(Forms, Options::[term()]) -> syntaxTree()

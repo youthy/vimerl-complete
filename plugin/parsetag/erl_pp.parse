@@ -1,0 +1,15 @@
+form@form(Form) -> io_lib:chars() @ Form =  erl_parse:abstract_form()    
+form@form(Form, HookFunction) -> io_lib:chars() @ Form =  HookFunction =  hook_function()    
+attribute@attribute(Attribute) -> io_lib:chars() @ Attribute =  erl_parse:abstract_form()    
+attribute@attribute(Attribute, HookFunction) -> io_lib:chars() @ Attribute =  HookFunction =  hook_function()    
+function@function(Function) -> io_lib:chars() @ Function =  erl_parse:abstract_form()    
+function@function(Function, HookFunction) -> io_lib:chars() @ Function =  HookFunction =  hook_function()    
+guard@guard(Guard) -> io_lib:chars() @ Guard = [ erl_parse:abstract_expr() ]   
+guard@guard(Guard, HookFunction) -> io_lib:chars() @ Guard = [ HookFunction =  hook_function()    
+exprs@exprs(Expressions) -> io_lib:chars() @ Expressions = [ erl_parse:abstract_expr() ]   
+exprs@exprs(Expressions, HookFunction) -> io_lib:chars() @ Expressions = [ HookFunction =  hook_function()    
+exprs@exprs(Expressions, Indent, HookFunction) -> io_lib:chars() @ Expressions = [ Indent = integer() HookFunction =  hook_function()    
+expr@expr(Expression) -> io_lib:chars() @ Expression =  erl_parse:abstract_expr()    
+expr@expr(Expression, HookFunction) -> io_lib:chars() @ Expression =  HookFunction =  hook_function()    
+expr@expr(Expression, Indent, HookFunction) -> io_lib:chars() @ Expression =  Indent = integer() HookFunction =  hook_function()    
+expr@expr(Expression, Indent, Precedence, HookFunction) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="io_lib.html#type-chars" class="seealso">io_lib:chars() @ Expression =  Indent = integer() Precedence = integer() >= 0 HookFunction =  hook_function()    

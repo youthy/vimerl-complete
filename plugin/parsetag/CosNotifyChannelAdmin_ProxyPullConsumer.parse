@@ -1,0 +1,4 @@
+connect_any_pull_supplier@connect_any_pull_supplier(ProxyPullConsumer, PullSupplier) -> Reply@ 
+suspend_connection@suspend_connection(ProxyPullConsumer) -> Reply@ 
+resume_connection@resume_connection(ProxyPullConsumer) -> Reply@ 
+disconnect_pull_consumer@disconnect_pull_consumer(ProxyPullConsumer) -> ok@ 

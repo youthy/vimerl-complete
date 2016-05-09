@@ -1,0 +1,10 @@
+call@call(ChannelRef, Msg) ->@ 
+call@call(ChannelRef, Msg, Timeout) -> Reply | {error, Reason}@ 
+cast@cast(ChannelRef, Msg) -> ok @ 
+enter_loop@enter_loop(State) -> _ @ 
+init@init(Options) -> {ok, State} |  {ok, State, Timeout} | {stop, Reason} @ 
+reply@reply(Client, Reply) -> _@ 
+start@start(SshConnection, ChannelId, ChannelCb, CbInitArgs) -> @ 
+handle_call@CallbackModule:handle_call(Msg, From, State) -> Result@ 
+handle_cast@CallbackModule:handle_cast(Msg, State) -> Result@ 
+terminate@CallbackModule:terminate(Reason, State) -> _@ 

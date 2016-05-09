@@ -1,0 +1,24 @@
+spawn@spawn(Fun) -> pid()@ Fun = function()   
+spawn@spawn(Node, Fun) -> pid()@ Node = node() Fun = function()   
+spawn@spawn(Module, Function, Args) -> pid()@ Module = module() Function = atom() Args = [term()]   
+spawn@spawn(Node, Module, Function, Args) -> pid()@ Node = node() Module = module() Function = atom() Args = [term()]   
+spawn_link@spawn_link(Fun) -> pid()@ Fun = function()   
+spawn_link@spawn_link(Node, Fun) -> pid()@ Node = node() Fun = function()   
+spawn_link@spawn_link(Module, Function, Args) -> pid()@ Module = module() Function = atom() Args = [term()]   
+spawn_link@spawn_link(Node, Module, Function, Args) -> pid()@ Node = node() Module = module() Function = atom() Args = [term()]   
+spawn_opt@spawn_opt(Fun, SpawnOpts) -> pid()@ Fun = function() SpawnOpts = [ spawn_option() ]   
+spawn_opt@spawn_opt(Node, Function, SpawnOpts) -> pid()@ Node = node() Function = function() SpawnOpts = [ spawn_option() ]   
+spawn_opt@spawn_opt(Module, Function, Args, SpawnOpts) -> pid()@ Module = module() Function = atom() Args = [term()] SpawnOpts = [ spawn_option() ]   
+spawn_opt@spawn_opt(Node, Module, Function, Args, SpawnOpts) -> pid()@ Node = node() Module = module() Function = atom() Args = [term()] SpawnOpts = [ spawn_option() ]   
+start@start(Module, Function, Args) -> Ret@ Module = module() Function = atom() Args = [term()] Ret = term() | {error, Reason :: term()}   
+start@start(Module, Function, Args, Time) -> Ret@ Module = module() Function = atom() Args = [term()] Time = timeout() Ret = term() | {error, Reason :: term()}   
+start@start(Module, Function, Args, Time, SpawnOpts) -> Ret@ Module = module() Function = atom() Args = [term()] Time = timeout() SpawnOpts = [ Ret = term() | {error, Reason :: term()}   
+start_link@start_link(Module, Function, Args) -> Ret@ Module = module() Function = atom() Args = [term()] Ret = term() | {error, Reason :: term()}   
+start_link@start_link(Module, Function, Args, Time) -> Ret@ Module = module() Function = atom() Args = [term()] Time = timeout() Ret = term() | {error, Reason :: term()}   
+start_link@start_link(Module, Function, Args, Time, SpawnOpts) -> Ret@ Module = module() Function = atom() Args = [term()] Time = timeout() SpawnOpts = [ Ret = term() | {error, Reason :: term()}   
+init_ack@init_ack(Ret) -> ok@ Ret = term()   
+init_ack@init_ack(Parent, Ret) -> ok@ Parent = pid() Ret = term()   
+format@format(CrashReport) -> string()@ CrashReport = [term()]   
+initial_call@initial_call(Process) -> {Module, Function, Args} | false@ Process =  Module = module() Function = atom() Args = [atom()]   
+translate_initial_call@translate_initial_call(Process) -> {Module, Function, Arity}@ Process =  Module = module() Function = atom() Arity = byte()   
+hibernate@hibernate(Module, Function, Args) -> no_return()@ Module = module() Function = atom() Args = [term()]   

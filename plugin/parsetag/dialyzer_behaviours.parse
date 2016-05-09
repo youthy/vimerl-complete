@@ -1,0 +1,5 @@
+check_callbacks@check_callbacks(Module::module(), Attrs::[{cerl() (see module cerl), cerl() (see module cerl)}], Plt::plt() (see module dialyzer_plt), Codeserver::codeserver() (see module dialyzer_codeserver)) -> [dial_warning()]
+translatable_behaviours@translatable_behaviours(Tree::c_module() (see module cerl)) -> behaviour_api_dict()
+get_behaviour_apis@get_behaviour_apis(Behaviours::[behaviour()]) -> [mfa()]
+translate_behaviour_api_call@translate_behaviour_api_call(Fun::mfa_or_funlbl() (see module dialyzer_races), ArgTypes::[erl_type() (see module erl_types)], Args::[core_vars() (see module dialyzer_races)], Module::module(), BehApiInfo::behaviour_api_dict()) -> {mfa_or_funlbl() (see module dialyzer_races), [erl_type() (see module erl_types)], [core_vars() (see module dialyzer_races)]} | plain_call
+translate_callgraph@translate_callgraph(Behaviours::behaviour_api_dict(), Module::atom(), Callgraph::callgraph() (see module dialyzer_callgraph)) -> callgraph() (see module dialyzer_callgraph)

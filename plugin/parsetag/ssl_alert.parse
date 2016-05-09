@@ -1,0 +1,2 @@
+reason_code@reason_code(Alert::#alert{}, X2::client | server) -> closed | esslconnect | esslaccept | string()
+alert_txt@alert_txt(Alert::#alert{}) -> string()

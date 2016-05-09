@@ -1,0 +1,11 @@
+_get_MyID@_get_MyID(SupplierAdmin) -> AdminID@ 
+_get_MyChannel@_get_MyChannel(SupplierAdmin) -> Channel@ 
+_get_MyOperator@_get_MyOperator(SupplierAdmin) -> OpType@ 
+_get_pull_consumers@_get_pull_consumers(SupplierAdmin) -> ProxyIDSeq@ 
+_get_push_consumers@_get_push_consumers(SupplierAdmin) -> ProxyIDSeq@ 
+get_proxy_consumer@get_proxy_consumer(SupplierAdmin, ProxyID) -> Reply@ 
+obtain_notification_pull_consumer@obtain_notification_pull_consumer(SupplierAdmin, SupplierType) -> Reply@ 
+obtain_pull_consumer@obtain_pull_consumer(SupplierAdmin) -> Proxy@ 
+obtain_notification_push_consumer@obtain_notification_push_consumer(SupplierAdmin, SupplierType) -> Reply@ 
+obtain_push_consumer@obtain_push_consumer(SupplierAdmin) -> Proxy@ 
+destroy@destroy(SupplierAdmin) -> ok@ 

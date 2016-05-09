@@ -1,0 +1,6 @@
+create@create() -> Result@ 
+create@create(Typecode, Value) -> Result@ 
+set_typecode@set_typecode(A, Typecode) -> Result@ 
+get_typecode@get_typecode(A) -> Result@ 
+set_value@set_value(A, Value) -> Result@ 
+get_value@get_value(A) -> Result@ 

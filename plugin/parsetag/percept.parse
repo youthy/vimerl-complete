@@ -1,0 +1,6 @@
+profile@profile(Filename::string()) -> {ok, Port} | {already_started, Port}
+stop_profile@stop_profile() -> ok | {error, not_started}
+analyze@analyze(Filename::string()) -> ok | {error, Reason}
+start_webserver@start_webserver() -> {started, Hostname, Port} | {error, Reason}
+start_webserver@start_webserver(Port::integer()) -> {started, Hostname, AssignedPort} | {error, Reason}
+stop_webserver@stop_webserver() -> ok | {error, not_started}

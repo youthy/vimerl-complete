@@ -1,8 +1,13 @@
 # vimerl-complete
 Vim plugin for erlang code auto-completation
 
+## Require
+1. need [Vundle](https://github.com/VundleVim/Vundle.vim) or other Plugin Manager
+2. need [Syntastic](https://github.com/scrooloose/syntastic) or some other syntax
+plugin to define `erlang` filetype
+
 ## Install
-1. If you use Vundle, then edit .vimrc in your $HOME path, add 
+Then edit .vimrc in your $HOME path, add 
 ```
 Plugin 'youthy/vimerl-complete'
 ```` 
@@ -14,7 +19,6 @@ after other plugins. Then type
 
 in vim to install.
 
-2. or just download and put extract directory `vimerl-complete` into your plugin directory.
 
 ## Usage
 1. This plugin parse offical docs on [erldocs](http://erldocs.com/). please download a version which you need and extract into your
@@ -42,9 +46,20 @@ let g:vimerl_complete_only_export = 0
 ```
 
 into your `.vimrc` file to change the default settings.
-If you disable auto-display, then you can Use `<C-J>` which means `CTRL + J` to list completation. 
-If the words before cursor do not have `:` it displays what `<C-X><C-N>` does.
+If you disable auto-display, then you can Use `<Tab>` which to list completation. 
+
+## Example
+1. `module:` 
+when you type a module name and a`:` it will displays functions exported or not in the module 
+depends your settings. Module can be offical module like `lists`, `ets` or user module whose `.erl` file in the 
+`src/` parent path, recursively.
+like`/home/youthy/erlang_project/src`, it will match the `module.erl` in `/home/youthy/erlang_project` recursively.
+
+2. `module:funname`
+same as above,but display matches only match funname.
+
+3. `singleword`
+when there no `:` before cursor, it will display modules which match the `singleword`, and functions in `erlang` module
+which match, and localfunctions.
 
 
-If the module is not in the offical list, it will search `.erl` files in the `src` directory's parent directory recursively.If no 
-file match the module name.It will print error report.

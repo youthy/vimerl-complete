@@ -1,0 +1,1 @@
+obsolete@obsolete(Module::atom(), Name::atom(), Arity::byte()) -> no | {tag(), string()} | {tag(), mfas(), release()}

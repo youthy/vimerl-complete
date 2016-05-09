@@ -1,0 +1,2 @@
+init@init(Dir, MaxBytes, MaxFiles) -> Args@ Dir =  MaxBytes = integer() >= 0 MaxFiles = 1..255 Args =  args()    
+init@init(Dir, MaxBytes, MaxFiles, Pred) -> Args@ Dir =  MaxBytes = integer() >= 0 MaxFiles = 1..255 Pred = fun((Event :: term()) -> boolean()) Args =  args()    

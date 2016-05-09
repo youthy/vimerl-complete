@@ -102,7 +102,7 @@ endfunction
 function! s:search_local(base)
     let modresult = s:search_module(a:base)
     let erlangfun = s:search_external('erlang:'.a:base)
-    return extend(erlangfun, modresult)
+    return modresult + erlangfun + s:search_local_fun(a:base)
 endfunction
 
 function! s:search_module(base)
@@ -111,6 +111,21 @@ function! s:search_module(base)
     let officalmods = split(substitute(officalpath, '[^\n]*/\(\w*\).parse', '\1', 'g'), '\n')
     let usermods = split(substitute(userpath, '[^\n]*/\(\w*\).erl', '\1', 'g'), '\n')
     return map(extend(officalmods, usermods), '{"word":v:val, "kind":"m"}')
+endfunction
+
+function! s:search_local_fun(base)
+    let lnum = 1
+    let return = []
+    while lnum != 0 
+        let tmp = matchstr(getline(lnum), '^'.a:base.'.*)')
+        let lnum = nextnonblank(lnum + 1)
+        if empty(tmp)
+            continue
+        else
+            call add(return, {'word':matchstr(tmp, '^\w\+('), 'abbr':tmp, 'kind':'f'})
+        endif
+    endwhile
+    return return
 endfunction
 
 function! s:search_offical_module_functions(module, func)
@@ -164,6 +179,7 @@ function! s:form_offical_result(module, str)
     else
         let prefix = a:module.':'
     endif
+    echom string(type)
     if empty(type)
         return {'word':prefix . word . '(', 'abbr':replace, 'kind':'f'}
     else

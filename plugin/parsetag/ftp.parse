@@ -1,0 +1,38 @@
+account@account(Pid, Account) -> ok | {error, Reason}@ 
+append@append(Pid, LocalFile) -> @ 
+append@append(Pid, LocalFile, RemoteFile) -> ok | {error, Reason}@ 
+append_bin@append_bin(Pid, Bin, RemoteFile) -> ok | {error, Reason}@ 
+append_chunk@append_chunk(Pid, Bin) -> ok | {error, Reason}@ 
+append_chunk_start@append_chunk_start(Pid, File) -> ok | {error, Reason}@ 
+append_chunk_end@append_chunk_end(Pid) -> ok | {error, Reason}@ 
+cd@cd(Pid, Dir) -> ok | {error, Reason}@ 
+close@close(Pid) -> ok@ 
+delete@delete(Pid, File) -> ok | {error, Reason}@ 
+formaterror@formaterror(Tag) -> string()@ 
+lcd@lcd(Pid, Dir) -> ok | {error, Reason}@ 
+lpwd@lpwd(Pid) -> {ok, Dir}@ 
+ls@ls(Pid) -> @ 
+ls@ls(Pid, Pathname) -> {ok, Listing} | {error, Reason}@ 
+mkdir@mkdir(Pid, Dir) -> ok | {error, Reason}@ 
+nlist@nlist(Pid) -> @ 
+nlist@nlist(Pid, Pathname) -> {ok, Listing} | {error, Reason}@ 
+open@open(Host) -> {ok, Pid} | {error, Reason}@ 
+open@open(Host, Opts) -> {ok, Pid} | {error, Reason}@ 
+pwd@pwd(Pid) -> {ok, Dir} | {error, Reason}@ 
+recv@recv(Pid, RemoteFile) -> @ 
+recv@recv(Pid, RemoteFile, LocalFile) -> ok | {error, Reason}@ 
+recv_bin@recv_bin(Pid, RemoteFile) -> {ok, Bin} | {error, Reason}@ 
+recv_chunk_start@recv_chunk_start(Pid, RemoteFile) -> ok | {error, Reason}@ 
+recv_chunk@recv_chunk(Pid) -> ok | {ok, Bin} | {error, Reason}@ 
+rename@rename(Pid, Old, New) -> ok | {error, Reason}@ 
+rmdir@rmdir(Pid, Dir) -> ok | {error, Reason}@ 
+send@send(Pid, LocalFile) ->@ 
+send@send(Pid, LocalFile, RemoteFile) -> ok | {error, Reason}@ 
+send_bin@send_bin(Pid, Bin, RemoteFile) -> ok | {error, Reason}@ 
+send_chunk@send_chunk(Pid, Bin) -> ok | {error, Reason}@ 
+send_chunk_start@send_chunk_start(Pid, File) -> ok | {error, Reason}@ 
+send_chunk_end@send_chunk_end(Pid) -> ok | {error, Reason}@ 
+type@type(Pid, Type) -> ok | {error, Reason}@ 
+user@user(Pid, User, Password) -> ok | {error, Reason}@ 
+user@user(Pid, User, Password, Account) -> ok | {error, Reason}@ 
+quote@quote(Pid, Command) -> [FTPLine]@ 

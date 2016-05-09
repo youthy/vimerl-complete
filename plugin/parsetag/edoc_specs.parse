@@ -1,0 +1,7 @@
+type@type(Form::syntaxTree(), TypeDocs::dict()) -> #tag{}
+spec@spec(Form::syntaxTree(), ClauseN::pos_integer()) -> #tag{}
+dummy_spec@dummy_spec(Form::syntaxTree()) -> #tag{}
+docs@docs(Forms::[syntaxTree()], CommentFun::([syntaxTree()], Line::term()) -> #tag{}) -> dict()
+add_data@add_data(Entries::entries(), Options::proplist() (see module proplists), File::filename() (see module file), Module::module_info()) -> entries()
+is_tag@is_tag(Tag::atom()) -> boolean()
+tag@tag(Tag::atom()) -> tag_kind()

@@ -1,0 +1,2 @@
+get_admin@get_admin(Object) -> AdminProperties@ 
+set_admin@set_admin(Object, AdminProperties) -> Reply@ 

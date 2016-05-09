@@ -1,0 +1,10 @@
+create@create(Name :: name() ) -> ok@ 
+delete@delete(Name :: name() ) -> ok@ 
+get_closest_pid@get_closest_pid(Name) -> pid() | {error, Reason}@ Name =  Reason = {no_process, Name} | {no_such_group, Name}   
+get_members@get_members(Name) -> [pid()] | {error, {no_such_group, Name}}@ Name =  name()    
+get_local_members@get_local_members(Name) -><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[pid()] | {error, {no_such_group, Name}}@ Name =  name()    
+join@join(Name, Pid :: pid()) -> ok | {error, {no_such_group, Name}}@ Name =  name()    
+leave@leave(Name, Pid :: pid()) -> ok | {error, {no_such_group, Name}}@ Name =  name()    
+which_groups@which_groups() -> [Name :: name() ]@ 
+start@start() -> {ok, pid()} | {error, any()}@ 
+start_link@start_link() -> {ok, pid()} | {error, any()}@ 

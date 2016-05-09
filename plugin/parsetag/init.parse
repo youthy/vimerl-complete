@@ -1,0 +1,10 @@
+boot@boot/1@ 
+get_argument@get_argument/1@ 
+get_arguments@get_arguments/0@ 
+get_plain_arguments@get_plain_arguments/0@ 
+get_status@get_status/0@ 
+reboot@reboot/0@ 
+restart@restart/0@ 
+script_id@script_id/0@ 
+stop@stop/0@ 
+stop@stop/1@ 

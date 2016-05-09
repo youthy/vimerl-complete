@@ -1,0 +1,8 @@
+app_node@app_node(App, Candidates) -> NodeName
+app_node@app_node(App, Candidates, FailOnBadRPC) -> NodeName
+app_node@app_node(App, Candidates, FailOnBadRPC, Cookie) -> NodeName
+call@call(Node, Module, Function, Args) -> term() | {badrpc, Reason}
+call@call(Node, Module, Function, Args, TimeOut) -> term() | {badrpc, Reason}
+call@call(Node, Module, Function, Args, TimeOut, Cookie) -> term() | {badrpc, Reason}
+cast@cast(Node, Module, Function, Args) -> ok
+cast@cast(Node, Module, Function, Args, Cookie) -> ok

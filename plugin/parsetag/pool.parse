@@ -1,0 +1,8 @@
+start@start(Name) -> Nodes@ Name = atom() Nodes = [node()]   
+start@start(Name, Args) -> Nodes@ Name = atom() Args = string() Nodes = [node()]   
+attach@attach(Node) -> already_attached | attached@ Node = node()   
+stop@stop() -> stopped@ 
+get_nodes@get_nodes() -> [node()]@ 
+pspawn@pspawn(Mod, Fun, Args) -> pid()@ Mod = module() Fun = atom() Args = [term()]   
+pspawn_link@pspawn_link(Mod, Fun, Args) -> pid()@ Mod = module() Fun = atom() Args = [term()]   
+get_node@get_node() -> node()@ 
