@@ -52,9 +52,12 @@ parse_type(<<>>) ->
     <<>>;
 parse_type(<<"\n">>) ->
     <<>>;
+parse_type(<<" ">>) ->
+    <<>>;
 parse_type(Type) ->
     Type2 = re:replace(Type, "<.*<code>|<a.*\">|<\/\[a-z]+>", " ", [global, {return, binary}, ungreedy]),
     replace_gt(Type2).
 
 replace_gt(Bin) ->
     re:replace(Bin, "&gt;", ">", [global, {return, binary}]).
+

@@ -53,10 +53,8 @@ function! vimerlcomplete#Complete(findstart, base)
         " second invoke a:base is the string should replace
         if a:base =~ '\w\+:\w*' 
             " match module:(function)
-            return s:search_external(a:base)
+            return s:search_external(a:base, 1)
         else
-            " I don't want supply local function because other method can do 
-            " I'm lazy
             return s:search_local(a:base)
         endif
     endif
@@ -76,14 +74,14 @@ function! s:calc_return_column()
 endfunction
 
 " base is like "module:(fun)"
-function! s:search_external(base) 
+function! s:search_external(base, prefixmodule) 
     let sp = split(a:base, ":")
     " func maybe[] or [funname]
     let [module; func] = sp
     let filename = module .'.parse'
     if s:is_file_exist(s:parse_path, module.'.parse')
         " offical modules
-        return s:search_offical_module_functions(module, func)
+        return s:search_offical_module_functions(module, func, a:prefixmodule)
     else
         " user modules
         let filepath = s:get_user_module_filepath(module.'.erl')
@@ -101,7 +99,7 @@ endfunction
 
 function! s:search_local(base)
     let modresult = s:search_module(a:base)
-    let erlangfun = s:search_external('erlang:'.a:base)
+    let erlangfun = s:search_external('erlang:'.a:base, 0)
     return modresult + erlangfun + s:search_local_fun(a:base)
 endfunction
 
@@ -128,14 +126,19 @@ function! s:search_local_fun(base)
     return return
 endfunction
 
-function! s:search_offical_module_functions(module, func)
+function! s:search_offical_module_functions(module, func, prefixmodule)
     if a:func == []
         let arg = '.* '
     else
         let arg = '^' . a:func[0]
     endif
+    if a:prefixmodule
+        let prefix = a:module.':'
+    else
+        let prefix = ""
+    endif
     let grepcmd = 'grep ' . '"'. arg . '"' . ' ' . s:parse_path . a:module . '.parse'
-    let result = map(split(system(grepcmd), '\n'), 's:form_offical_result(a:module, v:val)')
+    let result = map(split(system(grepcmd), '\n'), 's:form_offical_result(prefix, v:val)')
     return result
 endfunction
 
@@ -172,18 +175,12 @@ function! s:search_user_module_export_functions(module, func, filepath)
 endfunction
 
 " form offical each result
-function! s:form_offical_result(module, str)
+function! s:form_offical_result(prefix, str)
     let [word, replace; type] = split(a:str, '@')
-    if a:module ==# 'erlang'
-        let prefix = ""
-    else
-        let prefix = a:module.':'
-    endif
-    echom string(type)
     if empty(type)
-        return {'word':prefix . word . '(', 'abbr':replace, 'kind':'f'}
+        return {'word':a:prefix . word . '(', 'abbr':replace, 'kind':'f'}
     else
-        return {'word':prefix . word . '(', 'abbr':replace, 'info':type[0], 'kind':'f'}
+        return {'word':a:prefix . word . '(', 'abbr':replace, 'info':type[0], 'kind':'f'}
 endfunction
 
 " form user function result
@@ -263,5 +260,5 @@ function! PreviewWindowOpened()
 endfunction
 
 function! s:get_line_cursor()
-    return strpart(getline('.'), 0, col('.'))
+    return strpart(getline('.'), 0, col('.') - 1)
 endfunction
