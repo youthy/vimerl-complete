@@ -33,9 +33,7 @@ in vim to generate tags for completation. ("18.3" is the version I used. It can 
 
 By default, It will automaticlly display module functions after you type `module:`.
 
-And the functions only include exported functions. 
-
-You can change default settings by add
+And the functions only include exported functions. You can change default settings by add
 ```
 " set this value to 0 to disable the auto completation
 let g:vimerl_complete_auto = 0
@@ -44,7 +42,12 @@ let g:vimerl_complete_only_export = 0
 ```
 
 into your `.vimrc` file to change the default settings.
-If you disable auto-display, then you can Use `<Tab>` which to list completation. 
+If you disable auto-display, then you can Use 
+```
+<Tab>
+``` 
+
+to list completation. 
 
 ## Example
 1. `module:` 
