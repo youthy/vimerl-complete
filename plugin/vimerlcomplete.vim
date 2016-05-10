@@ -63,7 +63,7 @@ endfunction
 " try to return replace column  
 function! s:calc_return_column() 
     let line = strpart(getline('.'), 0, col('.') - 1)
-    let tmplist = split(line, '\s\|(\')
+    let tmplist = split(line, '\s\|(')
     if tmplist == []
         return -1
     endif
@@ -200,17 +200,19 @@ function! s:is_file_exist(path, filename)
 endfunction
 
 function! s:is_user_fun_export(export_list, fun_str)
-   let tmp = split(a:fun_str, '(\|,\|)') 
-   if tmp[-1] == ''
-       let num = 0
-   else
-       let num = len(tmp) - 1
-   endif
-   if index(a:export_list, tmp[0].'/'.num) != -1
-       return 1
-   else
-       return 0
-   endif
+    " change #record{}, tuple{}, and list[] to a simple Text
+    let str2 = substitute(a:fun_str, '{.\{-}}\|\[.*]', 'Text', 'g')
+    let tmp = split(str2, '(\|,\|)') 
+    if tmp[-1] == ''
+        let num = 0
+    else
+        let num = len(tmp) - 1
+    endif
+    if index(a:export_list, tmp[0].'/'.num) != -1
+        return 1
+    else
+        return 0
+    endif
 endfunction
 
 function! vimerlcomplete#Tab() 
@@ -229,7 +231,7 @@ function! VimerlCompleteSet()
     inoremap <buffer> <TAB>  <C-R>=vimerlcomplete#Tab()<CR>
     augroup vimerlautocmd
         au!
-        autocmd InsertLeave <buffer> if PreviewWindowOpened()|pclose|endif
+        autocmd InsertLeave <buffer> if s:PreviewWindowOpened()|pclose|endif
         autocmd InsertCharPre <buffer> if  v:char == ':' 
                     \ | if g:vimerl_complete_auto && (s:get_line_cursor() =~ '\w\+$')
                         \ | call feedkeys("\<C-X>\<C-O>") 
@@ -247,10 +249,9 @@ function! s:get_user_module_filepath(module)
     return find
 endfunction
 
-function! PreviewWindowOpened()
+function! s:PreviewWindowOpened()
     for nr in range(1, winnr('$'))
         if getwinvar(nr, "&pvw") == 1
-            " found a preview
             return 1
         endif  
     endfor
