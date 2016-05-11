@@ -28,16 +28,17 @@ command! -nargs=* EcompleteGen call VimerlcompleteGen <args>
 
 " gen .parse file
 function! VimerlcompleteGen(version)
-    if type(a:version) != type("")
-        echoerr "badarg: version must be string"
-        return 0
+    if a:version !=# ""
+        let doc_dir = "docs-" . a:version
+        if !s:is_file_exist(s:home_path, doc_dir)
+            echoerr "thereis no directory". ' '. s:home_path . doc_dir. ' ' . "please download first"
+            return 0
+        endif
+        let scriptarg = s:home_path.doc_dir
+    else
+        let scriptarg = ""
     endif
-    let doc_dir = "docs-" . a:version
-    if !s:is_file_exist(s:home_path, doc_dir)
-        echoerr "thereis no directory". ' '. s:home_path . doc_dir. ' ' . "please download first"
-        return 0
-    endif
-    let script_output = system(s:exec_script . ' ' . s:home_path . doc_dir)
+    let script_output = system(s:exec_script . ' ' . scriptarg)
     if !v:shell_error
         return 0
     else
