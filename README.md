@@ -32,6 +32,7 @@ $HOME directory. like `/home/youthy/docs-18.3`.
 
 in vim to generate tags for completation. Yon need run this command **only once** unless you change your erlang version
 ("18.3" is the version I used. It can be like "R15B01" etc.)
+
 3. If you don't want to download erldocs, You can also type
 ```
 :EcompleteGen("")
@@ -75,7 +76,7 @@ same as above,but display matches only match funname.
 when there no `:` before cursor, it will display modules which match the `singleword`, and functions in `erlang` module
 which match, and localfunctions.
 
-**up_to_now, this plugin conflicts with YouCompleteMe, becase YouCompleteMe force use `completeopt-=longest`
-and under this situation, Plugin always select the first matches in display menu.It annoys. But I haven't find
+**Up to now, this plugin conflicts with YouCompleteMe, becase YouCompleteMe force use `completeopt-=longest`
+and under this situation, plugin always select the first matches in display menu.It annoys. But I haven't find
 a beautiful solution**
 
