@@ -31,20 +31,19 @@ $HOME directory. like `/home/youthy/docs-18.3`.
 ```
 
 in vim to generate tags for completation. Yon need run this command **only once** unless you change your erlang version
-("18.3" is the version I used. It can be like "R15B01" etc.)
+(18.3 is the version I used. It can be like R15B01 etc.)
 
-If you don't want to download erldocs, You can also type
+If you **don't want** to download erldocs, You can also type
 ```
 :EcompleteGen
 ```
 
-to gen tags from erlang source files(It takes maybe a minute). You must ensure you have `.erl` src files. To find them in `code:lib_dir() ++ "*/src"` directory.
+to gen tags from erlang source files(It takes maybe a minute). You must **ensure** you have `.erl` src files. To find them in `code:lib_dir() ++ "*/src"` directory.
 I recommand you use [kerl](https://github.com/kerl/kerl)
 And this way to gen tags is copied from [vim-erlang-omnicomplete](https://github.com/vim-erlang/vim-erlang-omnicomplete)
 (I just know this plugin, otherwise I won't write this plugin =_=).
 
-
-3. By default, It will automaticlly display module functions after you type `module:`.
+By default, It will automaticlly display module functions after you type `module:`.
 
 And the functions **only include exported** functions. You can change default settings by add
 ```
