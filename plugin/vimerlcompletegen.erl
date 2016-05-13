@@ -8,11 +8,13 @@
 -define(S2A(List), list_to_atom(List)).
 -define(N2S(Number), integer_to_list(Number)).
 
-main([]) ->
+main(Argc) ->
+    delete_previous_file(),
+    main0(Argc).
+main0([]) ->
     ErlFiles = find_local_src_path(),
     parse_erl_files(ErlFiles);
-main([Path]) ->
-    delete_previous_file(),
+main0([Path]) ->
     Files = filelib:wildcard(Path ++"/" ++ "*/*.html"),
     lists:map(fun parse_file/1, Files).
 %% =============================================================================
@@ -28,11 +30,11 @@ parse_erl(FileName) ->
     try  
         {_, Doc} = edoc:get_doc(FileName),
         Data = parse_edoc(Doc),
-        ok = file:write_file(get_output_file(Module), Data)
+        ok = file:write_file(get_output_file(Module), list_to_binary(Data))
     catch 
         _Type:_Error -> 
             Data2 = parse_module_info(list_to_atom(Module)),
-            ok = file:write_file(get_output_file(Module), Data2)
+            ok = file:write_file(get_output_file(Module), list_to_binary(Data2))
     end.
 
 find_local_src_path() ->
@@ -67,7 +69,7 @@ parse_fun([Fun|T], Acc) ->
     Args = lists:map(fun(Arg) -> get_xml_attribute(Arg, "name") end, Args0),
     Argstr = make_str(Args),
     Return = analyze_return(Fun),
-    Result = Name ++ "@" ++ Name ++ Argstr ++ " -> " ++ Return ++ "\n",
+    Result = [Name ,"@" ,Name ,Argstr ," -> " ,Return ,"\n"],
     parse_fun(T, [Result|Acc]).
 
 parse_module_info(Mod) ->
@@ -75,10 +77,11 @@ parse_module_info(Mod) ->
 parse_module_info([], Acc) ->
     Acc;
 parse_module_info([{Name, Arity}|T], Acc) ->
-    Item = ?A2S(Name) ++ "@" ++ ?A2S(Name) ++ "/" ++ ?N2S(Arity) ++ "\n",
+    Item = [?A2S(Name) ,"@" ,?A2S(Name) ,"/" ,?N2S(Arity) ,"\n"],
     parse_module_info(T, [Item|Acc]).
 %% =============================================================================
 %% The functions below copied from vim-erlang-omnicomplete
+%% Originally I only parse htmls
 %% https://github.com/vim-erlang/vim-erlang-omnicomplete
 analyze_return(Fun) ->
     case xmerl_xpath:string("typespec/type/fun/type/*", Fun) of

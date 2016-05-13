@@ -27,7 +27,7 @@ $HOME directory. like `/home/youthy/docs-18.3`.
 
 2. Then run 
 ```
-:EcompleteGen("18.3")
+:EcompleteGen 18.3
 ```
 
 in vim to generate tags for completation. Yon need run this command **only once** unless you change your erlang version
@@ -35,13 +35,13 @@ in vim to generate tags for completation. Yon need run this command **only once*
 
 3. If you don't want to download erldocs, You can also type
 ```
-:EcompleteGen("")
+:EcompleteGen
 ```
 
 to gen tags from erlang source files(It takes maybe a minute). You must ensure you have `.erl` src files. To find them in `code:lib_dir() ++ "*/src"` directory.
 I recommand you use [kerl](https://github.com/kerl/kerl)
 And this way to gen tags is copied from [vim-erlang-omnicomplete](https://github.com/vim-erlang/vim-erlang-omnicomplete)
-(I just know there are this plugin, otherwise I won't write this plugin =_=).
+(I just know this plugin, otherwise I won't write this plugin =_=).
 
 
 By default, It will automaticlly display module functions after you type `module:`.
@@ -64,15 +64,18 @@ to list completation.
 
 ## Example
 1. `module:` 
+
 when you type a module name and a`:` it will displays functions exported or not in the module 
 depends your settings. Module can be offical module like `lists`, `ets` or user module whose `.erl` file in the 
 `src/` parent path, recursively.
 like`/home/youthy/erlang_project/src`, it will match the `module.erl` in `/home/youthy/erlang_project` recursively.
 
 2. `module:funname`
+
 same as above,but display matches only match funname.
 
 3. `singleword`
+
 when there no `:` before cursor, it will display modules which match the `singleword`, and functions in `erlang` module
 which match, and localfunctions.
 

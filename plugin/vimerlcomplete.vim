@@ -24,7 +24,7 @@ let s:home_path = split(expand('<sfile>:p:h'), '.vim')[0]
 
 autocmd FileType erlang call VimerlCompleteSet()
 
-command! -nargs=* EcompleteGen call VimerlcompleteGen <args>
+command! -nargs=? EcompleteGen call VimerlcompleteGen(<q-args>)
 
 " gen .parse file
 function! VimerlcompleteGen(version)
@@ -129,7 +129,7 @@ endfunction
 
 function! s:search_offical_module_functions(module, func, prefixmodule)
     if a:func == []
-        let arg = '.* '
+        let arg = '.*'
     else
         let arg = '^' . a:func[0]
     endif
@@ -139,6 +139,7 @@ function! s:search_offical_module_functions(module, func, prefixmodule)
         let prefix = ""
     endif
     let grepcmd = 'grep ' . '"'. arg . '"' . ' ' . s:parse_path . a:module . '.parse'
+    echom grepcmd
     let result = map(split(system(grepcmd), '\n'), 's:form_offical_result(prefix, v:val)')
     return result
 endfunction
@@ -220,7 +221,7 @@ function! vimerlcomplete#Tab()
     if pumvisible()
         return "\<C-N>"
     endif
-    if s:get_line_cursor() =~ '\w\+$' 
+    if s:get_line_cursor() =~ '\w\+:*$' 
         return "\<C-X>\<C-O>"
     else
         return "\<Tab>"
@@ -229,6 +230,7 @@ endfunction
 
 function! VimerlCompleteSet()
     setlocal omnifunc=vimerlcomplete#Complete
+    setlocal completeopt=menuone,preview,longest
     inoremap <buffer> <TAB>  <C-R>=vimerlcomplete#Tab()<CR>
     augroup vimerlautocmd
         au!
