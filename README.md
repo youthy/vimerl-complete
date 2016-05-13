@@ -1,7 +1,7 @@
 # vimerl-complete
 Vim plugin for erlang code auto-completation
 
-![](http://i1156.photobucket.com/albums/p578/crossshura/optimized2_zpszcg8yvwx.gif)
+![](http://i1156.photobucket.com/albums/p578/crossshura/optimized_zps7cintri8.gif)
 ## Require
 1. need [Vundle](https://github.com/VundleVim/Vundle.vim) or other Plugin Manager
 2. need [Syntastic](https://github.com/scrooloose/syntastic) or some other syntax
