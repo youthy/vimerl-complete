@@ -52,6 +52,7 @@ function! vimerlcomplete#Complete(findstart, base)
         return s:calc_return_column()
     else
         " second invoke a:base is the string should replace
+        echom a:base
         if a:base =~ '\w\+:\w*' 
             " match module:(function)
             return s:search_external(a:base, 1)
@@ -64,13 +65,15 @@ endfunction
 " try to return replace column  
 function! s:calc_return_column() 
     let line = strpart(getline('.'), 0, col('.') - 1)
-    let tmplist = split(line, '\s\|(')
-    if tmplist == []
-        return -1
-    endif
+    echom line
+    "let tmplist = split(line, '\s\|(')
+    "if tmplist == []
+    "    return -1
+    "endif
     " 添加'$'防止前面存在一样的string
     " '$' is used for handle pattern like "lists:   lists:(cursor here)"
-    let column = match(line, tmplist[-1].'$')
+    "let column = match(line, tmplist[-1].'$')
+    let column = match(line, '\w\+:*\w*$')
     return column
 endfunction
 
