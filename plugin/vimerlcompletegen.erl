@@ -16,7 +16,8 @@ main0([]) ->
     parse_erl_files(ErlFiles);
 main0([Path]) ->
     Files = filelib:wildcard(Path ++"/" ++ "*/*.html"),
-    lists:map(fun parse_file/1, Files).
+    {ok, Mp} = re:compile(?RE_FUNCTION),
+    [parse_file(File, Mp) || File <- Files].
 %% =============================================================================
 %% Parse .erl files
 %% =============================================================================
@@ -141,9 +142,9 @@ make_str(Acc, [H|T]) ->
 %% =============================================================================
 %% Parse .html files
 %% =============================================================================
-parse_file(FileName) ->
+parse_file(FileName, Mp) ->
     {ok, Bin} = file:read_file(FileName),
-    Data = parse_bin(Bin),
+    Data = parse_bin(Bin, Mp),
     Module = get_module_name(FileName),
     ok = file:write_file(get_output_file(Module), Data).
 
@@ -151,8 +152,8 @@ delete_previous_file() ->
     Files = filelib:wildcard(get_output_dir() ++ "*.parse"),
     lists:map(fun(F) -> file:delete(F) end, Files).
 
-parse_bin(Bin) ->
-    case re:run(Bin, ?RE_FUNCTION, [global, {capture, [name, detail, type], binary}]) of
+parse_bin(Bin, Mp) ->
+    case re:run(Bin, Mp, [global, {capture, [name, detail, type], binary}]) of
         nomatch -> [];
         {match, List} -> 
             [parse_part(Match) || Match <- List]

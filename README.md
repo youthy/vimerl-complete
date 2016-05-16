@@ -78,7 +78,7 @@ same as above,but display matches only match funname.
 when there no `:` before cursor, it will display modules which match the `singleword`, and functions in `erlang` module
 which match, and localfunctions.
 
-**Up to now, this plugin conflicts with YouCompleteMe, becase YouCompleteMe force use `completeopt-=longest`
-and under this situation, plugin always select the first matches in display menu.It annoys. But I haven't find
+**Up to now, this plugin conflicts with YouCompleteMe or neocomplete, becase they force use `completeopt-=longest`
+and under this situation, plugin always select the first match in display menu.It annoys. But I haven't find
 a beautiful solution**
 
