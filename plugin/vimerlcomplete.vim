@@ -52,7 +52,6 @@ function! vimerlcomplete#Complete(findstart, base)
         return s:calc_return_column()
     else
         " second invoke a:base is the string should replace
-        echom a:base
         if a:base =~ '\w\+:\w*' 
             " match module:(function)
             return s:search_external(a:base, 1)
@@ -65,7 +64,6 @@ endfunction
 " try to return replace column  
 function! s:calc_return_column() 
     let line = strpart(getline('.'), 0, col('.') - 1)
-    echom line
     "let tmplist = split(line, '\s\|(')
     "if tmplist == []
     "    return -1
