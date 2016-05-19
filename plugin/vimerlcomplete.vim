@@ -64,13 +64,8 @@ endfunction
 " try to return replace column  
 function! s:calc_return_column() 
     let line = strpart(getline('.'), 0, col('.') - 1)
-    "let tmplist = split(line, '\s\|(')
-    "if tmplist == []
-    "    return -1
-    "endif
     " 添加'$'防止前面存在一样的string
     " '$' is used for handle pattern like "lists:   lists:(cursor here)"
-    "let column = match(line, tmplist[-1].'$')
     let column = match(line, '\w\+:*\w*$')
     return column
 endfunction
@@ -122,7 +117,7 @@ function! s:search_local_fun(base)
         if empty(tmp)
             continue
         else
-            call add(return, {'word':matchstr(tmp, '^\w\+('), 'abbr':tmp, 'kind':'f'})
+            call add(return, {'word':matchstr(tmp, '^\w\+('), 'abbr':tmp, 'kind':'f', 'dup':1})
         endif
     endwhile
     return return
@@ -140,7 +135,6 @@ function! s:search_offical_module_functions(module, func, prefixmodule)
         let prefix = ""
     endif
     let grepcmd = 'grep ' . '"'. arg . '"' . ' ' . s:parse_path . a:module . '.parse'
-    echom grepcmd
     let result = map(split(system(grepcmd), '\n'), 's:form_offical_result(prefix, v:val)')
     return result
 endfunction
@@ -166,12 +160,12 @@ function! s:search_user_module_export_functions(module, func, filepath)
     let grepresult = system(grepcmd)
     let pos = matchend(grepresult, '\(\w\+/\d\+\n\)*')
     if pos < 1
-        echom "None"
+        return []
     else
         let str1 = strpart(grepresult, 0, pos)
         let str2 = strpart(grepresult, pos, strlen(grepresult) - pos - 1)
         let export = split(str1, '\n')
-        let allfun = split(str2, '\n')
+        let allfun = map(split(str2, '\n'), 'matchstr(v:val, ".\\{-})")')
         let fun2 = filter(allfun, 's:is_user_fun_export(export, v:val)')
         return map(fun2, 's:form_user_result_onlyexport(a:module, v:val)')
     endif
@@ -181,21 +175,21 @@ endfunction
 function! s:form_offical_result(prefix, str)
     let [word, replace; type] = split(a:str, '@')
     if empty(type)
-        return {'word':a:prefix . word . '(', 'abbr':replace, 'kind':'f'}
+        return {'word':a:prefix . word . '(', 'abbr':replace, 'kind':'f', 'dup':1}
     else
-        return {'word':a:prefix . word . '(', 'abbr':replace, 'info':type[0], 'kind':'f'}
+        return {'word':a:prefix . word . '(', 'abbr':replace, 'info':type[0], 'kind':'f', 'dup':1}
 endfunction
 
 " form user function result
 function! s:form_user_result(module, str)
     let name = matchstr(a:str, '\w\+(')
-    return {'word':a:module.':'.name, 'abbr': matchstr(a:str, '.*)'), 'kind':'f'}
+    return {'word':a:module.':'.name, 'abbr': matchstr(a:str, '.*)'), 'kind':'f', 'dup':1}
 endfunction
 
 " form user function only exported
 function! s:form_user_result_onlyexport(module, str)
     let name = matchstr(a:str, '\w\+(')
-    return {'word':a:module.':'.name, 'abbr': a:str}
+    return {'word':a:module.':'.name, 'abbr': a:str, 'dup': 1}
 endfunction
 
 function! s:is_file_exist(path, filename)
