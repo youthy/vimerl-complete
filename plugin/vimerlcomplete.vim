@@ -198,6 +198,11 @@ endfunction
 
 function! s:is_user_fun_export(export_list, fun_str)
     " change #record{}, tuple{}, and list[] to a simple Text
+    " fun(A) -> lists:map(fun fun2/2, A) the fun2/2 will be in grep result
+    " so the fun_str maybe empty string
+    if empty(a:fun_str)
+        return 0
+    endif
     let str2 = substitute(a:fun_str, '{.\{-}}\|\[.*]', 'Text', 'g')
     let tmp = split(str2, '(\|,\|)') 
     if tmp[-1] == ''
