@@ -97,7 +97,11 @@ endfunction
 function! s:search_local(base)
     let modresult = s:search_module(a:base)
     let erlangfun = s:search_external('erlang:'.a:base, 0)
-    return modresult + erlangfun + s:search_local_fun(a:base)
+    if erlangfun != -1
+        return modresult + erlangfun + s:search_local_fun(a:base)
+    else
+        return modresult + s:search_local_fun(a:base)
+    end
 endfunction
 
 function! s:search_module(base)
