@@ -84,7 +84,7 @@ function! s:search_external(base, prefixmodule)
         let filepath = s:get_user_module_filepath(module.'.erl')
         if empty(filepath)
             " can't find module
-            return -1
+            return []
         endif
         if g:vimerl_complete_only_export
             return s:search_user_module_export_functions(module, func, filepath)
@@ -97,10 +97,10 @@ endfunction
 function! s:search_local(base)
     let modresult = s:search_module(a:base)
     let erlangfun = s:search_external('erlang:'.a:base, 0)
-    if erlangfun != -1
-        return modresult + erlangfun + s:search_local_fun(a:base)
-    else
-        return modresult + s:search_local_fun(a:base)
+    "if erlangfun != -1
+    return modresult + erlangfun + s:search_local_fun(a:base)
+    "else
+    "    return modresult + s:search_local_fun(a:base)
     end
 endfunction
 
