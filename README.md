@@ -2,12 +2,6 @@
 Vim plugin for erlang code auto-completation
 
 ![](http://i1156.photobucket.com/albums/p578/crossshura/optimized_zps7cintri8.gif)
-## Bug Fix
-**2016.5.20** function like `fun(List) -> lists:map(fun otherfun/1, List)` may cause error, so I remove it.
-
-**2016.5.19** add 'dup' option. In earlier version, If a module have `fun()`, `fun(A)` functions
-It will only display one of them.So I fix this.Anothor bug is the function like`fun(A) -> fun2(A).`
-won't show in menu which had been fixed in this version.
 
 ## Require
 1. need [Vundle](https://github.com/VundleVim/Vundle.vim) or other Plugin Manager
